@@ -1,0 +1,73 @@
+﻿.top-25 {
+    top: 25%;
+}
+
+.fs-large-3 {
+    font-size: 1.5em;
+}
+
+
+
+/*editing::after updated changes, older one got commented out*/
+.right-sidebar {
+    z-index: 100;
+    width: 200px;
+    pointer-events: none;
+    /* transform: translateX(50%); */
+    /* width: 150px; */
+    transition: all 0.2s ease-in-out;
+}
+
+    .right-sidebar > * {
+        transition: all 0.3s ease-in-out;
+        /* transform: translateX(100px); */
+        color: black;
+        pointer-events: auto;
+        cursor: pointer;
+        z-index: 99999;
+        width: fit-content !important;
+/*        box-shadow: 1px 1px 3px gray;*/
+    }
+
+   
+
+    .right-sidebar > *.highlightedtab {
+        border: 1px solid black;
+        box-shadow: 2px 2px 3px black;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+
+
+    .right-sidebar > *:hover {
+        transform: translateX(0) !important;
+        /*            background: #4682b4;*/
+        background: #000000a6;
+        color: white !important;
+        border-top-left-radius: 999px;
+        border-bottom-left-radius: 999px;
+    }
+
+.right-sidebar > * img{
+    width: 15px;
+
+    
+    
+}
+
+.right-sidebar > *:hover img {
+    filter: invert(100%);
+}
+
+.right-sidebar > * span {
+    padding-left: 1rem;
+    color: transparent;
+    visibility: hidden;
+    /* width: 100px; */
+}
+
+.right-sidebar > *:hover span {
+    color: white;
+    /*display: inline;*/
+    visibility: visible;
+}

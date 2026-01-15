@@ -1,0 +1,206 @@
+﻿@model IEnumerable<quezemasterNew.Models.Class9.Class9QuestionSetViewModel>
+
+    <title>Class 6</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+    a5:visited, a.ex5:link {
+        text-decoration: none;
+    }
+
+    a.ex5:hover, a.ex5:active {
+        text-decoration: underline;
+    }
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="w3-panel w3-card" style="border-radius:20px">
+                <div class="col-md-1" style="padding-top:0px">
+                    <img src="~/image\notes-removebg-preview.png" height="0px" width="0px" style="padding-left:0px" />
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table-responsive-lg">
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <p style="font-size:17px;color:black;padding-top:10px">
+                                            <a class="ex5" asp-action="OnlineTest" asp-controller="Class6" asp-route-id="@item.id" style="padding-left:0px;font-size:17px;color:black;font-weight:400;padding-top:10px">@item.QuestionSetName</a>
+                                        </p>
+                                        <h5 style="color:#4CBB17;font-weight:400">
+                                            Question : 20 &nbsp; &nbsp;&nbsp <i class="fa fa-clock-o" style="font-size:12px;color:#4CBB17;font-weight:500"></i> 20 Minutes
+                                        </h5>
+                                        <hr />
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="col-md-4">
+
+            <br />
+            <br />
+            <br />
+            <div class="w3-panel w3-card" style="border-radius:10px">
+                <div class="w3-panel w3-card" style="border-radius:5px;background-color:#f4f4f4">
+                    <center>
+                        <h5 style="font-weight:400">Quick links</h5>
+                    </center>
+                </div>
+
+                <h5 style="color:#4CBB17;font-weight:600;padding-top:50px">
+                    Quantitative Aptitude
+                </h5>
+
+
+                <h5 style="font-size:17px;color:gray">
+                    <i style="padding-left:20px;font-size:20px;color:gray;padding:7px;padding-top:8px" class="fa fa-angle-right"></i>
+                    <a class="ex5" href="#" style="font-weight:500">Arithmetic</a>
+                </h5>
+
+                <h5 style="font-size:17px;color:gray">
+                    <i style="padding-left:20px;font-size:20px;color:gray;padding:8px;padding-top:3px" class="fa fa-angle-right"></i>
+                    <a class="ex5" href="#" style="font-weight:500">Data Interpretation</a>
+                </h5>
+
+
+
+                <h5 style="color:#4CBB17;font-weight:600">
+                    Verbal (English)
+                </h5>
+
+
+                <h5 style="font-size:17px;color:gray">
+                    <i style="padding-left:12px;font-size:19px;color:gray;padding:7px;padding-top:8px" class="fa fa-angle-right"></i>
+                    <a class="ex5" href="#" style="font-weight:500">
+                        Verbal Ability
+                    </a>
+                </h5>
+
+                <h5 style="font-size:17px;color:gray">
+                    <i style="padding-left:12px;font-size:19px;color:black;padding:8px;padding-top:3px" class="fa fa-angle-right"></i>
+                    <a class="ex5" href="#" style="font-weight:500">
+                        Verbal Test
+                    </a>
+                </h5>
+
+                <h5 style="color:#4CBB17;font-weight:600">
+                    Reasoning
+                </h5>
+
+
+                <h5 style="font-size:17px;color:gray">
+                    <i style="padding-left:12px;font-size:17px;color:gray;padding:7px;padding-top:8px" class="fa fa-angle-right"></i>
+                    <a class="ex5" href="#" style="font-weight:500">
+                        Logical
+
+                    </a>
+                </h5>
+
+                <h5 style="font-size:17px;color:gray">
+                    <i style="padding-left:12px;font-size:17px;color:black;padding:8px;padding-top:3px" class="fa fa-angle-right"></i>
+                    <a class="ex5" href="#" style="font-weight:500">
+                        Verbal
+                    </a>
+                </h5>
+
+
+                <h5 style="font-size:17px;color:gray">
+                    <i style="padding-left:12px;font-size:17px;color:black;padding:8px;padding-top:3px" class="fa fa-angle-right"></i>
+                    <a class="ex5" href="#" style="font-weight:500">
+                        Nonverbal
+                    </a>
+                </h5>
+
+                <h5 style="color:#4CBB17;font-weight:600">
+                    Programming
+                </h5>
+
+
+                <h5 style="font-size:17px;color:gray">
+                    <i style="padding-left:12px;font-size:17px;color:black;padding:8px;padding-top:3px" class="fa fa-angle-right"></i>
+                    <a class="ex5" href="#" style="font-weight:500">
+                        C  Programming
+
+                    </a>
+                </h5>
+
+
+                <h5 style="font-size:17px;color:gray">
+                    <i style="padding-left:12px;font-size:17px;color:gray;padding:7px;padding-top:8px" class="fa fa-angle-right"></i>
+                    <a class="ex5" href="#" style="font-weight:500">
+                        C++
+                    </a>
+                </h5>
+
+                <h5 style="font-size:17px;color:gray">
+                    <i style="padding-left:12px;font-size:17px;color:black;padding:8px;padding-top:3px" class="fa fa-angle-right"></i>
+                    <a class="ex5" href="#" style="font-weight:500">
+                        Java
+                    </a>
+                </h5>
+
+                <h5 style="color:#4CBB17;font-weight:600">
+                    Interview
+                </h5>
+
+
+                <h5 style="font-size:17px;color:gray">
+                    <i style="padding-left:12px;font-size:17px;color:gray;padding:7px;padding-top:8px" class="fa fa-angle-right"></i>
+                    <a class="ex5" href="#" style="font-weight:500">
+                        GD
+                    </a>
+                </h5>
+
+                <h5 style="font-size:17px;color:gray">
+                    <i style="padding-left:12px;font-size:17px;color:gray;padding:7px;padding-top:8px" class="fa fa-angle-right"></i>
+                    <a class="ex5" href="#" style="font-weight:500">
+                        HR
+                    </a>
+                </h5>
+
+
+                <h5 style="font-size:17px;color:gray">
+                    <i style="padding-left:12px;font-size:17px;color:gray;padding:7px;padding-top:8px" class="fa fa-angle-right"></i>
+                    <a class="ex5" href="#" style="font-weight:500">
+                        Technical Interview
+                    </a>
+                </h5>
+
+
+                <h5 style="color:#4CBB17;font-weight:600">
+                    Placement Papers
+                </h5>
+
+
+                <h5 style="font-size:17px;color:gray">
+                    <i style="padding-left:12px;font-size:17px;color:gray;padding:7px;padding-top:8px" class="fa fa-angle-right"></i>
+                    <a class="ex5" href="#" style="font-weight:500">
+                        Placement Papers
+                    </a>
+                </h5>
+
+                <h5 style="font-size:17px;color:gray">
+                    <i style="padding-left:12px;font-size:17px;color:black;padding:8px;padding-top:3px" class="fa fa-angle-right"></i>
+                    <a class="ex5" href="#" style="font-weight:500">
+                        Submit Paper
+                    </a>
+                </h5>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+

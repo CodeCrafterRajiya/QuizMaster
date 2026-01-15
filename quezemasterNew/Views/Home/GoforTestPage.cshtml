@@ -1,0 +1,610 @@
+﻿
+@{
+    ViewData["Title"] = "Go For Test";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+	var TestType = @ViewBag.TestDiv;
+}
+<script>
+	function GoForTest() {
+		alert("Comming Soon");
+	}
+</script>
+
+
+@if (TestType == "General Aptitude")
+{
+	 <div class="container-fluid">
+		<div class="row">
+			<div id="cardshadow"  class="col-sm-10" >
+
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="card">
+								<img src="~/newfolder/gap.jpg" />
+
+								<div class="card-body">
+									<h5 class="card-title">UPP</h5>
+									<p class="card-text">
+										General Aptitude is an integral part of many competitive examinations like SSC CGL, UPSC, etc. and aims to assess a candidate .
+									</p>
+									<a asp-controller="UPP" asp-action="Onlinetest" class="btn btn-primary">Go For Test</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="card">
+								<img src="~/newfolder/istockphoto-511281043-612x612.jpg" />
+								<div class="card-body">
+									<h5 class="card-title">Data Interpretation</h5>
+									<p class="card-text">
+
+										 Candidates can prepare effectively by assessing the format and types of questions used in previous exams through the PYPs.
+
+									</p>
+									<a href="#" onclick="GoForTest()" class="btn btn-primary">Go For Test</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-4">
+							<div class="card">
+								<img src="~/newfolder/engbpsc.jpg" />
+
+
+								<div class="card-body">
+									<h5 class="card-title">Online Aptitude Test</h5>
+									<p class="card-text">
+
+										Solving practice sets helps candidates to assess their strengths and weaknesses, the areas that require improvement.
+									</p>
+									<a href="#" onclick="GoForTest()" class="btn btn-primary">Go For Test</a>
+								</div>
+							</div>
+						</div>
+
+
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+		</div>
+
+	</div> 
+}
+
+@if (TestType == "EnglishTGT")
+{
+	<div class="container-fluid">
+		<div class="row">
+			<div id="cardshadow" class="col-sm-10">
+
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="card">
+								<img src="~/newfolder/gap.jpg" />
+
+								<div class="card-body">
+									<h5 class="card-title">TGT</h5>
+									<p class="card-text">
+										General Aptitude is an integral part of many competitive examinations like SSC CGL, UPSC, etc. and aims to assess a candidate .
+									</p>
+									<a asp-controller="TGTPGTLTEnglish" asp-action="TGTTestOnline" class="btn btn-primary">Go For Test</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="card">
+								<img src="~/newfolder/istockphoto-511281043-612x612.jpg" />
+								<div class="card-body">
+									<h5 class="card-title">PGT</h5>
+									<p class="card-text">
+
+										Candidates can prepare effectively by assessing the format and types of questions used in previous exams through the PYPs.
+
+									</p>
+									<a asp-controller="TGTPGTLTEnglish" asp-action="PGTTestOnline" class="btn btn-primary">Go For Test</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-4">
+							<div class="card">
+								<img src="~/newfolder/engbpsc.jpg" />
+
+
+								<div class="card-body">
+									<h5 class="card-title">LT</h5>
+									<p class="card-text">
+
+										Solving practice sets helps candidates to assess their strengths and weaknesses, the areas that require improvement.
+									</p>
+									<a asp-controller="TGTPGTLTEnglish" asp-action="LTTestOnline" class="btn btn-primary">Go For Test</a>
+								</div>
+							</div>
+						</div>
+
+
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+		</div>
+
+	</div>
+}
+
+@if (TestType == "English (BPSC)")
+{
+	<div class="container-fluid">
+		<div class="row">
+			<div id="cardshadow" class="col-sm-10">
+
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="card">
+								<img src="~/newfolder/gap.jpg" />
+
+								<div class="card-body">
+									<h5 class="card-title">6 to 8</h5>
+									<p class="card-text">
+										General Aptitude is an integral part of many competitive examinations like SSC CGL, UPSC, etc. and aims to assess a candidate .
+									</p>
+									<a asp-controller="BPSCEnglish" asp-action="TestOnline" asp-route-SubjectName="6To8" class="btn btn-primary">Go For Test</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="card">
+								<img src="~/newfolder/istockphoto-511281043-612x612.jpg" />
+								<div class="card-body">
+									<h5 class="card-title">9 to 10</h5>
+									<p class="card-text">
+
+										Candidates can prepare effectively by assessing the format and types of questions used in previous exams through the PYPs.
+
+									</p>
+									<a asp-controller="BPSCEnglish" asp-action="TestOnline" asp-route-SubjectName="9To10" class="btn btn-primary">Go For Test</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-4">
+							<div class="card">
+								<img src="~/newfolder/engbpsc.jpg" />
+
+
+								<div class="card-body">
+									<h5 class="card-title">11 to 12</h5>
+									<p class="card-text">
+
+										Solving practice sets helps candidates to assess their strengths and weaknesses, the areas that require improvement.
+									</p>
+									<a asp-controller="BPSCEnglish" asp-action="TestOnline" asp-route-SubjectName="11To12" class="btn btn-primary">Go For Test</a>
+								</div>
+							</div>
+						</div>
+
+
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+		</div>
+
+	</div>
+}
+
+@if (TestType == "GK")
+{
+	<div class="container-fluid">
+		<div class="row">
+			<div id="cardshadow" class="col-sm-10">
+
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="card">
+								<img src="~/newfolder/gap.jpg" />
+
+								<div class="card-body">
+									<h5 class="card-title">BPSC</h5>
+									<p class="card-text">
+										General Aptitude is an integral part of many competitive examinations like SSC CGL, UPSC, etc. and aims to assess a candidate .
+									</p>
+									<a href="#" onclick="GoForTest()" class="btn btn-primary">Go For Test</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="card">
+								<img src="~/newfolder/istockphoto-511281043-612x612.jpg" />
+								<div class="card-body">
+									<h5 class="card-title">UP SSSC</h5>
+									<p class="card-text">
+
+										Candidates can prepare effectively by assessing the format and types of questions used in previous exams through the PYPs.
+
+									</p>
+									<a href="#" onclick="GoForTest()" class="btn btn-primary">Go For Test</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-4">
+							<div class="card">
+								<img src="~/newfolder/engbpsc.jpg" />
+
+
+								<div class="card-body">
+									<h5 class="card-title">UP SSC</h5>
+									<p class="card-text">
+
+										Solving practice sets helps candidates to assess their strengths and weaknesses, the areas that require improvement.
+									</p>
+									<a href="#" onclick="GoForTest()" class="btn btn-primary">Go For Test</a>
+								</div>
+							</div>
+						</div>
+
+
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+		</div>
+
+	</div>
+}
+
+@if (TestType == "CLass9")
+{
+	<div class="container-fluid">
+		<div class="row">
+			<div id="cardshadow" class="col-sm-10">
+
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="card">
+								<img src="~/newfolder/gap.jpg" />
+
+								<div class="card-body">
+									<h5 class="card-title">Hindi</h5>
+									<p class="card-text">
+										General Aptitude is an integral part of many competitive examinations like SSC CGL, UPSC, etc. and aims to assess a candidate .
+									</p>
+									<a asp-controller="Class9" asp-action="TestOnline" asp-route-SubjectName="Hindi" class="btn btn-primary">Go For Test</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="card">
+								<img src="~/newfolder/istockphoto-511281043-612x612.jpg" />
+								<div class="card-body">
+									<h5 class="card-title">English</h5>
+									<p class="card-text">
+
+										Candidates can prepare effectively by assessing the format and types of questions used in previous exams through the PYPs.
+
+									</p>
+									<a asp-controller="Class9" asp-action="TestOnline" asp-route-SubjectName="English" class="btn btn-primary">Go For Test</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-4">
+							<div class="card">
+								<img src="~/newfolder/engbpsc.jpg" />
+
+
+								<div class="card-body">
+									<h5 class="card-title">Science</h5>
+									<p class="card-text">
+
+										Solving practice sets helps candidates to assess their strengths and weaknesses, the areas that require improvement.
+									</p>
+									<a asp-controller="Class9" asp-action="TestOnline" asp-route-SubjectName="Science" class="btn btn-primary">Go For Test</a>
+								</div>
+							</div>
+						</div>
+
+
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+		</div>
+
+	</div>
+}
+
+@if (TestType == "CLass10")
+{
+	<div class="container-fluid">
+		<div class="row">
+			<div id="cardshadow" class="col-sm-10">
+
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="card">
+								<img src="~/newfolder/gap.jpg" />
+
+								<div class="card-body">
+									<h5 class="card-title">Hindi</h5>
+									<p class="card-text">
+										General Aptitude is an integral part of many competitive examinations like SSC CGL, UPSC, etc. and aims to assess a candidate .
+									</p>
+									<a asp-controller="CLass10" asp-action="TestOnline" asp-route-SubjectName="Hindi" class="btn btn-primary">Go For Test</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="card">
+								<img src="~/newfolder/istockphoto-511281043-612x612.jpg" />
+								<div class="card-body">
+									<h5 class="card-title">English</h5>
+									<p class="card-text">
+
+										Candidates can prepare effectively by assessing the format and types of questions used in previous exams through the PYPs.
+
+									</p>
+									<a asp-controller="CLass10" asp-action="TestOnline" asp-route-SubjectName="English" class="btn btn-primary">Go For Test</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-4">
+							<div class="card">
+								<img src="~/newfolder/engbpsc.jpg" />
+
+
+								<div class="card-body">
+									<h5 class="card-title">Science</h5>
+									<p class="card-text">
+
+										Solving practice sets helps candidates to assess their strengths and weaknesses, the areas that require improvement.
+									</p>
+									<a asp-controller="CLass10" asp-action="TestOnline" asp-route-SubjectName="Science" class="btn btn-primary">Go For Test</a>
+								</div>
+							</div>
+						</div>
+
+
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+		</div>
+
+	</div>
+}
+
+@if (TestType == "CLass11")
+{
+	<div class="container-fluid">
+		<div class="row">
+			<div id="cardshadow" class="col-sm-10">
+
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="card">
+								<img src="~/newfolder/gap.jpg" />
+
+								<div class="card-body">
+									<h5 class="card-title">Hindi</h5>
+									<p class="card-text">
+										General Aptitude is an integral part of many competitive examinations like SSC CGL, UPSC, etc. and aims to assess a candidate .
+									</p>
+									<a asp-controller="Class11" asp-action="TestOnline" asp-route-SubjectName="Hindi" class="btn btn-primary">Go For Test</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="card">
+								<img src="~/newfolder/istockphoto-511281043-612x612.jpg" />
+								<div class="card-body">
+									<h5 class="card-title">English</h5>
+									<p class="card-text">
+
+										Candidates can prepare effectively by assessing the format and types of questions used in previous exams through the PYPs.
+
+									</p>
+									<a asp-controller="Class11" asp-action="TestOnline" asp-route-SubjectName="English" class="btn btn-primary">Go For Test</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-4">
+							<div class="card">
+								<img src="~/newfolder/engbpsc.jpg" />
+
+
+								<div class="card-body">
+									<h5 class="card-title">History</h5>
+									<p class="card-text">
+
+										Solving practice sets helps candidates to assess their strengths and weaknesses, the areas that require improvement.
+									</p>
+									<a asp-controller="Class11" asp-action="TestOnline" asp-route-SubjectName="History" class="btn btn-primary">Go For Test</a>
+								</div>
+							</div>
+						</div>
+
+
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+		</div>
+
+	</div>
+}
+
+
+@if (TestType == "CLass12")
+{
+	<div class="container-fluid">
+		<div class="row">
+			<div id="cardshadow" class="col-sm-10">
+
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="card">
+								<img src="~/newfolder/gap.jpg" />
+
+								<div class="card-body">
+									<h5 class="card-title">Hindi</h5>
+									<p class="card-text">
+										General Aptitude is an integral part of many competitive examinations like SSC CGL, UPSC, etc. and aims to assess a candidate .
+									</p>
+									<a asp-controller="Class12" asp-action="TestOnline" asp-route-SubjectName="Hindi" class="btn btn-primary">Go For Test</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="card">
+								<img src="~/newfolder/istockphoto-511281043-612x612.jpg" />
+								<div class="card-body">
+									<h5 class="card-title">English</h5>
+									<p class="card-text">
+
+										Candidates can prepare effectively by assessing the format and types of questions used in previous exams through the PYPs.
+
+									</p>
+									<a asp-controller="Class12" asp-action="TestOnline" asp-route-SubjectName="English" class="btn btn-primary">Go For Test</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-4">
+							<div class="card">
+								<img src="~/newfolder/engbpsc.jpg" />
+
+
+								<div class="card-body">
+									<h5 class="card-title">History</h5>
+									<p class="card-text">
+
+										Solving practice sets helps candidates to assess their strengths and weaknesses, the areas that require improvement.
+									</p>
+									<a asp-controller="Class12" asp-action="TestOnline" asp-route-SubjectName="History" class="btn btn-primary">Go For Test</a>
+								</div>
+							</div>
+						</div>
+
+
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+		</div>
+
+	</div>
+}
+
+@if (TestType == "Academic")
+{
+	<div class="container-fluid">
+		<div class="row">
+			<div id="cardshadow" class="col-sm-10">
+
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="card">
+								<img src="~/newfolder/gap.jpg" />
+
+								<div class="card-body">
+									<h5 class="card-title">Class 6 All Subject</h5>
+									<p class="card-text">
+										General Aptitude is an integral part of many competitive examinations like SSC CGL, UPSC, etc. and aims to assess a candidate .
+									</p>
+									<a asp-controller="Class6" asp-action="TestOnline" class="btn btn-primary">Go For Test</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="card">
+								<img src="~/newfolder/istockphoto-511281043-612x612.jpg" />
+								<div class="card-body">
+									<h5 class="card-title">Class 7 All Subject</h5>
+									<p class="card-text">
+
+										Candidates can prepare effectively by assessing the format and types of questions used in previous exams through the PYPs.
+
+									</p>
+									<a asp-controller="Class7" asp-action="TestOnline" class="btn btn-primary">Go For Test</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-4">
+							<div class="card">
+								<img src="~/newfolder/engbpsc.jpg" />
+
+
+								<div class="card-body">
+									<h5 class="card-title">Class 8 All Subject</h5>
+									<p class="card-text">
+
+										Solving practice sets helps candidates to assess their strengths and weaknesses, the areas that require improvement.
+									</p>
+									<a asp-controller="Class8" asp-action="TestOnline" class="btn btn-primary">Go For Test</a>
+								</div>
+							</div>
+						</div>
+
+
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+		</div>
+
+	</div>
+}

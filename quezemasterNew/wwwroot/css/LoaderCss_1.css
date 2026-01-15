@@ -1,0 +1,100 @@
+﻿
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255,0.2); /* Semi-transparent background */
+    backdrop-filter: blur(2px); /* Apply blur effect */
+    z-index: 999; /* Ensure it's on top of other elements */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#FinancialFilterLoader {
+    display: none;
+    height: 110px;
+    width: 110px; /* Start hidden */
+    z-index: 9999;
+    position: fixed;
+    top: 50%;
+}
+.myBtn {
+    width: 105px;
+    margin-right: 5px;
+    margin-top: 8px;
+}
+
+.fullpagebtn {
+    width:105px;
+    margin-right:5px;
+    margin-top:8px; 
+    padding:3px; 
+    border:1px solid;
+}
+
+
+
+ 
+
+#diagramimageLoader {
+    display: none;
+    height: 60px;
+    width: 60px; /* Start hidden */
+    z-index: 9999;
+    position: fixed;
+    top: 50%;
+    left:75%;
+}
+
+.filterloader {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* This will center the loader */
+    z-index: 9999; /* Make sure the loader stays on top */
+}
+
+
+
+
+
+
+#DiagramloaderOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255,0.2); /* Semi-transparent background */
+    backdrop-filter: blur(2px); /* Apply blur effect */
+    z-index: 999; /* Ensure it's on top of other elements */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#DiagramFilterLoader {
+    display: none;
+    height: 110px;
+    width: 110px; /* Start hidden */
+    z-index: 9999;
+    position: fixed;
+    top: 70%;
+}
+
+
+
+#diagramimageLoadersummary {
+   display:none ;
+   height:10%; 
+   width : 10%;
+   
+}
+.summarydiagramloader {
+    display: none;
+    left: 50%;
+   margin-top:220px;
+}

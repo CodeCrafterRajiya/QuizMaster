@@ -1,0 +1,536 @@
+
+
+:root {
+    --header-height: 3rem;
+    --nav-width: 80px;
+    --first-color: #2a3f54;
+    --active-hover: #2a3f54;
+    --first-color-light: #fff;
+    --white-color: #257ee8;
+    --body-font: "Nunito", sans-serif;
+    --normal-font-size: 1rem;
+    --z-fixed: 100;
+    --main-blut: #257ee8;
+    --orange: #ffa756;
+    --green: #08aa6e;
+    --dark: #1b2431;
+    --secondary-dark: #273142;
+    --dark-light: #323d4e;
+    --stroke: #313d4f;
+    --stroke-light: rgba(198, 198, 198, 0.3);
+    --stroke-lighter: rgba(207, 207, 207, 0.11);
+    --bs-body-bg: #273142;
+}
+
+.dashboard {
+    margin: 0;
+}
+
+.statementPendingIcon {
+    background: #ff9066;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0px;
+}
+
+.statementCompleteIcon {
+    background: #08aa6e;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0px;
+}
+
+.progressOfCasesIcon {
+    background: #fec53d;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0px;
+}
+
+.totalStatementIcon {
+    background: #8280ff;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0px;
+
+   
+}
+/*----------By Nisha 1-2-25-----------*/
+.totalFinancialIcon {
+    background: #2ec4b6;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0px;
+}
+
+
+.totalpendingapprovalIcon {
+    background: #ff4d6b;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0px;
+}
+
+
+
+.rejectedrequestIcon {
+    background: #d9534f;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0px;
+}
+
+
+/*--------------end by nisha-----------------*/
+.statenentCard {
+    border-radius: 16px;
+    box-shadow: 0px 2px 8px #d3d3d3;
+    border: none;
+    padding: 8px;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+    .statenentCard.totalCase:hover {
+        background: #ff9066;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+    .statenentCard.complete:hover {
+        background: #08aa6e;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+    .statenentCard.progressCard:hover {
+        background: #fec53d;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+    .statenentCard.allCase:hover {
+        background: #8280ff;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+    /*------by Nisha 1-02-2025-*/
+    .statenentCard.Forfinancial:hover {
+        background: #2ec4b6;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+     
+    .statenentCard.pendingapproval:hover {
+        background: #ff4d6b;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+
+
+    .statenentCard.rejectedrequest:hover {
+        background: #d9534f;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+
+
+    /*------ end by Nisha 1-02-2025-*/
+    .statenentCard.totalCase:hover .statementPendingIcon,
+    .statenentCard.complete:hover .statementCompleteIcon,
+    .statenentCard.progressCard:hover .progressOfCasesIcon,
+    .statenentCard.allCase:hover .totalStatementIcon {
+        background: var(--first-color-light);
+    }
+/*by Nisha 1-02-2025--*/
+    .statenentCard.Forfinancial:hover .totalFinancialIcon {
+        background: var(--first-color-light);
+    }
+
+    .statenentCard.pendingapproval:hover .totalpendingapprovalIcon {
+        background: var(--first-color-light);
+    }
+
+    .statenentCard.rejectedrequest:hover .rejectedrequestIcon {
+        background: var(--first-color-light);
+    }
+
+    /*------------end of by nisha-------*/
+    .statenentCard.totalCase:hover .statementPendingIcon svg path {
+        fill: #ff9066;
+    }
+
+    .statenentCard.complete .statementCompleteIcon svg path {
+        fill: #fff;
+    }
+
+    .statenentCard.complete:hover .statementCompleteIcon svg path {
+        fill: #08aa6e;
+    }
+
+    .statenentCard.progressCard:hover .progressOfCasesIcon svg path {
+        fill: #fec53d;
+    }
+
+    .statenentCard.allCase:hover .totalStatementIcon svg path {
+        fill: #8280ff;
+    }
+
+    /*------------by Nisha----------------*/
+    .statenentCard.Forfinancial:hover .totalFinancialIcon svg path {
+        fill: #2ec4b6;
+    }
+
+    .statenentCard.pendingapproval:hover .totalpendingapprovalIcon svg path {
+        fill: #ff4d6b;
+    }
+
+    .statenentCard.rejectedrequest:hover .rejectedrequestIcon svg path {
+        fill: #d9534f;
+    }
+    /*----------------end by nisha*/
+    .statenentCard:hover a,
+    .statenentCard:hover a p,
+    .statenentCard:hover a h2 
+    
+    {
+        color: #fff !important;
+    }
+
+    .statenentCard a {
+        color: rgba(0, 0, 0, 0.75);
+    }
+
+
+
+        .statenentCard a p {
+            font-size: 12px;
+            margin-top: 0px;
+        }
+
+        .statenentCard a h2 {
+            font-size: 30px;
+            color: #000;
+            font-weight: bold;
+            margin-bottom: 0;
+        }
+
+       
+
+.innerBody {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lgCardHeading {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn-group .btn-outline-primary {
+    color: rgba(0, 0, 0, 0.64);
+    border: none;
+    background: var(--first-color-light);
+    font-size: 14px;
+    border-radius: 50px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+    padding: 8px 16px;
+}
+
+.messageTxt {
+    position: absolute;
+    right: 10px;
+    margin-top: 2px;
+    font-size: 12px;
+}
+
+.chackWrap {
+    margin: 16px 0px 0px 36px;
+}
+
+.fileUpload {
+    border-radius: 16px;
+    border: 2px dashed #d5d5d5;
+    height: 120px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #f3f3f3;
+    position: relative;
+}
+
+    .fileUpload.smFile {
+        height: 80px;
+        border: 1px dashed #d5d5d5;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .fileUpload .inner {
+        margin: 0;
+    }
+
+.graphCard {
+    border-radius: 16px;
+    box-shadow: 0px 2px 8px #d3d3d3;
+    border: none;
+    padding: 8px;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+    .graphCard .card-header {
+        background: transparent;
+        border-bottom: none;
+    }
+
+   
+    .graphCard .dropdown .btn {
+        width: 30px !important;
+        height: 30px !important;
+        padding: 0 !important;
+        border: none !important;
+    }
+ 
+    .graphCard .dropdown-menu {
+        min-width: 100px !important;
+    }
+ 
+    .graphCard .dropdown-item {
+        padding: 0px 5px !important;
+        font-size: 12px !important;
+    }
+    .graphCard .add-remark-btn:hover {
+        background-color: #f0f0f0; /* Change background color on hover */
+    }
+ 
+    .chatBody,.RemarkBody{
+        height:27rem;
+    }
+
+    .graphCard .dropdown-menu {
+        min-width: 100px !important;
+    }
+
+    .graphCard .dropdown-item {
+        padding: 0px 5px !important;
+        font-size: 12px !important;
+    }
+
+.graphContainer {
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+}
+
+.table-responsive h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.table-responsive .form-check-input {
+    margin-left: 0 !important;
+}
+
+.noData {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+    .noData h3 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 16px;
+        margin-bottom: 8px;
+    }
+
+
+.manageTab {
+    margin: 0;
+}
+
+    .manageTab .nav {
+        display: flex;
+        justify-content: flex-start;
+        overflow: hidden;
+        flex-direction: row;
+    }
+
+    .manageTab .nav-tabs .nav-item.show .nav-link,
+    .nav-tabs .nav-link.active {
+        background: hsla(268, 95%, 50%, 1);
+        background: linear-gradient( 160deg, hsla(268, 95%, 50%, 1) 0%, hsla(213, 81%, 53%, 1) 72% );
+        background: -moz-linear-gradient( 160deg, hsla(268, 95%, 50%, 1) 0%, hsla(213, 81%, 53%, 1) 72% );
+        background: -webkit-linear-gradient( 160deg, hsla(268, 95%, 50%, 1) 0%, hsla(213, 81%, 53%, 1) 72% );
+        filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#7607F9", endColorstr="#257EE8", GradientType=1 );
+        color: var(--first-color-light);
+    }
+
+        .manageTab .nav-tabs .nav-item.show .nav-link,
+        .nav-tabs .nav-link.active::after {
+            background-color: transparent;
+        }
+
+.nav-tabs .nav-link {
+    background: #fff;
+    /*comment by Arati SIngh 21-06-2025*/
+   /* margin-right: -1px;*/
+    border: 1px solid #ddd;
+    border-bottom: none;
+    /*padding: 10px 24px;*/
+    padding: 8px 18px;
+}
+
+.manageList {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mamageCenter {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.manageLeft {
+    width: calc(50% - 50px);
+}
+
+.manageRight {
+    width: calc(50% - 50px);
+}
+
+.tab-content .dTable {
+    border-radius: 0px 8px 8px 8px;
+}
+
+.manageACminH {
+    min-height: 380px;
+}
+@media screen and (max-width: 768px) {
+    .statenentCard {
+        margin-bottom: 16px;
+    }
+
+    .innerBody {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 8px;
+        min-height: 150px;
+    }
+
+        .innerBody p {
+            margin-top: 8px !important;
+            margin-bottom: 8px !important;
+            font-size: 12px;
+        }
+
+    .cartSec {
+        width: 100%;
+    }
+
+
+    .graphCard {
+        margin-bottom: 16px;
+    }
+
+    .manageTab {
+        margin-top: 16px;
+    }
+
+    .manageList {
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    .mamageCenter {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        margin-bottom: 20px;
+    }
+
+    .manageLeft {
+        width: 100%;
+    }
+
+    .manageRight {
+        width: 100%;
+    }
+
+    .nav-tabs .nav-link {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+
+    .rotateUp {
+        rotate: 90deg;
+    }
+
+    .rotateDown {
+        rotate: -90deg;
+    }
+
+    .mobArrowSpace {
+        margin: 0px 2px;
+    }
+
+   
+}
+
+.statenentCard .innerBody .cartSec .card-text {
+    font-size: 14px !important;
+}
+/*-------------------------------------------For Case Index--------------------------------------------------------*/
+/* Tooltip css for headerText tooltip  */
+.custom-tooltip1 {
+    background-color: #333; /* Tooltip background */
+    color: #fff; /* Tooltip text color */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding around text */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    margin-top: -85px;
+    margin-left: 15px;
+}
+    /*---------------------------------------------------light theme----------------------------------------*/
+
+
+
+/*----------------------------------------------------media query-------------------------------------------------*/

@@ -1,0 +1,38 @@
+﻿@model IEnumerable<quezemasterNew.Models.ViewModel.UsersDetails>
+@{
+    ViewData["Title"] = "User Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="overflow-x:auto">
+    <h3 class="text-center pt-4 pb-3  fw-bold">User Details</h3>
+    <table class="table table-bordered" >
+        @{
+            <thead >
+                <tr>
+                    <th>Sr No</th>
+                    <th>Name</th>
+                    <th>MobileNo</th>
+                    <th>EmailId</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            var i = 1;
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.Label(" ", i++.ToString())</td>
+                        <td>@item.Name</td>
+                        <td>@item.MobileNo</td>
+                        <td>@item.EmailId</td>
+                        <td>@item.Role</td>
+                    </tr>
+                }
+            </tbody>
+
+        }
+    </table>
+</div>
+
+

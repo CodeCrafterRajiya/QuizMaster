@@ -1,0 +1,38 @@
+﻿#image {
+    border-top-left-radius: 0.75rem;
+    border-bottom-left-radius: 0.75rem;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.shadow-sm {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05) !important;
+}
+
+
+.custom-shadow {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* 🔹 Image padding and border radius */
+.image-wrapper {
+    padding: 1rem;
+}
+
+    .image-wrapper img {
+        border-radius: 15px;
+        object-fit: cover;
+    }
+
+/* 🔹 Font size enhancements */
+.form-wrapper {
+    font-size: 1.2rem;
+}
+.form-label {
+    font-size: 1rem !important;
+}
+
+    .form-wrapper-heading {
+        font-size: 2rem;
+    }

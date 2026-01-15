@@ -1,0 +1,202 @@
+﻿@model quezemasterNew.Models.ViewModel.QuestionPepar10ViewModel
+@{
+    ViewData["Title"] = "AddQuestionTGT";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<style>
+    #dataTable_filter, #dataTable_length, #dataTable_info, #dataTable_paginate {
+        display: block;
+        border: 1px solid black;
+    }
+
+    .table {
+        border: 1px solid black;
+    }
+
+        .table thead th {
+            border-bottom: 1px solid black;
+        }
+
+    button.dt-button, div.dt-button, a.dt-button, input.dt-button {
+        background-color: #EC6BAB;
+        color: white;
+    }
+</style>
+<script>
+    var $jq = jQuery.noConflict();
+    $jq(document).ready(function () {
+        var printCounter = 0;
+        $jq('#ConfirmTable').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+
+                {
+                    extend: 'excel',
+                    messageTop: 'Quize Index'
+                },
+
+                {
+                    extend: 'print',
+                    messageTop: function () {
+                        printCounter++;
+
+                        if (printCounter === 1) {
+                            return '<center><h3><u>Quize Master</u></h3></center><hr/>';
+                        }
+                        else {
+                            return '<center><h3><u>Quize Master</u></h3></center><hr/>';
+                        }
+                    },
+                    messageBottom: null
+                }
+            ]
+        });
+    });
+</script>
+
+
+<div class="container-fluid">
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-12 card card-body shadow-sm CardCss">
+            <form asp-action="QuestionAddForm10Details" asp-controller="TGTPGTLTEnglish">
+
+                <input type="hidden" asp-for="ConnectedQuestion" />
+                <input type="hidden" asp-for="PrimaryId" />
+
+                <h5 class="text-center"> Question Add</h5>
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-2">
+                        <label><strong>Question</strong></label>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="text" asp-for="QuestionNo" class="form-control" />
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-2">
+                        <label><strong>Answer A</strong></label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" asp-for="AnswerA" class="form-control" />
+                    </div>
+                    <div class="col-md-2">
+                        <label><strong>Answer B</strong></label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" asp-for="AnswerB" class="form-control" />
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-2">
+                        <label><strong>Answer C</strong></label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" asp-for="AnswerC" class="form-control" />
+                    </div>
+                    <div class="col-md-2">
+                        <label><strong>Answer D</strong></label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" asp-for="AnswerD" class="form-control" />
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-2">
+                        <label><strong>Currect Answer</strong></label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" asp-for="CurrectAnswer" class="form-control" />
+                    </div>
+                    <div class="col-md-2">
+                    </div>
+                    <div class="col-md-4 ">
+                        <input type="submit" value="Submit" class="btn btn-primary  px-4">
+                        <input type="submit" value="Clear" class="btn btn-denger ms-4 clearBtnCss px-4">
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mt-3">
+        <div class="table-responsive col-md-12 card card-body shadow-sm CardCss m-0 p-0">
+
+
+            <table id="ConfirmTable" class=" table table-bordered table-hover text-center average-font-size" border="1">
+                @{
+                    <thead>
+                        <tr>
+                            <th>
+                                <label>#</label>
+                            </th>
+                            <th>Question</th>
+                            <th>Answer A</th>
+                            <th>Answer B</th>
+                            <th>Answer C</th>
+                            <th>Answer D</th>
+                            <th>Currect Answer</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    var i = 1;
+                    <tbody>
+                        @foreach (var item in Model.lsListQuestion)
+                        {
+                            <tr>
+
+                                <td data-label="#">@Html.Label("" + i++.ToString())</td>
+                                <td data-label="Question No">@item.QuestionNo </td>
+                                <td data-label="Answer A"> @item.AnswerA</td>
+                                <td data-label="Answer B"> @item.AnswerB</td>
+                                <td data-label="Answer C"> @item.AnswerC</td>
+                                <td data-label="Answer D"> @item.AnswerD</td>
+                                <td data-label="Currect Answer"> @item.CurrectAnswer</td>
+                                <td data-label="Action">
+                                    <div class="dropdown text-center average-font-size">
+                                        <span class="btn-sm" data-bs-toggle="dropdown" aria-expanded="false" style="cursor:pointer;">
+                                            <svg width="18" height="18" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                                <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                            </svg>
+                                        </span>
+
+                                        <ul class="dropdown-menu bg-body p-0">
+                                            <li>
+                                                <a asp-action="AddQuestionTGT" asp-route-PrimaryId="@item.Id" asp-route-id="@item.ConnectedQuestion" asp-controller="TGTPGTLTEnglish" class="dropdown-item p-2 ps-3">
+                                                    Edit
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a asp-action="DeleteQuestionTGT" class="dropdown-item p-2 ps-3 text-danger btn-drop-delete" asp-route-id="@item.Id" asp-route-ConnectionId="@item.ConnectedQuestion" asp-controller="TGTPGTLTEnglish">
+                                                    Delete
+                                                </a>
+                                            </li>
+
+
+                                        </ul>
+                                    </div>
+
+                                </td>
+
+                            </tr>
+                        }
+                    </tbody>
+                }
+            </table>
+        
+        </div>
+    </div>
+</div>
+
+
+
+

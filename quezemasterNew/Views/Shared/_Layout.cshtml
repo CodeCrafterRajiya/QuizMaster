@@ -1,0 +1,316 @@
+﻿@using quezemasterNew.CommonFunctional;
+<!DOCTYPE html>
+
+<html lang="en"  data-bs-theme="auto">
+<style>
+    ul {
+        list-style-type: none;
+    }
+
+    .navscroll {
+        overflow-y: scroll;
+        height: 80vh;
+        scrollbar-width: none;
+    }
+
+
+    .fixed-bottomss {
+        background: #DBE0FF;
+        color: #000;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    html, body {
+        height: 100%;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    main {
+        flex: 1; /* pushes footer to bottom */
+        /* z-index: 1030;  */
+    }
+
+
+    @@media(min - width: 348px) and (max-width: 770px) {
+        .col-12 p {
+            line-height: 0.8;
+        }
+    }
+
+    .fixed-bottomss .row {
+        margin: 0;
+    }
+
+
+
+    .hideUnauthorizedFeatures {
+        display: none;
+    }
+
+    body {
+        padding-left: 0 !important;
+    }
+
+    .body-pd {
+        padding-left: 0 !important;
+    }
+
+    .dashboard-content {
+        margin-top: 60px; /* push content below fixed navbar */
+        padding: 0;
+        width: 100%;
+        min-height: calc(100vh - 100px); /* fill screen minus navbar+footer */
+        background-color: #f8f9fa; /* light bg (or dark if theme switched) */
+    }
+
+    .footer {
+        height: 40px;
+        line-height: 40px;
+        font-size: 14px;
+    }
+
+    /* Responsive Design */
+    @@media (max-width: 767.98px) {
+        .fixed-bottomss .col-md-2, .fixed-bottomss .col-md-6, .fixed-bottomss .col-md-3 {
+            text-align: center;
+            margin-top: 150px;
+        }
+
+            .fixed-bottomss .col-md-2.text-end,
+            .fixed-bottomss .col-md-6.text-end,
+            .fixed-bottomss .col-md-3.text-end {
+                text-align: center;
+            }
+
+        .casenameh1 {
+            font-size: 1px;
+            /* font-weight: bold; */
+            margin-left: 16px;
+            margin-bottom: 0;
+            color: #000;
+        }
+    }
+
+    @@media (min-width: 768px) {
+        .fixed-bottomss .col-md-2.text-end, .fixed-bottomss .col-md-6.text-end, .fixed-bottomss .col-md-3.text-end {
+            text-align: end;
+        }
+    }
+</style>
+<head>
+    <titel> <link rel="icon" type="image/x-icon" href="~/favicon.ico" /> </titel>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="language" content="en">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/quezemasterNew.styles.css" asp-append-version="true" />
+    <link href="~/css/sb-admin.css" rel="stylesheet" />
+    <link href="~/css/sb-admin.min.css" rel="stylesheet" />
+    <link href="~/fontawesome-free/css/all.css" rel="stylesheet" />
+    <link href="~/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    <link href="~/fontawesome-free/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="~/fontawesome-free/css/regular.min.css" rel="stylesheet" />
+    <link href="~/css/sidebar.css" rel="stylesheet" />
+    <link href="~/css/fluent.css" rel="stylesheet" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+
+    <script src="~/js/color-modes.js"></script>
+    <link href="~/css/common.css" rel="stylesheet" />
+    <link href="~/css/dashboard.css" rel="stylesheet" />
+    <link href="~/css/LightTheme.css" rel="stylesheet" />
+    <link href="~/css/DarkTheme.css" rel="stylesheet" />
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <link href="~/css/sign-in.css" rel="stylesheet" />
+    <script src="~/js/sweetalert/sweetalert2@11.js"></script>
+    <link href="~/js/sweetalert/sweetalert2.min.css" rel="stylesheet" />
+    <link href="~/css/LoaderCss.css" rel="stylesheet" />
+    <script src="~/js/alertmessagejs/customealertmessage.js"></script>
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+
+</head>
+
+
+ <body id="body-pd" class="bg-body-tertiary bg-gray">
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="check2" viewBox="0 0 16 16">
+            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+        </symbol>
+        <symbol id="circle-half" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+        </symbol>
+        <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+            <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+            <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+        </symbol>
+        <symbol id="sun-fill" viewBox="0 0 16 16">
+            <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+        </symbol>
+    </svg>
+    <header class="header topHeader bg-body-tertiary ps-2" id="header">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+
+            <!-- Left Section -->
+            <div class="d-flex align-items-center">
+                <h3 class="fw-semibold text-primary me-3">Quiz Master</h3>
+
+                <ul class="navbar-nav d-flex flex-row">
+                    @if (CommonFunctions.GetRole(User).Equals("Admin"))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fw-semibold" asp-area="" asp-controller="Home" asp-action="Index">
+                                Admin Dashboard
+                            </a>
+                        </li>
+                    }
+                    else if (CommonFunctions.GetRole(User).Equals("Student"))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fw-semibold" asp-area="" asp-controller="Home" asp-action="MyAllTestInStudent">
+                                Result
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+
+            <!-- Right Section -->
+            <div class="d-flex align-items-center">
+
+                <!-- Theme Toggle -->
+                <div class="dropdown me-3">
+                    <button type="button" class="btn btn-sm light" data-bs-theme-value="light">
+                        <svg class="bi" width="1em" height="1em">
+                            <use href="#sun-fill"></use>
+                        </svg>
+                    </button>
+                    <button type="button" class="btn btn-sm  dark" data-bs-theme-value="dark">
+                        <svg class="bi" width="1em" height="1em">
+                            <use href="#moon-stars-fill"></use>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Profile Dropdown -->
+                <div class="dropdown">
+                    <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+
+                        <img src="~/image/profile.png" alt="profile" width="34" height="34"
+                             class="rounded-circle me-2 border border-1" />
+
+                        <div class="profileTxt">
+                            <strong>@User.Identity?.Name</strong>
+                            <div class="small text-muted">@CommonFunctions.GetRole(User)</div>
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end shadow">
+                        <li><a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index">Profile</a></li>
+                        <li><a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/ChangePassword">Change Password</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <form asp-area="Identity" asp-page="/Account/Logout"
+                                  asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                                <button type="submit" class="dropdown-item">Sign out</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div class="container-fluid">
+        <main role="main" class="pb-3">
+            @RenderBody()
+            @RenderSection("ControlsSection", required: false)
+        </main>
+    </div>
+
+
+    <!-- Start  Footer Section -->
+    <footer class="fixed-bottomss text-dark" id="footer">
+        <div class="container-fluid p-0">
+            <div class="row align-items-center">
+
+                <div class="col-md-3 col-sm-3 col-12  mb-2 mb-md-0 mt-2 text-center text-md-end ">
+
+                    @{
+
+
+                        <span class="text-break "></span>
+
+                    }
+
+                </div>
+                <div class="col-md-7 col-sm-7 col-12 mb-2 mb-md-0 mt-2 text-center pb-0">
+
+                    <span class="text-break ">Quiz Master © 2025 All rights reserved</span>
+                </div>
+                <div class="col-md-2 col-sm-2 col-12 mb-2 mb-md-0 mt-2 text-center text-md-end">
+                    <img src="~/image/Login Page Logo FFT.png" width="13%" height="12%" class="float-end" />
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+
+    <!-- Scripts -->
+    <script src="~/notification/ikr.notificationplugin.js"></script>
+    <script src="~/js/daterangepicker.min.js"></script>
+    <script src="~/js/moment.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body> 
+
+</html>
+
+<script>
+    var $jq = jQuery.noConflict();
+    //this js is used for switch light mode to dark mode
+    $jq(".light").click(function () {
+        $jq(this).hide();
+        $jq(".dark").show();
+    });
+    $jq(".dark").click(function () {
+        $jq(this).hide();
+        $jq(".light").show();
+    });
+
+
+    //This code is used for switch navbar to expanded form
+    document.addEventListener("DOMContentLoaded", function (event) {
+        /*===== LINK ACTIVE =====*/
+        const linkColor = document.querySelectorAll('.nav_link')
+
+        function colorLink() {
+            if (linkColor) {
+                linkColor.forEach(l => l.classList.remove('active'))
+                this.classList.add('active')
+            }
+        }
+        linkColor.forEach(l => l.addEventListener('click', colorLink))
+
+        // Your code to run since DOM is loaded and ready
+    });
+
+
+</script>

@@ -1,0 +1,156 @@
+﻿@model quezemasterNew.Models.TGTPGTLT.TGTPGTLTViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+
+    <div class="row justify-content-center" id="PGTDetailsForm">
+        <div class="col-md-12  p-0">
+
+            <div class="card card-body mt-4 shadow-sm CardCss">
+          
+
+                    <!-- Row 1 -->
+                <div class="row mt-2 mb-3">
+
+                        <!-- Quez Name -->
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-3">
+                            <label asp-for="QuezName" class="form-label fw-bold">Quiz Name</label>
+                                </div>
+                                <input asp-for="Id" class="form-control" id="PGTQuezId" type="hidden" readonly/>
+                                <div class="col-md-9">
+                                    <input asp-for="QuezName" class="form-control" id="PGTQuezName"/>
+                                    <span asp-validation-for="QuezName" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Class Name -->
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label asp-for="ClassName" class="form-label fw-bold">Class Name</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input asp-for="ClassName" class="form-control" id="PGTClassName"/>
+                                    <span asp-validation-for="ClassName" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="row mb-3">
+
+                        <!-- Subject Name -->
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label asp-for="SubjectName" class="form-label fw-bold">Subject Name</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input asp-for="SubjectName" class="form-control" id="PGTSubjectName"/>
+                                    <span asp-validation-for="SubjectName" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Remark -->
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label asp-for="Remark" class="form-label fw-bold">Remark</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input asp-for="Remark" class="form-control" id="PGTRemark"/>
+                                    <span asp-validation-for="Remark" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Button Row -->
+            <div class="text-center average-font-size">
+                        <button type="submit" class="btn btn-primary  px-4" id="SavePGTDetails">Create</button>
+                <button type="reset" class="btn btn-secondary px-4 ms-4 clearBtnCss" id="PGTResetBtn">Reset</button>
+                    </div>
+
+                
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+<script>
+    var $jq = jQuery.noConflict();
+
+    $jq(document).ready(function () {
+
+
+        // ===== AJAX FORM SUBMIT =====
+
+        $jq('#PGTDetailsForm').on('click', '#SavePGTDetails', function (e) {
+            e.preventDefault(); // Stop normal form submit
+
+            var formData = {
+                Id: $jq("#PGTQuezId").val(),
+                QuezName: $jq("#PGTQuezName").val(),
+                ClassName: $jq("#PGTClassName").val(),
+                SubjectName: $jq("#PGTSubjectName").val(),
+                Remark: $jq("#PGTRemark").val()
+            };
+
+            $jq.ajax({
+                url: '@Url.Action("InsertPGT", "TGTPGTLTEnglish")',   // <-- Change controller name
+                type: "POST",
+                data: formData,
+                success: function (response) {
+
+                // Retrieve the ViewData value and ensure it's a string
+                $jq("#PGTDetailsList").html('');
+                $jq("#PGTDetailsList").html(response);
+                // Reset Only this form
+                ResetFormData();
+                },
+                error: function () {
+
+                   showMessageToUser("We apologize, but an error occurred while saving the data.", "error");
+                }
+            });
+        });
+
+
+        // ===== RESET BUTTON CLICK =====
+        $jq("#PGTResetBtn").on("click", function () {
+           ResetFormData();
+        });
+
+
+
+
+
+
+         function ResetFormData() {
+              $jq("#PGTQuezId").val('');
+              $jq("#PGTQuezName").val('');
+              $jq("#PGTClassName").val('');
+              $jq("#PGTSubjectName").val('');
+              $jq("#PGTRemark").val('');
+         }
+
+
+
+    });
+</script>
+
+

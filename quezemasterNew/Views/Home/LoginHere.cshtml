@@ -1,0 +1,88 @@
+﻿
+<style type="text/css">
+    .main-div {
+        background-image: url('/img/computer image.jpg');
+        height: 590px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 0.8;
+        color:white !important;
+        backdrop-filter:blur() !important;
+    }
+
+    .main-div input {
+        background-color: transparent !important;
+        color:white !important;
+    }
+</style>
+<div class="container-fluid">
+    <div class="main-div">
+
+        <br />
+        <br />
+        <br />
+        <div class="row">
+
+                <h2 style="text-center my-3">Login</h2>
+
+            <br />
+            <br />
+            <form asp-action="EnquiryForm" asp-controller="Home">
+
+                <div class="row">
+                    <input type="hidden" />
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-1">
+                        <label><b>User Name</b></label>
+                    </div>  
+                    
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="Enter User Name">
+                    </div>
+                </div>
+                <br />
+
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-1">
+                        <label><b>Email Id</b></label>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="email" class="form-control" placeholder="Enter Email Id" />
+                    </div>
+                </div>
+                <br />
+
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-1">
+                        <label><b>Password</b></label>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="password" class="form-control" placeholder="Password" />
+                    </div>
+                </div>
+                <br />
+                
+           
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                    <div class="col-md-4"></div>
+                  @*
+
+                    <div class="col-sm-4 mx-auto">
+                    //    <input type="submit" class="btn btn-success w-100" value="Login" />
+                   </div> *@
+                </div>
+
+            </form>
+        </div>
+        </div>
+        </div>

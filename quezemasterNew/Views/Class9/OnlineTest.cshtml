@@ -1,0 +1,91 @@
+﻿@{
+    ViewData["Title"] = "Class 9 Online Test";
+}
+
+@model quezemasterNew.Models.ViewModel.Test.Test10DetailsViewModel
+
+<style>
+    input, button, select, optgroup, textarea {
+        margin-top: 1;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        height: 20px;
+        width: 20px;
+    }
+</style>
+
+@ViewBag.Message
+
+<div class="container">
+    <form asp-action="OnlineTest" asp-controller="Class9">
+        <div class="row" style="font-weight:16px">
+            <div class="col-md-1"></div>
+            <div class="col-md-10" style="padding-top:100px">
+                <div class="row">
+                    <div class="card card-body" style="border:1px solid grey;border-radius:5px">
+                        <input type="hidden" asp-for="@Model.TestId" />
+                        <input type="hidden" asp-for="ConnectionQuestion" />
+                        <input type="hidden" asp-for="QuestionId" />
+                        <input type="hidden" asp-for="FinalTest" />
+                        <input type="hidden" asp-for="CurrectAnswer" />
+                        <input type="hidden" asp-for="QuestionNo" />
+                        <input type="hidden" asp-for="QuizName" />
+                        <h4 class="text-center">Quiz Name - @Model.QuizName</h4>
+                        <hr />
+
+                        <div class="row">
+                            <h4>Q. - @Model.QuestionNo</h4>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h4>@Html.RadioButton("Answer", "A-"+@Model.AnswerA, Model.AnswerA == "A") @Model.AnswerA</h4>
+                            </div>
+                            <div class="col-md-2"></div>
+                            <div class="col-md-4">
+                                <h4>@Html.RadioButton("Answer", "B-" + @Model.AnswerB, Model.AnswerB == "B")  @Model.AnswerB</h4>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h4>@Html.RadioButton("Answer", "C-" + @Model.AnswerC, Model.AnswerC == "C")  @Model.AnswerC </h4>
+
+                            </div>
+                            <div class="col-md-2"></div>
+                            <div class="col-md-4">
+
+                                <h4> @Html.RadioButton("Answer", "D-" + @Model.AnswerD, Model.AnswerD == "D")  @Model.AnswerD </h4>
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                        <br />
+                        <div class="row">
+                            <div class="col-md-4"></div>
+
+                            @if (Model.FinalTest == "Final Test")
+                            {
+                                <div class="col-md-4">
+                                    <input type="submit" value="Submit" class="btn btn-success" style="width:200px;height:50px" />
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="col-md-4">
+                                    <input type="submit" value="Next" class="btn btn-primary" style="width:200px;height:50px;" />
+                                </div>
+                            }
+
+                            <div class="col-md-2"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </form>
+</div>
+ 

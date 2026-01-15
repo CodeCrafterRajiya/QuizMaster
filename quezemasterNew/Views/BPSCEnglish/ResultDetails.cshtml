@@ -1,0 +1,60 @@
+﻿@model IEnumerable<quezemasterNew.Models.ViewModel.ResultDetailsViewModel>
+@{
+    ViewData["Title"] = "BPSC RESULT";
+}
+@if (@Model.FirstOrDefault().TotalCurrectAnswer != null)
+{
+    <h4 class="text-center" style="color:green"> Total Answer - @Model.FirstOrDefault().TotalCurrectAnswer / 20</h4>
+
+}
+<div class="container-fluid">
+    <table class="table">
+        @{
+            <thead>
+                <tr>
+                    <th>Sr No</th>
+                    <th>Question</th>
+                    <th>Answer A</th>
+                    <th>Answer B</th>
+                    <th>Answer C</th>
+                    <th>Answer D</th>
+                    <th>Answer E</th>
+                    
+                </tr>
+            </thead>
+            var i = 1;
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    @if (String.IsNullOrEmpty(item.CurrectAnsawer))
+                    {
+                        <tr style="color:red">
+                            <td>@item.SRNumber</td>
+                            <td>@item.Question</td>
+                            <td>@item.AnsswerA</td>
+                            <td>@item.AnsswerB</td>
+                            <td>@item.AnsswerC</td>
+                            <td>@item.AnsswerD</td>
+                            <td>@item.AnsswerE</td>
+                            
+                        </tr>
+                    }
+                    else
+                    {
+                        <tr style="color:forestgreen">
+                            <td>@item.SRNumber</td>
+                            <td>@item.Question</td>
+                            <td>@item.AnsswerA</td>
+                            <td>@item.AnsswerB</td>
+                            <td>@item.AnsswerC</td>
+                            <td>@item.AnsswerD</td>
+                            <td>@item.AnsswerE</td>
+                            
+                        </tr>
+                    }
+                }
+            </tbody>
+        }
+    </table>
+
+</div>

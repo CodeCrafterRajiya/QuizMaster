@@ -1,0 +1,66 @@
+﻿@model quezemasterNew.Models.ViewModel.enquiryformviewmodel
+<title>Enquiry Form</title>
+<style type="text/css">
+    .main-div {
+        background-image: url('/img/webpage.jpg');
+        height: 590px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 0.8;
+    }
+</style>
+<div class="container-fluid">
+    <div class="main-div">
+        <div class="row">
+            <div class="col-sm-6 mx-auto px-3 py-3 rounded-2 card card-body" style="background-color:white;margin-top:30px">
+                <h2 class="text-center my-3" style="color:blue">Enquiry From</h2>
+                <form asp-action="EnquiryForm" asp-controller="Home">
+                    <div class="row">
+                        <input type="hidden" asp-for="Id" />
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <label><b>Name</b></label>
+                        </div>
+                        <div class="col-md-9 mb-3">
+                            <input type="text" class="form-control" placeholder="Enter Your Name" asp-for="Name" />
+                        </div>
+
+
+                        <div class="col-md-3 mb-3">
+                            <label><b>Mobile No</b></label>
+                        </div>
+                        <div class="col-md-9 mb-3">
+                            <input type="number" class="form-control" placeholder="Enter Mobile No" asp-for="MobileNo" />
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <label><b>Email Id</b></label>
+                        </div>
+                        <div class="col-md-9 mb-3">
+                            <input type="email" class="form-control" placeholder="Enter Email Id" asp-for="EmailId" />
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <label><b>Message</b></label>
+                        </div>
+                        <div class="col-md-9 mb-3">
+                            <textarea type="text" class="form-control" placeholder="Message" asp-for="Message"></textarea>
+                        </div>
+
+                        <div class="col-md-4 mx-auto">
+                            <button type="submit" class="btn btn-primary w-100">Submit</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+

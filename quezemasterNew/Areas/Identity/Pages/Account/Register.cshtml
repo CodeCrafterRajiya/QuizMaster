@@ -1,0 +1,62 @@
+﻿@page
+@model RegisterModel
+@{
+    Layout = null;
+}
+<title>Register</title>
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/quezemasterNew.styles.css" asp-append-version="true" />
+<link href="~/css/sb-admin.css" rel="stylesheet" />
+<link href="~/css/sb-admin.min.css" rel="stylesheet" />
+<link href="~/fontawesome-free/css/all.css" rel="stylesheet" />
+<link href="~/fontawesome-free/css/all.min.css" rel="stylesheet" />
+<link href="~/css/sidebar.css" rel="stylesheet" />
+
+<link href="~/css/fluent.css" rel="stylesheet" />
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+<div class="row" >
+    <div class="col-md-4"></div>
+    <div class="col-md-4 card card-body" style="margin-top:100px">
+        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <h2 style="text-align:center">Create a new account</h2>
+            <hr />
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.Name" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                <label asp-for="Input.Name">Name</label>
+                <span asp-validation-for="Input.Name" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                <label asp-for="Input.Email">Email</label>
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.MobileNo" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                <label asp-for="Input.MobileNo">Mobile No</label>
+                <span asp-validation-for="Input.MobileNo" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
+                <label asp-for="Input.Password">Password</label>
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
+                <label asp-for="Input.ConfirmPassword">Confirm Password</label>
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-success">Register</button>
+            <br />
+            <br />
+            <a class="nav-link text-white btn btn-primary" asp-area="Identity" asp-page="/Account/Login">Login</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

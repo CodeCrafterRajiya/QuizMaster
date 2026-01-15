@@ -1,0 +1,202 @@
+﻿
+:root {
+    --caseTypeColor: #d68866;
+    /*--teamTypeColor: #7286e1;*/
+    --teamTypeColor: #5171ff;
+}
+
+.StateIcon {
+    background: #8280ff;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0px;
+}
+
+.DistrictDataIcon {
+    background: #7eb09b;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0px;
+}
+
+.ThanaDataIcon {
+    background: #d295bf;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0px;
+
+
+}
+.CompanyDetailsIcon {
+    background: #e07a5f;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0px;
+}
+.NodelOfficerIcon {
+    background: #2ec4b6;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0px;
+}
+
+.icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0px;
+}
+
+.CaseType .icon{
+    background: var(--caseTypeColor);
+}
+
+
+.TeamType .icon {
+    background: var(--teamTypeColor);
+}
+
+/*by default icons fill of small  cards is white*/
+.statenentCard .icon {
+    fill: white;
+}
+
+.statenentCard {
+    border-radius: 8px;
+    /*Box Shadow : 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+    box-shadow : 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) ;
+    /*  box-shadow: 0px 2px 8px #d3d3d3; */
+    border: none;
+    padding: 8px;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+    .statenentCard.StateData:hover {
+        background: #8280ff;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+
+    .statenentCard.DistrictData:hover {
+       /* background: #3bceac;*/
+        background: #7eb09b;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+
+    .statenentCard.ThanaData:hover {
+        background: #d295bf;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+
+    .statenentCard.CompanyDetails:hover {
+        background: #e07a5f;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+    .statenentCard.NodelOfficer:hover {
+        background: #2ec4b6;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+    .statenentCard.CaseType:hover {
+        background: var(--caseTypeColor);
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+    .statenentCard.TeamType:hover {
+        background: var(--teamTypeColor);
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+    .statenentCard.StateData:hover .StateIcon {
+        background: var(--first-color-light);
+    }
+
+    .statenentCard.DistrictData:hover .DistrictDataIcon {
+        background: var(--first-color-light);
+    }
+
+    .statenentCard.ThanaData:hover .ThanaDataIcon {
+        background: var(--first-color-light);
+    }
+
+    .statenentCard.CompanyDetails:hover .CompanyDetailsIcon {
+        background: var(--first-color-light);
+    }
+
+    .statenentCard.NodelOfficer:hover .NodelOfficerIcon {
+        background: var(--first-color-light);
+    }
+
+    .statenentCard:hover .icon{
+        background: var(--first-color-light);
+    }
+
+
+    .statenentCard.StateData:hover .StateIcon svg path {
+        fill: #8280ff;
+    }
+
+
+    .statenentCard.DistrictData:hover .DistrictDataIcon
+    svg path {
+        fill: #7eb09b;
+    }
+
+    .statenentCard.ThanaData:hover .ThanaDataIcon
+    svg path {
+        stroke: #d295bf;
+    }
+
+    .statenentCard.CompanyDetails:hover .CompanyDetailsIcon
+    svg path {
+        stroke: #e07a5f;
+    }
+
+
+    .statenentCard.NodelOfficer:hover .NodelOfficerIcon
+    svg path {
+        stroke: #2ec4b6;
+    }
+
+    
+
+    .statenentCard.CaseType:hover .icon
+    svg path {
+        fill: var(--caseTypeColor);
+    }
+
+    .statenentCard.TeamType:hover .icon
+    svg path {
+        fill: var(--teamTypeColor);
+    }
+
+
+    .statenentCard .innerBody .cartSec .card-texts {
+        font-size: 18px !important;
+    }

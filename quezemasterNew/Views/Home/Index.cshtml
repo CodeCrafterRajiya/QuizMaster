@@ -1,0 +1,499 @@
+﻿@using quezemasterNew.CommonFunctional;
+<title>Dashboard</title>
+
+@{
+	Layout = "_AdminLayout";
+}
+<link href="~/css/watchlist.css" rel="stylesheet" />
+	<style>
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+		}
+	
+		#image{
+			position: relative;
+		}
+
+		.topleft {
+			position: absolute;
+			top:210px;
+			left:26px;
+			font-size: 18px;
+			color:white;
+			width:50%;
+		}
+
+		.img1 {
+			width: 100%;
+			height: auto;
+		}
+
+		.container-fluid {
+			/* margin-top: 15px; */
+			padding:10px;
+			position: relative;
+		}
+
+		h2{
+			padding:20px;
+			text-align:center;
+			font-weight:1600px;
+		}
+
+		.container{
+
+			padding-top:20px;
+		}
+
+		.card-img{
+			height:10%;
+
+		}
+
+		h5{
+			font-family: Copperplate;
+			font-size: 27px;
+			font-weight: bold;
+		}
+
+		.card-text{
+			font-family: Georgia;
+		}
+
+	.card-scale {
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+		.card-scale:hover {
+			transform: scale(1.05);
+			box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+		
+		}
+		
+			@* Here my form CSS code is written... *@
+
+
+/* 		h2 {
+			margin-top: 4px;
+			font-family: Arial Black;
+			text-align: center;
+			padding: 10px;
+			color: darkblue;
+			box-shadow: 3px 3px 3px 3px lightblue;
+			
+		} */
+
+/* 		.form {
+			padding: 30px;
+			justify-content: center;
+		}
+
+		.form-group {
+			padding: 7px;
+		}
+
+		.checkbox {
+			padding: 10px;
+		} */
+
+	/*	button {
+			padding: 40px;
+			margin-left: 10px;
+	}
+
+	*/
+
+		/* Here is  my new page style sheet stated */
+
+/* 		#cardshadow{
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		}
+
+		.card{
+			
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		
+		}
+
+		.card-text {
+			font-family: Georgia;
+		} */
+	</style>
+
+@if (CommonFunctions.GetRole(User).Equals("Admin"))
+{
+    <div class="container-fluid">
+
+		<!----Start Coorect code --->
+	@* 	<div class="row">
+			<div class="col-md-3">
+				<div class="card card-body">
+
+					 <div class="row text-center"><a asp-Action="EnquiryDetailsList" asp-controller="Home">Enquiry Details</a></div>
+				</div>
+			</div>
+			<div class="col-md-1"></div>
+			<div class="col-md-3">
+				<div class="card card-body">
+					<div class="row text-center"><a asp-Action="Index" asp-controller="Admin">Question Details</a></div>
+
+				</div>
+			</div>
+			<div class="col-md-1"></div>
+			<div class="col-md-3">
+				<div class="card card-body">
+					  <div class="row text-center"><a asp-Action="SheAllTest" asp-controller="Admin">All Test</a></div>
+				</div>
+			</div>
+		</div>
+		<br />
+		<div class="row">
+			<div class="col-md-3">
+				<div class="card card-body">
+
+					 <div class="row text-center"><a asp-Action="UserDetails" asp-controller="Home">Users</a></div>
+				</div>
+			</div>
+			<div class="col-md-1"></div> *@
+
+
+			<!----END Coorect code --->
+
+
+
+			@* <div class="col-md-3">
+				<div class="card card-body">
+					<div class="row text-center"><a asp-Action="Index" asp-controller="Admin">Question Details</a></div>
+
+				</div>
+			</div>
+			<div class="col-md-1"></div>
+			<div class="col-md-3">
+				<div class="card card-body">
+					  <div class="row text-center"><a asp-Action="SheAllTest" asp-controller="Admin">All Test</a></div>
+				</div>
+			</div> *@
+		@* </div> *@
+
+
+
+
+
+        @* <div class="row">
+            <div class="Col-md-4">
+                <div class="card card-body">
+                    <div class="row text-center"><a asp-Action="EnquiryDetailsList" asp-controller="Home">Enquiry Details</a></div>
+                </div>
+            </div>
+            <div class="Col-md-4">
+                <div class="card card-body">
+                    <div class="row text-center"><a asp-Action="Index" asp-controller="Admin">Question Details</a></div>
+                </div> 
+            </div>
+            <div class="Col-md-4">
+
+                <div class="card card-body">
+                    <div class="row text-center"><a asp-Action="SheAllTest" asp-controller="Admin">All Test</a></div>
+                </div>
+
+            </div>
+        </div> *@
+		@* <div class="bg-gray-100 bg-body-tertiary">
+
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+				<!-- Statistics Cards -->
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+					<!-- Total Numbers Card -->
+					<div class=" rounded-lg shadow-md p-6 border-l-4 border-blue-500 watchlist-link totalData " data-type="Totalcount" data-displayname="Enquiry Details">
+						<div class="flex items-center justify-between">
+							<div class="cartSec">
+								<p class="text-xl font-bold text-gray-600 mb-1">Enquiry Details</p>
+
+								<p class="text-3xl font-bold text-blue-600">
+									1000
+								</p>
+							</div>
+							<div class="bg-blue-100 p-3 rounded-full">
+								<svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+								</svg>
+							</div>
+						</div>
+					</div>
+
+					<!-- Matched Numbers Card -->
+
+					<div class=" rounded-lg shadow-md p-6 border-l-4 border-red-500 watchlist-link active matchedData" data-type="Totalcount" data-displayname="Question Details">
+						<div class="flex items-center justify-between  ">
+							<div class="cartSec ">
+								<p class="text-xl font-bold text-gray-600 mb-1">Question Details</p>
+								<p class="text-3xl font-bold text-red-600">
+									1000
+								</p>
+
+							</div>
+							<div class="bg-red-100 p-3 rounded-full">
+								<svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+								</svg>
+							</div>
+						</div>
+					</div>
+
+
+
+					<!-- Unmatched Numbers Card -->
+
+					<div class=" rounded-lg shadow-md p-6 border-l-4 border-green-500 watchlist-link unmatchedData" data-type="Totalcount" data-displayname="All Test">
+						<div class="flex items-center justify-between">
+							<div class="cartSec ">
+								<p class="text-xl font-bold text-gray-600 mb-1">All Test</p>
+								<p class="text-3xl font-bold text-green-600">
+									100
+								</p>
+
+							</div>
+							<div class="bg-green-100 p-3 rounded-full">
+								<svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+								</svg>
+							</div>
+
+
+						</div>
+					</div>
+
+
+
+				</div>
+
+			</div>
+		</div> *@
+
+
+		<div class="row g-4 mb-4 bg-gray-100 bg-body-tertiary">
+
+			<!-- Card 1 -->
+			<div class="col-12 col-sm-6 col-md-4">
+				<div class="rounded-lg shadow-md p-4 border-start border-4 border-blue-500 watchlist-link totalData card-scale">
+					<div class="d-flex justify-content-between align-items-center">
+						<div class="cartSec">
+							<p class="fw-bold text-muted mb-1">Enquiry Details</p>
+							<p class="fs-2 fw-bold text-primary">1000</p>
+						</div>
+						<div class="bg-blue-100 p-3 rounded-circle">
+							<svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+									  d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Card 2 -->
+			<div class="col-12 col-sm-6 col-md-4">
+				<div class="rounded-lg shadow-md p-4 border-start border-4 border-red-500 watchlist-link matchedData card-scale">
+					<div class="d-flex justify-content-between align-items-center">
+						<div class="cartSec">
+							<p class="fw-bold text-muted mb-1">Question Details</p>
+							<p class="fs-2 fw-bold text-danger">1000</p>
+						</div>
+						<div class="bg-red-100 p-3 rounded-circle">
+							<svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+									  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Card 3 -->
+			<div class="col-12 col-sm-6 col-md-4">
+				<div class="rounded-lg shadow-md p-4 border-start border-4 border-green-500 watchlist-link unmatchedData card-scale">
+					<div class="d-flex justify-content-between align-items-center">
+						<div class="cartSec">
+							<p class="fw-bold text-muted mb-1">All Test</p>
+							<p class="fs-2 fw-bold text-success">100</p>
+						</div>
+						<div class="bg-green-100 p-3 rounded-circle">
+							<svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+									  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+    </div>
+}
+else 
+{
+    
+<body>
+	
+	<div class="container-fluid" >
+
+		<img class="img1" id="image" src="~/newfolder/pngtree-minimalist-illustration-a-3d-rendered-clock-and-books-image_3609905.jpg" />
+		
+		<div class="topleft" >
+			
+			<h3>QUIZE MASTER</h3>
+			<h4 style="color:mediumvioletred">Take your learning with you!</h4>
+			<P class="ABC">Grammar lessons with exercises and clear explanations, grammar charts, reading and listening tests with transcriptions, writing lessons, instant marking, answer feedback, and much more!</P>
+
+		</div>
+		
+		<h2>My All Exam Test Series</h2>
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="card">
+					<img class="img1" src="~/newfolder/gap.jpg" />
+					
+					<div class="card-body">
+						<h5 class="card-title">General Aptitude</h5>
+						<p class="card-text">General Aptitude is an integral part of many competitive examinations like SSC CGL, UPSC, etc. and aims to assess a candidate’s abilities to resolve problems and reasoning-related calculations. 
+							Through this test series, we are bringing you various General Aptitude topics as well as practice questions.</p>
+						<a asp-action="GoforTestPage" asp-controller="Home" asp-route-TypeTest="General Aptitude" class="btn btn-primary">Go For Test</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="card">
+					
+						<img class="img1" src="~/newfolder/istockphoto-511281043-612x612.jpg" />
+				
+
+					<div class="card-body">
+						<h5 class="card-title">English</h5>
+						<p class="card-text">
+							 
+							To ensure that they had a complete round of preparation and to understand the level of the exam's difficulty, candidates must take a series of mock tests. Candidates can prepare effectively by assessing the format and types of questions used in previous exams through the PYPs.
+						</p>
+						<a asp-action="GoforTestPage" asp-controller="Home" asp-route-TypeTest="EnglishTGT" class="btn btn-primary">Go For Test</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-4">
+				<div class="card">
+						<img class="img1" src="~/newfolder/engbpsc.jpg" />
+					
+					
+					<div class="card-body">
+						<h5 class="card-title">English(BPSC)</h5>
+						<p class="card-text"> These books are designed to provide aspirants with a comprehensive understanding of the exam pattern and question types. 
+							Solving practice sets helps candidates to assess their strengths and weaknesses, identify the areas that require improvement, and work on them accordingly. </p>
+						<a asp-action="GoforTestPage" asp-controller="Home" asp-route-TypeTest="English (BPSC)" class="btn btn-primary">Go For Test</a>
+					</div>
+				</div>
+			</div>
+
+
+
+		</div>
+	</div>
+
+
+	<div class="container-fluid" style="">
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="card">
+					
+					
+						<img class="img1"  src="~/newfolder/gk.png" />
+					<div class="card-body">
+						<h5 class="card-title">GK</h5>
+						<p class="card-text">For a candidate who is taking a Static general knowledge mock test, the importance remains in possibilities of what they achieve or how much progress they make after taking the mock test. 
+							The whole process of static general knowledge mock tests designed to provide the best educational support with ease of access to different subject-wise tests. </p>
+						<a asp-action="GoforTestPage" asp-controller="Home" asp-route-TypeTest="GK" class="btn btn-primary">Go For Test</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="card">
+					
+						<img class="img1" src="~/newfolder/61e7ef6d0cf26c86b99caea2_scaled_cover.jpg" />
+					<div class="card-body">
+						<h5 class="card-title">Class 9</h5>
+						<p class="card-text">Practice tests can be extremely helpful in familiarising students with the format and question types they can expect on the actual tests. 
+							By providing practice tests for students from Year 4 to Year 11, Edutest caters to a wide range of age groups and educational levels, which can be beneficial for students at different stages of their academic journey.</p>
+						<a asp-action="GoforTestPage" asp-controller="Home" asp-route-TypeTest="CLass9" class="btn btn-primary">Go For Test</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-4">
+				<div class="card">
+					
+					<img class="img1" src="~/newfolder/class 10..png" />
+					<div class="card-body">
+						<h5 class="card-title">Class 10</h5>
+						<p class="card-text">Practice tests can be extremely helpful in familiarising students with the format and question types they can expect on the actual tests.
+							By providing practice tests for students from Year 4 to Year 11, Edutest caters to a wide range of age groups and educational levels, which can be beneficial for students at different stages of their academic journey.</p>
+						<a asp-action="GoforTestPage" asp-controller="Home" asp-route-TypeTest="CLass10" class="btn btn-primary">Go For Test</a>
+					</div>
+				</div>
+			</div>
+
+
+
+		</div>
+	</div>
+
+	<div class="container-fluid" style="">
+
+
+
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="card">
+					
+						<img class="img1" src="~/newfolder/class 11..png" />
+					<div class="card-body">
+						<h5 class="card-title">Class 11</h5>
+						<p class="card-text">Practice tests can be extremely helpful in familiarising students with the format and question types they can expect on the actual tests. 
+							By providing practice tests for students from Year 4 to Year 11, Edutest caters to a wide range of age groups and educational levels, which can be beneficial for students at different stages of their academic journey.</p>
+						<a asp-action="GoforTestPage" asp-controller="Home" asp-route-TypeTest="CLass11" class="btn btn-primary">Go For Test</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="card">
+					
+					<img class="img1" src="~/newfolder/class 12..png" />
+					<div class="card-body">
+						<h5 class="card-title">Class 12</h5>
+						<p class="card-text">Practice tests can be extremely helpful in familiarising students with the format and question types they can expect on the actual tests. 
+							By providing practice tests for students from Year 4 to Year 11, Edutest caters to a wide range of age groups and educational levels, which can be beneficial for students at different stages of their academic journey.</p>
+						<a asp-action="GoforTestPage" asp-controller="Home" asp-route-TypeTest="CLass12" class="btn btn-primary">Go For Test</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-4">
+				<div class="card">
+					
+						<img class="img1" src="~/newfolder/download (2).jpeg" />
+					
+					<div class="card-body">
+						<h5 class="card-title">Academic</h5>
+						<p class="card-text">Practice tests can be extremely helpful in familiarising students with the format and question types they can expect on the actual tests. 
+							By providing practice tests for students from Year 4 to Year 11, Edutest caters to a wide range of age groups and educational levels, which can be beneficial for students at different stages of their academic journey.</p>
+						<a asp-action="GoforTestPage" asp-controller="Home" asp-route-TypeTest="Academic" class="btn btn-primary">Go For Test</a>
+					</div>
+				</div>
+			</div>
+
+
+
+		</div>
+	</div>
+
+	</body>
+}

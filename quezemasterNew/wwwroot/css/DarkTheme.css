@@ -1,0 +1,1005 @@
+﻿:root {
+    --alternateRowcolor: #08aa6e;
+    --dark: #1b2431;
+    --gridTablecolor: #273142;
+    --first-color-light: #fff;
+      --icon-color-light: black;
+    --icon-color-dark: white;
+}
+
+[data-bs-theme="dark"] {
+    /*---------------------------------------------dark theme--common.css-------------------------------------------------*/
+    .bg-body-tertiary {
+        background: var(--dark) !important;
+    }
+
+
+
+
+    .topHeader {
+        background-color: var(--secondary-dark) !important;
+        color: var(--first-color-light);
+    }
+
+    .toggleMenuIc {
+        fill: var(--first-color-light);
+    }
+
+    .searchInput {
+        background: var(--dark-light);
+    }
+
+    .topHeader h1 {
+        color: var(--first-color-light);
+    }
+    /*this color  use form footer when dark mode arati singh*/
+    .topHeader span {
+        color: var(--first-color-light);
+    }
+
+    .card {
+        border: 1px solid var(--stroke);
+        border-radius: 14px;
+        background-color: #212c36 !important;
+        color: var(--first-color-light) !important;
+    }
+
+    .table td, .table th {
+        color: var(--first-color-light) !important;
+    }
+
+    .l-navbar {
+        background: var(--secondary-dark);
+        border-right: 1px solid var(--stroke);
+    }
+
+    .dt-container div.dt-search input,
+    .dt-container div.dt-length select {
+        background: var(--dark-light);
+    }
+
+    .admin {
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    .dropdown-item:focus,
+    .dropdown-item:hover {
+        background-color: var(--dark-light);
+        color: var(--first-color-light) !important;
+    }
+
+    .btn-drop-delete:focus,
+    .btn-drop-delete:hover {
+        background-color: #5e040d !important;
+        color: var(--first-color-light) !important;
+    }
+
+    .form-check-input {
+        --bs-form-check-bg: var(--dark-light);
+    }
+
+
+
+    .dTable {
+        background: var(--bs-body-bg);
+    }
+
+    .fltrInput .form-control,
+    .fltrInput .form-select {
+        background: var(--dark-light);
+    }
+
+    .fltrIcon path {
+        stroke: var(--first-color-light);
+    }
+
+    .filterIcon {
+        border-right: 1px solid var(--bs-border-color);
+    }
+
+    .dTable a .tableIcom path,
+    .dTable a:hover .tableIcom svg {
+        stroke: var(--first-color-light);
+    }
+
+    .light svg {
+        fill: var(--first-color-light);
+    }
+
+    .light {
+        display: block;
+    }
+
+    .dark {
+        display: none;
+    }
+
+    .graphCard .dropdown-menu.show {
+        background-color: var(--dark-light) !important;
+    }
+
+    .customeModel .modal-content {
+        background-color: var(--secondary-dark);
+        border-radius: 20px;
+    }
+
+    .form-control,
+    .form-select,
+    .form-check-input {
+        background-color: var(--dark-light) !important;
+        color: white !important;
+    }
+    /*proble in the firfox browser this css */
+
+    @media (prefers-color-scheme: dark) {
+        /*proble in the firfox browser this css */
+        /* body {
+        background: #000;
+    }
+*/
+        /* .mainBody {
+        background: #000;
+    }*/
+        /* .topHeader {
+        background-color: var(--bs-dark) !important;
+    }*/
+    }
+    /*---------------------------------------------dark theme- dasboard.css--------------------------------------------------*/
+    .statenentCard {
+        box-shadow: none;
+    }
+
+        .statenentCard a {
+            color: rgba(255, 255, 255, 0.64);
+        }
+
+            .statenentCard a h2 {
+                color: rgba(255, 255, 255, 1);
+            }
+
+
+    .graphCard {
+        box-shadow: none;
+    }
+
+    .dTable .form-select {
+        width: 100px;
+    }
+
+    .fileUpload {
+        border-radius: 16px;
+        border: 2px dashed #d5d5d54f;
+        background: #f3f3f30a;
+    }
+
+        .fileUpload svg {
+            fill: #d3d3d3 !important;
+        }
+
+    .customeModel .modal-header .btn-close {
+        background: #c7c7c7;
+        filter: none;
+    }
+
+    .nav-tabs .nav-link {
+        background: #273142;
+        border: 1px solid #353f4c;
+    }
+
+    .LoginLogo {
+        width: 32vh;
+        height: 9vh;
+        background: url('/image/Intstack logo_white.svg') no-repeat center center;
+        background-size: cover; /* Ensure the image scales to cover the div */
+    }
+    /*-----------new dashboard css------------*/
+    .chartcontainer {
+        border: 3px solid #99b2cc;
+        border-radius: 20px;
+        height: 100%;
+        width: 50%;
+        margin-right: 5px;
+        margin-left: 5px;
+        background: #16222e;
+        color: #ffff;
+    }
+
+    .Mainchartcontainer {
+        height: 40vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .chartcontainer:first-child {
+        margin-left: 0;
+    }
+
+    .chartcontainer:last-child {
+        margin-right: 0;
+    }
+    /*-------Histogram graph css in dashboard----------*/
+
+    .ShowGraphDatamainDivContainer {
+        width: 100%;
+        height: calc(55vh - 7.6vh);
+        background: #17151A;
+    }
+    /*Following is  removed input order stop stop changing anything when switched stop light theme*/
+    /*.tooltip-box-chardatatable {
+    position: relative;
+    display: inline-block;
+    padding: 3px 9px;
+    background-color: #fff;
+    color: #17151A;
+    font-size: 12px;
+    border-radius: 4px;
+    text-align: center;
+}*/
+    /* Large Tooltip Arrow */
+    .tooltip-box-chardatatable::after {
+        content: "";
+        position: absolute;
+        bottom: -16px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 10px;
+        border-style: solid;
+        border-color: #2563eb transparent transparent transparent;
+    }
+    /*-------------------------------------sign-in.css-------------------------------------------*/
+    .iputIcon {
+        fill: rgba(255, 255, 255, 0.42);
+    }
+
+    .bg-body-tertiary {
+        background-color: var(--dark) !important;
+    }
+
+    .signInCard {
+        background-color: var(--secondary-dark) !important;
+    }
+
+    .form-control {
+        background: var(--dark-light);
+    }
+
+    .topHeader {
+        background-color: var(--secondary-dark) !important;
+        color: var(--first-color-light);
+    }
+
+    .light svg {
+        fill: var(--first-color-light);
+    }
+
+    .light {
+        display: block;
+    }
+
+    .dark {
+        display: none;
+    }
+    /*Header detail color like Account no..*/
+    .ReportHeaderDetailCss {
+        /* text-decoration: none !important;*/
+        color: #48CAE4 !important; /* color:#90E0EF !important;*/
+    }
+    /*Arati singh modal change color-profile content dark mode*/
+    .customeModel .modal-content {
+        background-color: var(--secondary-dark) !important;
+    }
+    /*---------------------------dark theme-Syncfusion grid and syncfusion dropdown css for darkmode-------------------------*/
+    .e-grid .e-table {
+        background-color: #273142;
+        color: var(--first-color-light);
+    }
+    /*alternate row color*/
+    .e-grid .e-row.e-altrow {
+        color: var(--first-color-light);
+        background-color: #000b1b;
+    }
+    /*cell text color in the grid*/
+    .e-grid .e-rowcell:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-detailrowcollapse:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-detailrowexpand:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-gridcontent .e-rowdragdrop:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-gridheader .e-rowdragdrop:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-emptyrow:not(.e-editedbatchcell):not(.e-updatedtd) {
+        color: var(--first-color-light);
+    }
+
+    a {
+        color: var(--first-color-light);
+        text-decoration: none !important;
+        /* color:cornflowerblue!important;*/
+    }
+        /* Style for anchor tag on hover */
+        a:hover {
+            color: #000b1b !important;
+            text-decoration: none;
+        }
+
+    #nav-bar a:hover {
+        color: white !important;
+    }
+    /*  color  when center mouse input the row change corlor*/
+    .e-grid.e-gridhover .e-row tr:not(.e-disable-gridhover):not(.e-editedrow):not(.e-detailrow):hover .e-rowcell:not(.e-cellselectionbackground):not(.e-active):not(.e-updatedtd):not(.e-indentcell), .e-grid.e-gridhover .e-row:not(.e-disable-gridhover):not(.e-editedrow):not(.e-detailrow):hover .e-rowcell:not(.e-cellselectionbackground):not(.e-active):not(.e-updatedtd):not(.e-indentcell), .e-grid.e-gridhover .e-row:not(.e-disable-gridhover):not(.e-detailrow):hover .e-detailrowcollapse:not(.e-cellselectionbackground):not(.e-active):not(.e-updatedtd):not(.e-indentcell), .e-grid.e-gridhover .e-row:not(.e-disable-gridhover):not(.e-detailrow):hover .e-rowdragdrop:not(.e-cellselectionbackground):not(.e-active):not(.e-updatedtd):not(.e-indentcell), .e-grid.e-rtl .e-gridhover .e-row:not(.e-disable-gridhover):not(.e-detailrow):hover .e-rowdragdrop:not(.e-cellselectionbackground):not(.e-active):not(.e-updatedtd):not(.e-indentcell), .e-grid.e-gridhover .e-row:not(.e-disable-gridhover):not(.e-detailrow):hover .e-detailrowexpand:not(.e-cellselectionbackground):not(.e-active):not(.e-updatedtd):not(.e-indentcell) {
+        background-color: #211522;
+        color: var(--first-color-light);
+    }
+
+    td.e-rowcell.e-selectionbackground.e-active {
+        color: black !important;
+        text-decoration: none !important;
+    }
+    /*
+td.e-rowcell.e-templatecell.e-selectionbackground.e-active a:hover {
+    color: black !important;
+    text-decoration: none !important;
+    background: #2563eb !important;
+}*/
+    /* When hovering over the tr, change the color of a tags inside td elements */
+    /*tr:hover td a {
+    color: #243141;
+    text-decoration: none;
+}
+tr:hover td i {
+    color: #243141;
+    text-decoration: none;
+}*/
+    .e-grid .e-table td a .e-active {
+        background-color: #e0e0e0 !important;
+        color: #0000 !important;
+    }
+    /*css for pdf and excel button color*/
+
+    .e-toolbar {
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        background: #000b1b;
+        border: 1px none rgba(0,0,0,.12);
+        box-shadow: none
+    }
+
+        .e-toolbar .e-toolbar-items {
+            background: #000b1b;
+        }
+
+        .e-toolbar .e-toolbar-item .e-tbar-btn {
+            background: #000b1b;
+            box-shadow: none;
+            color: var(--first-color-light);
+            border: none
+        }
+
+            .e-toolbar .e-toolbar-item .e-tbar-btn .e-icons {
+                color: var(--first-color-light);
+            }
+
+            .e-toolbar .e-toolbar-item .e-tbar-btn .e-tbar-btn-text {
+                color: var(--first-color-light);
+            }
+
+            .e-toolbar .e-toolbar-item .e-tbar-btn.e-flat.e-active {
+                background: #000b1b;
+                box-shadow: none
+            }
+
+                .e-toolbar .e-toolbar-item .e-tbar-btn.e-flat.e-active .e-tbar-btn-text {
+                    color: var(--first-color-light);
+                }
+
+                .e-toolbar .e-toolbar-item .e-tbar-btn.e-flat.e-active:focus {
+                    box-shadow: none
+                }
+
+            .e-toolbar .e-toolbar-item .e-tbar-btn:focus {
+                background: #000b1b;
+                border-radius: 2px;
+                color: var(--first-color-light);
+                border-color: rgba(0,0,0,.12);
+                border-style: solid;
+                border-width: 0;
+                box-shadow: none
+            }
+
+                .e-toolbar .e-toolbar-item .e-tbar-btn:focus .e-icons {
+                    color: var(--first-color-light);
+                }
+
+                .e-toolbar .e-toolbar-item .e-tbar-btn:focus .e-tbar-btn-text {
+                    color: var(--first-color-light);
+                }
+
+            .e-toolbar .e-toolbar-item .e-tbar-btn:hover {
+                background: #000b1b;
+                border-color: rgba(0,0,0,.12);
+                border-style: solid;
+                border-width: 0;
+                border-radius: 2px;
+                color: var(--first-color-light);
+            }
+
+                .e-toolbar .e-toolbar-item .e-tbar-btn:hover .e-icons {
+                    color: var(--first-color-light);
+                }
+
+                .e-toolbar .e-toolbar-item .e-tbar-btn:hover .e-tbar-btn-text {
+                    color: var(--first-color-light);
+                }
+
+                .e-toolbar .e-toolbar-item .e-tbar-btn:hover:active .e-icons {
+                    color: var(--first-color-light);
+                }
+
+                .e-toolbar .e-toolbar-item .e-tbar-btn:hover:active .e-tbar-btn-text {
+                    color: var(--first-color-light);
+                }
+
+            .e-toolbar .e-toolbar-item .e-tbar-btn:active {
+                background: #000b1b;
+                border-color: #bdbdbd;
+                border-style: solid;
+                border-width: 0;
+                border-radius: 2px;
+                box-shadow: none;
+                color: var(--first-color-light);
+            }
+
+                .e-toolbar .e-toolbar-item .e-tbar-btn:active .e-icons {
+                    color: var(--first-color-light);
+                }
+
+                .e-toolbar .e-toolbar-item .e-tbar-btn:active .e-tbar-btn-text {
+                    color: var(--first-color-light);
+                }
+
+    .e-hscroll .e-scroll-nav {
+        background: #000b1b;
+    }
+    /*css for searching box*/
+    .e-grid .e-toolbar-items .e-toolbar-item.e-search-wrapper .e-search {
+        margin-bottom: 0;
+        opacity: .6;
+        width: 230px;
+        background: #273142;
+    }
+        /*css form searching placeholder color*/
+        .e-grid .e-toolbar-items .e-toolbar-item.e-search-wrapper .e-search input::placeholder {
+            color: var(--first-color-light);
+        }
+
+    .e-toolbar .e-toolbar-items {
+        background: #273142 !important;
+    }
+    /*css form searching icon color*/
+    .e-grid .e-icons:not(.e-btn-icon) {
+        color: var(--first-color-light);
+    }
+    /*css for pagination section*/
+    .e-pager {
+        background-color: #404040;
+        border-color: #e0e0e0;
+        color: var(--first-color-light);
+        opacity: .87;
+    }
+
+    .e-input-group, .e-input-group.e-control-wrapper, .e-float-input, .e-float-input.e-input-group, .e-float-input.e-control-wrapper, .e-float-input.e-input-group.e-control-wrapper {
+        background: rgba(0, 0, 0, 0);
+        color: rgba(0,0,0,.12);
+    }
+        /*this css use for change icon color in footer dropdown */
+        .e-input-group .e-input-group-icon, .e-input-group.e-control-wrapper .e-input-group-icon {
+            background: rgba(0, 0, 0, 0);
+            border-color: rgba(0, 0, 0, .42);
+            color: #eee;
+        }
+    /*   css use for pagination arrow*/
+    .e-pager .e-prevpagedisabled, .e-pager .e-prevpage, .e-pager .e-nextpage, .e-pager .e-nextpagedisabled, .e-pager .e-lastpagedisabled, .e-pager .e-lastpage, .e-pager .e-firstpage, .e-pager .e-firstpagedisabled {
+        background-color: #404040;
+        /*color: #000;*/
+    }
+    /*   css use for pagination container color*/
+    .e-pager .e-pagercontainer {
+        background: rgba(0, 0, 0, 0);
+        border-color: #e0e0e0;
+    }
+    /*this css use for change counting number*/
+    .e-pager .e-numericitem {
+        background-color: #404040;
+        border-right-color: #e0e0e0;
+        color: #000;
+    }
+
+    .e-input-group::placeholder,
+    .e-input-group.e-control-wrapper::placeholder,
+    .e-float-input::placeholder,
+    .e-float-input.e-input-group::placeholder,
+    .e-float-input.e-control-wrapper::placeholder,
+    .e-float-input.e-input-group.e-control-wrapper::placeholder {
+        color: var(--first-color-light) !important;
+    }
+
+    .e-input-group, .e-input-group.e-control-wrapper, .e-float-input, .e-float-input.e-input-group, .e-float-input.e-control-wrapper, .e-float-input.e-input-group.e-control-wrapper::placeholder {
+        color: var(--first-color-light);
+    }
+    /*footer css like- total text*/
+    .e-grid .e-summaryrow .e-summarycell, .e-grid .e-summaryrow .e-templatecell, .e-grid .e-summarycontent .e-indentcell, .e-grid .e-indentcell.e-detailindentcelltop {
+        background-color: rgba(0,0,0,.54);
+        border-color: #e0e0e0;
+        color: #eee;
+        font-size: 15px;
+    }
+
+    .e-grid .e-gridfooter {
+        background-color: rgba(0,0,0,.54);
+    }
+    /*use for fuzzi logic list bacground color*/
+    .e-listbox-wrapper .e-list-item {
+        background-color: #000 !important;
+        color: #fff;
+    }
+
+    .e-numericcontainer .e-numericitem {
+        color: #fff;
+    }
+
+    .buttonCssWithA a {
+        color: #fff !important;
+    }
+    /* border color of grid row and column*/
+    .e-grid .e-rowcell, .e-grid .e-groupcaption, .e-grid .e-indentcell, .e-grid .e-recordplusexpand, .e-grid .e-recordpluscollapse, .e-grid .e-rowdragdropcell, .e-grid .e-detailrowcollapse, .e-grid .e-detailrowexpand, .e-grid .e-detailindentcell, .e-grid .e-detailcell, .e-grid .e-emptyrow.e-show-added-row .e-lastrowcell {
+        border-color: #808080 !important;
+    }
+    /* css use when hover in the grid header*/
+    a:hover span {
+        color: #fff !important;
+    }
+    /*.e-ddl .e-popup .e-multi-select-list-wrapper .e-checkbox .e-lib .e-control .e-popup-open {
+    color: #fff !important;
+}*/
+
+
+    .e-ddl .e-popup .e-multi-select-list-wrapper .e-checkbox .e-lib .e-control .e-popup-open .e-checkbox-label {
+        color: #ff5733 !important;
+    }
+
+
+        .e-ddl .e-popup .e-multi-select-list-wrapper .e-checkbox .e-lib .e-control .e-popup-open .e-checkbox-label:first-child {
+            color: #ff5733 !important;
+        }
+
+
+        .e-ddl .e-popup .e-multi-select-list-wrapper .e-checkbox .e-lib .e-control .e-popup-open .e-checkbox-label:contains('Select All') {
+            color: #ff5733 !important;
+        }
+    /*-------------------------------------------------column choose css---------------------------------------------*/
+    .e-dlg-header-content {
+        background-color: rgba(0,0,0,.54);
+    }
+
+    .e-dlg-header, .e-dlg-header * {
+        color: var(--first-color-light);
+        font-size: 18px;
+        font-weight: normal;
+    }
+
+    .e-dlg-content {
+        background-color: rgba(0,0,0,.54);
+    }
+
+    .e-checkbox-wrapper .e-label, .e-css.e-checkbox-wrapper .e-label {
+        color: var(--first-color-light);
+    }
+
+    .e-footer-content {
+        background-color: #434343;
+    }
+
+    .e-ccsearch::placeholder, .e-searchinput::placeholder {
+        color: #fff !important;
+        opacity: .8
+    }
+    /* Change color to white when hovering over the anchor tag */
+    a:hover .profileTxt {
+        color: white;
+    }
+
+
+    .profileTxt::after {
+        content: none;
+        color: white;
+    }
+
+    .e-grid .e-ftrchk.e-chkfocus, .e-grid .e-menu-item.e-menufocus, .e-grid li.e-cclist.e-colfocus, .e-grid-popup .e-ftrchk.e-chkfocus, .e-grid-popup .e-menu-item.e-menufocus, .e-grid-popup li.e-cclist.e-colfocus {
+        background-color: #434343;
+    }
+
+    .e-control.e-dropdownlist.e-lib.e-input::placeholder {
+        color: #fff !important;
+    }
+    /*-------------------------------------withdrawal and deposit color----------------------------*/
+    .e-grid .e-row .e-rowcell.customcss-Withdrawal {
+        color: #F3030E; /* Change the text color to red */
+    }
+
+    .e-grid .e-row .e-rowcell.customcss-Deposit {
+        color: green; /* Change the text color to green #088B3F */
+    }
+    /*-----------------------------------------use for filter css-------------------------------------------------*/
+    /* Customize the color of filter dropdown placeholder */
+    .e-searcher input.e-dropdownbase::placeholder {
+        color: white;
+    }
+    /* Customize the color of filter Select value color */
+
+    .e-multi-select-wrapper .e-delim-values {
+        -webkit-text-fill-color: white;
+        color: rgba(0, 0, 0, .87);
+    }
+    /* Customize the color of Selcet cut icon */
+    .e-multi-select-wrapper .e-chips-close.e-close-hooker {
+        color: white;
+    }
+    /*--------------------use for grid filter--------------------------*/
+
+    .e-contextmenu-wrapper ul, .e-contextmenu-container ul {
+        background-color: rgba(70, 70, 70);
+        color: var(--first-color-light);
+    }
+
+        .e-contextmenu-wrapper ul .e-disabled, .e-contextmenu-container ul .e-disabled {
+            color: var(--first-color-light);
+            opacity: 1;
+        }
+
+    .e-checkbox-wrapper:hover .e-label, .e-css.e-checkbox-wrapper:hover .e-label {
+        color: var(--first-color-light);
+    }
+
+    .e-grid .e-ftrchk.e-chkfocus, .e-grid li.e-cclist.e-colfocus {
+        background-color: rgba(70, 70, 70);
+    }
+
+    .e-dlg-content, .e-dlg-content:hover {
+        background-color: #434343 !important;
+        color: var(--first-color-light);
+    }
+
+    .e-btn, .e-flat, .e-css.e-btn {
+        color: var(--first-color-light) !important;
+    }
+
+        .e-primary, .e-css.e-btn.e-flat.e-primary {
+            background: rgba(0, 0, 0, 0);
+            border-color: rgba(0, 0, 0, 0);
+            color: #e3165b !important;
+        }
+
+    .e-radio + label .e-label {
+        color: var(--first-color-light);
+    }
+
+    .e-valid-input, .e-autocomplete::placeholder {
+        color: var(--first-color-light) !important;
+    }
+
+    .e-icon-dlg-close {
+        color: var(--first-color-light);
+    }
+
+    .e-popup-open {
+        background-color: rgba(70, 70, 70) !important;
+        color: wheat;
+    }
+
+    .e-datepicker, .e-datepicker::placeholder {
+        color: wheat !important;
+    }
+    /*Selected cell css */
+    .e-grid td.e-cellselectionbackground {
+        background: #bfbfbf !important;
+        color: #0c0b0b !important;
+    }
+
+    .e-dropdownbase .e-list-item {
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        border-bottom: 0;
+        border-color: #fff;
+        color: #e0e0e0 !important;
+        font-family: inherit;
+        font-size: 13px;
+        line-height: 36px;
+        min-height: 36px;
+        padding-right: 16px;
+        text-indent: 16px;
+        background-color: rgba(0,0,0,.84) !important;
+    }
+
+    .CheckValidText::placeholder, .CheckBlank::placeholder, .checkDuplicate::placeholder, textarea.border-bottom {
+        color: #999999 !important;
+    }
+    /*------------------------------------------User manager css-----------------------------*/
+    .CheckValidText, .CheckBlank, .checkDuplicate, .RegisterCheckBlank, textarea.border-bottom, input.e-input {
+        background: rgba(0, 0, 0, 0);
+        border-color: rgba(0, 0, 0, .42);
+        color: var(--first-color-light) !important;
+    }
+
+    .fa-arrow-left {
+        color: var(--first-color-light) !important;
+    }
+
+    .UserProfilePicture {
+        border: 2px dashed;
+        color: #b3b3b3;
+        border-radius: 12px;
+        padding: 12px;
+        cursor: pointer;
+    }
+    /*Register confirmation*/
+    .confirmation-container {
+        text-align: center;
+        background: #21262a;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        color: white;
+    }
+
+    .icon-container {
+        font-size: 50px;
+        color: #007bff;
+    }
+
+    .text-muted {
+        --bs-text-opacity: 1;
+        color: white !important;
+    }
+    /* Add right dropdown placeholdercolor */
+    .customdrop input.e-input[placeholder]::placeholder {
+        color: #fff !important; /* Change to your desired color */
+    }
+
+
+    .breadcrumb-item-a {
+        color: var(--first-color-light);
+        text-decoration: none !important;
+    }
+
+        .breadcrumb-item-a:hover {
+            color: #f7faff !important;
+            text-decoration: none;
+        }
+    /*------------------------notification css=--------------------*/
+    .ikrNotifications {
+        background-color: rgba(70, 70, 70) !important;
+        color: wheat;
+    }
+
+
+    .dropdown-content button {
+        width: 100%;
+        text-align: left;
+        padding: 10px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        color: wheat !important;
+        background: black !important;
+    }
+
+        .dropdown-content button:hover {
+            width: 100%;
+            text-align: left;
+            padding: 10px;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            color: wheat !important;
+            background: black !important;
+        }
+    /*Start Import section tabel css added by Rajiya Bano*/
+    .table .error-row {
+        background-color: #3f1717 !important;
+    }
+
+    .table .success-row {
+        background-color: #023020 !important;
+    }
+
+    .displayfilter {
+        background-color: #05223c !important;
+        border-radius: 25px;
+        border: 2px solid #2e8bc0 !important;
+        color: #cadffa !important;
+        font-weight: 600;
+    }
+
+    .FilterIndicatorBtnColor {
+        width: 0.3em;
+        height: 0.3em;
+        position: relative;
+        top: -2px;
+        left: 4px;
+    }
+
+
+    .dropdown-menu {
+        color: #fff !important;
+        background-color: #212529 !important;
+    }
+
+
+    .e-grid td.e-rowcell.differentValue {
+        color: red;
+    }
+
+    .custom-tooltip {
+        background-color: #333; /* Tooltip background */
+        color: #fff; /* Tooltip text color */
+        border-radius: 5px; /* Rounded corners */
+        padding: 10px; /* Padding around text */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+        margin-top: -70px;
+        margin-left: 60px;
+    }
+    /*End Import section tabel css */
+    /* Map marker Count*/
+    #markerCount {
+        color: white !important;
+    }
+    /* spec list heading*/
+    /*.HeaderstyleSpec {
+    color: black !important;
+}*/
+    /* spec list heading*/
+    .HeaderstyleSpecbackground {
+        background-color: #273142 !important;
+    }
+    /* Link Analysis*/
+    .Linkanalysislabel {
+        color: white !important;
+    }
+    /* Disabled state for the anchor tag inside the list item */
+    .disabledlink {
+        pointer-events: none; /* Disables click interaction */
+        opacity: 0.5; /* Visual cue to show the link is disabled */
+    }
+
+    .input-group-text {
+        display: flex;
+        align-items: center;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: var(--bs-body-color);
+        text-align: center;
+        white-space: nowrap;
+        background-color: var(--dark-light0);
+        border: var(--bs-border-width) solid var(--bs-border-color);
+        border-radius: var(--bs-border-radius);
+    }
+    /*--------------------------for notification-------------------------------------*/
+
+    .ikrNotifications .ikrSeeAll a {
+        color: #000b1b !important;
+    }
+
+    .Listdropdown-menu .list-group-item {
+        background: #243141 !important;
+    }
+
+    .filterDiv .dropdown-menu {
+        background: #243141 !important;
+    }
+    /*apply css in  filter  and remove border only first*/
+    .Listdropdown-menu .list-group-item:first-child {
+        border-top-width: 0;
+        border-color: #313f4a;
+    }
+    /*apply css in  filter  and remove border all */
+    .Listdropdown-menu .list-group-item + .list-group-item {
+        border-top-width: 0;
+        border-color: #313f4a;
+    }
+    /*---------------------Case management-------------------------*/
+    .card-body .CaseRightH4 {
+        color: var(--first-color-light);
+    }
+    /*-------------css for Deep File Analytics----------------------*/
+    .card-body .value {
+        color: #fff;
+    }
+
+    .card-body .label {
+        color: #a1afb9;
+    }
+
+    #Facemanupulation {
+        color: #FFF;
+    }
+    /*added by harsh*/
+    /*--------------------for right sidebar--------------  */
+    .right-sidebar > * img {
+        filter: invert(100%);
+        /*    fill: var( --first-color-light);
+        stroke: var( --first-color-light);*/
+    }
+
+    .right-sidebar > *.highlightedtab {
+        border-color: white;
+    }
+
+    .right-sidebar > *.highlightedtab {
+        box-shadow: 2px 2px 3px white;
+    }
+    /*    for grid view command case details icon*/
+    /*Start For boosttrap tooltip*/
+    .tooltip-inner {
+        color: black !important;
+        background-color: white !important;
+    }
+    /*End For boosttrap tooltip*/
+    /*no longer needed as icons were theme agnostic*/
+    .table-cell:first-child img {
+        /*    filter: invert(100%);*/
+    }
+
+    .InformationBlack {
+        color: #d4d4d4;
+        font-weight: 500;
+    }
+
+    .WarningYellow {
+        color: #c29519;
+        font-weight: 500;
+    }
+
+    .ErrorRed {
+        color: red;
+    }
+    /*by harsh*/
+
+    #UserProfile {
+        filter: invert(1) sepia(1) saturate(0);
+    }
+    /*by harsh panjwani*/
+    /*for dark theme, icons will be in light background when row is hovered or selected so color will be black */
+    #RoleRecords tr:hover .e-rowcell[data-colindex="4"] a[data-bs-toggle="dropdown"] > svg, #RoleRecords tr[aria-selected="true"] .e-rowcell[data-colindex="4"] a[data-bs-toggle="dropdown"] > svg {
+        fill: black !important;
+    }
+    /*  this is for all syncfusion grid */
+    .e-control.e-grid tr:hover .e-rowcell:last-child a[data-bs-toggle="dropdown"] > svg, .e-control.e-grid tr[aria-selected="true"] .e-rowcell:last-child a[data-bs-toggle="dropdown"] > svg {
+        fill: black !important;
+    }
+
+    .clearBtnCss {
+        background-color: red !important;
+        color: #fff !important;
+    }
+
+
+
+    .table-responsive {
+        overflow-x: auto !important;
+        overflow-y: visible !important;
+    }
+}
+
+
+/*:root {
+    --icon-color-light: black;
+    --icon-color-dark: white;
+}
+
+[data-theme='dark'] {
+    --icon-color: var(--icon-color-dark)!important;
+}
+
+[data-theme='light'] {
+    --icon-color: var(--icon-color-light)!important;
+}
+
+.btn_style svg {
+    color: var(--icon-color);
+}*/
+
+

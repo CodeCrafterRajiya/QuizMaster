@@ -1,0 +1,94 @@
+﻿@page
+@model LoginModel
+
+@{
+    Layout = null;
+}
+<title>Log in</title>
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/quezemasterNew.styles.css" asp-append-version="true" />
+<link href="~/css/sb-admin.css" rel="stylesheet" />
+<link href="~/css/loginpagestyle.css" rel="stylesheet" />
+<link href="~/css/sb-admin.min.css" rel="stylesheet" />
+<link href="~/fontawesome-free/css/all.css" rel="stylesheet" />
+<link href="~/fontawesome-free/css/all.min.css" rel="stylesheet" />
+<link href="~/css/sidebar.css" rel="stylesheet" />
+
+<link href="~/css/fluent.css" rel="stylesheet" />
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+
+
+
+<section >
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-12 col-lg-10 rounded-4 bg-white overflow-hidden m-5 custom-shadow">
+                <div class="row ">
+                    <!-- Left side with Image -->
+                    <div class="col-12 col-md-6 bsb-tpl-bg-platinum p-0">
+                        <div class="h-100 w-100 image-wrapper">
+                            <img src="~/newfolder/loginpageimg.jpg"
+                                 id="image"
+                                 class="img-fluid h-100 w-100 object-fit-cover" />
+                        </div>
+                    </div>
+
+                    <!-- Right side with Form -->
+                    <div class="col-12 col-md-6 bsb-tpl-bg-lotion">
+                        <div class="p-4 p-md-5 form-wrapper">
+                            <div class="mb-4">
+                                <h3 class="fw-semibold form-wrapper-heading">Quiz Master</h3>
+                            </div>
+
+                            <form id="account" method="post">
+                                <div class="mb-3">
+                                    <label for="email" class="form-label" asp-for="Input.Email">Email <span class="text-danger">*</span></label>
+                                    <input type="email" asp-for="Input.Email" class="form-control"  id="email" placeholder="name@example.com" required>
+                                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="password" class="form-label" asp-for="Input.Password">Password <span class="text-danger">*</span></label>
+                                    <input type="password" asp-for="Input.Password"  class="form-control"  id="password" required>
+                                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                                </div>
+
+                                <div class="mb-3 form-check">
+                                    <input class="form-check-input form-label" type="checkbox" id="remember_me" asp-for="Input.RememberMe">
+                                    <label class="form-check-label form-label" for="remember_me" asp-for="Input.RememberMe">Keep me logged in</label>
+                                </div>
+
+                                <div class="d-grid mb-4">
+                                    <button class="btn btn-primary btn-md" type="submit">Log in now</button>
+                                </div>
+                            </form>
+
+                               <div class="mb-4 text-end">
+                                <p class="mt-4 text-sm text-center form-label">
+                                    Don't have an account?
+                                    <a class="nav-link form-label " asp-area="Identity" asp-page="/Account/Register">Sign up</a>
+                                   @*  <a href="~/pages/sign-up.html" class="text-primary text-gradient font-weight-bold">Sign up</a> *@
+                                    </p> 
+                               
+                               </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

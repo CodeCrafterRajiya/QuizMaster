@@ -1,0 +1,27 @@
+﻿@model quezemasterNew.Models.TGTPGTLT.TGTPGTLTViewModel
+@{
+    ViewData["Title"] = "TGT ";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@* <p>
+    <a asp-action="CreateTGT">Create New</a>
+</p>
+*@
+
+
+<div class="container-fluid">
+
+    <div id="TGTPGTLTEDetailsForm">
+        @await Component.InvokeAsync("TGTPGTLTEnglish",
+        new { ViewComponentType = "TGTPGTLTEnglishForm", TGTPGTLTEnglishDetails = Model })
+</div>
+
+
+<div class="row justify-content-center mt-3">
+        <div class="col-md-12 card card-body shadow-sm CardCss" id="TGTPGTLTDetailsList">
+            @await Component.InvokeAsync("TGTPGTLTEnglish", new { ViewComponentType = "TGTPGTLTEnglishList", TGTPGTLTEnglishDetails = Model })
+    </div>
+</div>
+
+</div>

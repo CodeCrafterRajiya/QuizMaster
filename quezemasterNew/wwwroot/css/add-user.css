@@ -1,0 +1,333 @@
+@import "functions";
+@import "variables";
+@import "mixins";
+
+:root {
+    --header-height: 3rem;
+    --nav-width: 80px;
+    --first-color: #2a3f54;
+    --active-hover: #2a3f54;
+    --first-color-light: #fff;
+    --white-color: #257ee8;
+    --body-font: "Nunito", sans-serif;
+    --normal-font-size: 1rem;
+    --z-fixed: 100;
+    --main-blut: #257ee8;
+    --orange: #ffa756;
+    --green: #08aa6e;
+    --dark: #1b2431;
+    --secondary-dark: #273142;
+    --dark-light: #323d4e;
+    --stroke: #313d4f;
+    --stroke-light: rgba(198, 198, 198, 0.3);
+    --stroke-lighter: rgba(207, 207, 207, 0.11);
+    --bs-body-bg: #273142;
+}
+
+.stepwizard-step p {
+    margin-top: 0px;
+    color: #666;
+}
+
+.stepwizard {
+    width: 220px;
+    position: relative;
+    border-right: 1px solid #ddd;
+    margin-right: 40px;
+}
+    /*
+.stepwizard-step button[disabled] {
+ opacity: 1 !important;
+  filter: alpha(opacity=100) !important;
+}*/
+    .stepwizard .btn.disabled,
+    .stepwizard .btn[disabled],
+    .stepwizard fieldset[disabled] .btn {
+        opacity: 1 !important;
+        color: #bbb;
+    }
+.form-group h6.text-dark {
+    font-size: 14px;
+    font-weight: 600;
+}
+.stepwizard-step {
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+}
+
+.wizard {
+    box-shadow: none;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    border-radius: 12px;
+}
+
+.form {
+    width: calc(100% - 200px);
+}
+
+    .form .control-label {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+    /*update height value height: 46px; stop 40px*/
+    .form .form-control,
+    .form .form-select {
+        height: 35px;
+        padding: 0px 16px;
+        font-size: 14px;
+    }
+
+.btn-default {
+    width: 44px;
+    height: 44px;
+    border-radius: 50px;
+    font-size: 24px;
+    color: #979797;
+    font-weight: bold;
+    border: 1px solid #ddd;
+}
+
+    .btn-default:hover {
+        border: 1px solid #326bea;
+        color: #326bea !important;
+    }
+/* update height value from height: 44px; to height: 35px; remove border-radius: 50px;update font-size value from font-size: 24px; to   font-size: 16px; remove font-weight: bold;*/
+.btn-primary {
+    width: 44px;
+    height: 35px;
+    color: #fff;
+    font-size: 16px;
+    background: #326bea;
+}
+
+    .btn-primary:hover {
+        background: #326bea;
+        color: #fff !important;
+    }
+
+.stepText {
+    margin-left: 16px;
+}
+
+.stepwizard-step {
+    margin-bottom: 24px;
+}
+
+.heading {
+    font-size: 24px;
+    color: #000;
+    margin-bottom: 30px;
+}
+.navigation {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.noBdr {
+    border: none;
+    box-shadow: none;
+}
+
+.wizardForm {
+    padding: 0;
+}
+
+.form .w-50 {
+    width: calc(50% - 100px) !important;
+    margin-bottom: 16px;
+}
+
+.form .w-100 {
+    width: calc(100% - 100px) !important;
+    margin-bottom: 16px;
+}
+/*remove border-radious*/
+.nextBtn,
+.nextBtn:hover {
+    width: auto;
+    background: hsla(268, 95%, 50%, 1);
+    background: linear-gradient( 160deg, hsla(268, 95%, 50%, 1) 0%, hsla(213, 81%, 53%, 1) 72% );
+    background: -moz-linear-gradient( 160deg, hsla(268, 95%, 50%, 1) 0%, hsla(213, 81%, 53%, 1) 72% );
+    background: -webkit-linear-gradient( 160deg, hsla(268, 95%, 50%, 1) 0%, hsla(213, 81%, 53%, 1) 72% );
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#7607F9", endColorstr="#257EE8", GradientType=1 );
+    min-width: 80px;
+    font-size: 16px;
+    
+}
+
+.previousBtn,
+.previousBtn:hover,
+.previousBtn:focus-visible {
+    border: 1px solid #848484;
+    background: #fff !important;
+    border-radius: 50px;
+    min-width: 90px;
+    font-size: 16px;
+    color: #848484 !important;
+}
+
+.messageTxt {
+    position: absolute;
+    right: 0;
+    margin-top: 2px;
+}
+
+.fileUpload {
+    border-radius: 16px;
+    border: 2px dashed #d5d5d5;
+    height: 120px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #f3f3f3;
+}
+
+    .fileUpload .inner {
+        margin: 0;
+    }
+/*---------------------------------------------Media Query-------------------------------------*/
+
+@media (max-width: 767.98px) {
+    .wizard {
+        box-shadow: none;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        border-radius: 12px;
+    }
+
+    .stepwizard {
+        width: 100%;
+        margin-right: 0;
+        border: none;
+    }
+    
+    nav_list
+    .heading {
+        font-size: 18px;
+    }
+
+    .form {
+        width: 100%;
+    }
+
+        .form .w-50 {
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            margin-bottom: 12px !important;
+        }
+
+    .stepwizard-row {
+        display: flex;
+        justify-content: flex-start;
+        border: none;
+    }
+
+    .stepText {
+        font-size: 14px;
+        margin-left: 8px;
+    }
+
+    .stepwizard-step {
+        margin-right: 16px;
+        margin-left: 4px;
+    }
+
+    .heading {
+        margin-bottom: 16px;
+        margin-top: 16px;
+        margin-left: 4px;
+    }
+
+    .stepwizard-step .btn-primary,
+    .stepwizard-step .btn-default {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .mainBody {
+        margin-top: 60px;
+    }
+
+    .breadcrumb {
+        margin-bottom: 8px;
+    }
+
+    .form-check .form-check-label {
+        font-size: 12px;
+    }
+
+    .form .w-100 {
+        width: calc(100% - 0px) !important;
+        display: flex;
+    }
+}
+/*---------------------------------------------dark theme---------------------------------------------------*/
+
+[data-bs-theme="dark"] {
+    .heading
+{
+    color: #d4d6d9 !important;
+}
+
+.fileUpload {
+    border-radius: 16px;
+    border: 2px dashed #d5d5d54f;
+    background: #f3f3f30a;
+}
+
+.inner p {
+    color: #9d9d9d !important;
+}
+
+.stepwizard {
+    border-right: 1px solid var(--dark-light) !important;
+}
+
+.form-control,
+.form-select,
+.form-check-input {
+    background-color: var(--dark-light);
+}
+.previousBtn, .previousBtn:hover, .previousBtn:focus-visible {
+    border: 1px solid #fff;
+     background: #273142 !important; 
+    border-radius: 50px;
+    min-width: 90px;
+    font-size: 16px;
+    color: #fff !important;
+}
+
+}
+/*---------------------------------------------Light theme-----------------------------------------------------------*/
+[data-bs-theme="light"] {
+    .e-input, .e-input-group, .e-control-wrapper, textarea
+{
+    background-color: var(--first-color-light);
+    color:var(--dark-light);
+}
+
+.form-check-input {
+    --bs-form-check-bg: var(--first-color-light);
+}
+
+}

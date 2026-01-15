@@ -1,0 +1,156 @@
+﻿@model quezemasterNew.Models.TGTPGTLT.TGTPGTLTViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+
+    <div class="row justify-content-center" id="LTDetailsForm">
+        <div class="col-md-12  p-0">
+
+            <div class="card card-body mt-4 shadow-sm CardCss">
+          
+
+                    <!-- Row 1 -->
+                <div class="row mt-2 mb-3">
+
+                        <!-- Quez Name -->
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-3">
+                            <label asp-for="QuezName" class="form-label fw-bold">Quiz Name</label>
+                                </div>
+                                <input asp-for="Id" class="form-control" id="LTQuezId" type="hidden" readonly/>
+                                <div class="col-md-9">
+                                    <input asp-for="QuezName" class="form-control" id="LTQuezName"/>
+                                    <span asp-validation-for="QuezName" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Class Name -->
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label asp-for="ClassName" class="form-label fw-bold">Class Name</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input asp-for="ClassName" class="form-control" id="LTClassName"/>
+                                    <span asp-validation-for="ClassName" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="row mb-3">
+
+                        <!-- Subject Name -->
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label asp-for="SubjectName" class="form-label fw-bold">Subject Name</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input asp-for="SubjectName" class="form-control" id="LTSubjectName"/>
+                                    <span asp-validation-for="SubjectName" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Remark -->
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label asp-for="Remark" class="form-label fw-bold">Remark</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input asp-for="Remark" class="form-control" id="LTRemark"/>
+                                    <span asp-validation-for="Remark" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Button Row -->
+            <div class="text-center average-font-size">
+                        <button type="submit" class="btn btn-primary  px-4" id="SaveLTDetails">Create</button>
+                <button type="reset" class="btn btn-secondary px-4 ms-4 clearBtnCss" id="LTResetBtn">Reset</button>
+                    </div>
+
+                
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+<script>
+    var $jq = jQuery.noConflict();
+
+    $jq(document).ready(function () {
+
+
+        // ===== AJAX FORM SUBMIT =====
+
+        $jq('#LTDetailsForm').on('click', '#SaveLTDetails', function (e) {
+            e.preventDefault(); // Stop normal form submit
+
+            var formData = {
+                Id: $jq("#LTQuezId").val(),
+                QuezName: $jq("#LTQuezName").val(),
+                ClassName: $jq("#LTClassName").val(),
+                SubjectName: $jq("#LTSubjectName").val(),
+                Remark: $jq("#LTRemark").val()
+            };
+
+            $jq.ajax({
+                url: '@Url.Action("InsertLT", "TGTPGTLTEnglish")',   // <-- Change controller name
+                type: "POST",
+                data: formData,
+                success: function (response) {
+
+                // Retrieve the ViewData value and ensure it's a string
+                $jq("#LTDetailsList").html('');
+                $jq("#LTDetailsList").html(response);
+                // Reset Only this form
+                ResetFormData();
+                },
+                error: function () {
+
+                   showMessageToUser("We apologize, but an error occurred while saving the data.", "error");
+                }
+            });
+        });
+
+
+        // ===== RESET BUTTON CLICK =====
+        $jq("#LTResetBtn").on("click", function () {
+           ResetFormData();
+        });
+
+
+
+
+
+
+         function ResetFormData() {
+              $jq("#LTQuezId").val('');
+              $jq("#LTQuezName").val('');
+              $jq("#LTClassName").val('');
+              $jq("#LTSubjectName").val('');
+              $jq("#LTRemark").val('');
+         }
+
+
+
+    });
+</script>
+
+

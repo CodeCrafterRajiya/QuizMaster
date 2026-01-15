@@ -1,0 +1,430 @@
+﻿@{
+    Layout = null;
+}
+<title>Dashboard</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--card -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link href="~/css/site.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.rtl.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/quezemasterNew.styles.css" asp-append-version="true" />
+<link href="~/css/sb-admin.css" rel="stylesheet" />
+<link href="~/css/sb-admin.min.css" rel="stylesheet" />
+<link href="~/fontawesome-free/css/all.css" rel="stylesheet" />
+<link href="~/fontawesome-free/css/all.min.css" rel="stylesheet" />
+
+<link href="~/css/fluent.css" rel="stylesheet" />
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+<style>
+
+    a5:visited, a.ex5:link 
+    {
+        text-decoration: none;
+    }
+
+    a.ex5:hover, a.ex5:active 
+    {
+        text-decoration: underline;
+        color: white;
+    }
+
+    .card-title 
+    {
+        color: white;
+        font-size: 1.5em;
+        line-height: normal;
+        font-weight: 700;
+        margin-bottom: 0.5em;
+    }
+
+    .small-desc 
+    {
+        font-size: 1em;
+        font-weight: 400;
+        line-height: 1.5em;
+        color: #452c2c;
+    }
+
+    .small-desc 
+    {
+        font-size: 10em;
+    }
+
+    .go-corner 
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        width: 1em;
+        height: 1em;
+        overflow: hidden;
+        top: 0;
+        right: 0;
+        background: linear-gradient(135deg, #87CEEB, #87CEEB );
+        border-radius: 0 4px 0 50px;
+    }
+
+    .go-arrow {
+        margin-top: -4px;
+        margin-right: -4px;
+        color: white;
+        font-family: courier, sans;
+    }
+
+    .card {
+        display: block;
+        position: relative;
+        max-width: 100%;
+        width: 100%;
+        max-height: 250px;
+        background-color: #f2f8f9;
+        border-radius: 10px;
+        padding: 2em 1.2em;
+        margin: 12px;
+        text-decoration: none;
+        z-index: 0;
+        overflow: hidden;
+        background: linear-gradient(to bottom, white, white);
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+        .card:before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: -16px;
+            right: -16px;
+            background: linear-gradient(135deg, #87CEEB, #87CEEB );
+            height: 60px;
+            width: 60px;
+            color:white;
+            border-radius: 32px;
+            transform: scale(1);
+            transform-origin: 50% 50%;
+            transition: transform 0.35s ease-out;
+        }
+
+        .card a:before {
+            color: white;
+        }
+
+        .card:hover:before {
+            transform: scale(50);
+        }
+
+        .card .ex5:before {
+            color: white;
+        }
+
+        .card:hover .h5 {
+            transition: all 0.5s ease-out;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .card:hover .card-title {
+            transition: all 0.5s ease-out;
+            color: #ffffff;
+        }
+
+
+
+</style>
+<script>
+    function GoForTest() {
+        alert("Comming Soon");
+    }
+</script>
+<br />
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2"><b style="color:#4CBB17;font-size:30px">Quiz Master</b></div>
+        <div class="col-md-2"></div>
+        <div class="col-md-2"></div>
+        <div class="col-md-2"></div>
+        <div class="col-md-2"></div>
+        <div class="col-md-2" >
+            <div style="float:right">
+                <a class="text-white btn-primary btn-sm" asp-area="" style="width:70px" asp-controller="Home" asp-action="Enquiry">Enquiry</a>
+                <a class="text-blue btn-primary btn-sm" style="width:45px;" asp-area="Identity" asp-page="/Account/Login">Login</a>
+            </div>
+        </div>
+    </div>
+
+
+@*<a class="ex5" asp-controller="Class11" asp-action="Index">11</a>
+    <a class="ex5" asp-controller="Class12" asp-action="Index">12</a> *@
+
+
+    <div class="row">
+        <div class="row">
+            <div class="col-md-4 ">
+                <div class="w3-panel w3-card card">
+                    <div class="go-corner">
+                        <div class="go-arrow">→</div>
+                    </div>
+                    <h2 class="card-title" style="color:#4CBB17;font-size:23px;padding-top:18px;padding-left:5px">General Aptitude</h2>
+                    <h5 style="font-size:17px;color:black">
+                        <i style="padding-left:7px;font-size:17px;color:black;padding:7px;padding-top:22px" class="fa fa-angle-right" alt=""></i>
+                        <a class="ex5" asp-controller="UPP" asp-action="Onlinetest">UPP</a>
+                    </h5>
+                    <h5 style="font-size:17px;color:black">
+                        <i style="padding-left:7px;font-size:17px;color:black;padding:7px;padding-top:12px" class="fa fa-angle-right"></i>
+                        <a class="ex5" href="#" onclick="GoForTest()">Data Interpretation</a>
+                    </h5>
+                    <h5 style="font-size:17px;color:black">
+                        <i style="padding-left:7px;font-size:17px;color:black;padding:7px;padding-top:12px" class="fa fa-angle-right"></i>
+                        <a class="ex5" href="#" onclick="GoForTest()">Online Aptitude Test</a>
+                    </h5>
+                    <br />
+                    
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="w3-panel w3-card card">
+                    <div class="go-corner">
+                        <div class="go-arrow">→</div>
+                    </div>
+                    <h2 class="card-title" 2 style="color:#4CBB17;font-size:23px;padding-top:18px;padding-left:5px">English</h2>
+
+                    <h5 style="font-size:17px;color:black">
+                        <i style="padding-left:7px;font-size:17px;color:black;padding:7px;padding-top:22px" class="fa fa-angle-right" alt=""></i>
+                        <a class="ex5" asp-controller="TGTPGTLTEnglish" asp-action="TGTTestOnline">TGT</a>
+
+                    </h5>
+
+                    <h5 style="font-size:17px;color:darkslategray">
+                        <i style="padding-left:7px;font-size:17px;color:black;padding:7px;padding-top:12px" class="fa fa-angle-right"></i>
+                        <a class="ex5" asp-controller="TGTPGTLTEnglish" asp-action="PGTTestOnline">PGT  </a>
+                    </h5>
+
+                    <h5 style="font-size:17px;color:darkslategray">
+                        <i style="padding-left:7px;font-size:17px;color:black;padding:7px;padding-top:12px" class="fa fa-angle-right"></i>
+                        <a class="ex5" asp-controller="TGTPGTLTEnglish" asp-action="LTTestOnline">LT  </a>
+                    </h5>
+
+                    <br />
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="w3-panel w3-card card">
+                    <div class="go-corner">
+                        <div class="go-arrow">→</div>
+                    </div>
+                    <h2 class="card-title" style="color:#4CBB17;font-size:23px;padding-top:18px;padding-left:5px">English (BPSC)</h2>
+
+
+                    <h5 style="font-size:17px;color:black">
+                        <i style="padding-left:7px;font-size:17px;color:black;padding:7px;padding-top:22px" class="fa fa-angle-right" alt=""></i>
+                        <a class="ex5" href="#" onclick="GoForTest()">6 to 8</a>
+
+                        <h5 style="font-size:17px;color:darkslategray">
+                            <i style="padding-left:7px;font-size:17px;color:black;padding:7px;padding-top:12px" class="fa fa-angle-right"></i>
+                            <a class="ex5" href="#" onclick="GoForTest()">9 to 10</a>
+
+                        </h5>
+
+                        <h5 style="font-size:17px;color:darkslategray">
+                            <i style="padding-left:7px;font-size:17px;color:black;padding:7px;padding-top:12px" class="fa fa-angle-right"></i>
+                            <a class="ex5" href="#" onclick="GoForTest()">11 to 12</a>
+
+                        </h5>
+
+                        <br />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="w3-panel w3-card card">
+                    <div class="go-corner">
+                        <div class="go-arrow">→</div>
+                    </div>
+                    <h2 class="card-title" style="color:#4CBB17;font-size:23px;padding-top:18px;padding-left:5px">GK</h2>
+
+                    <h5 style="font-size:17px;color:black">
+                        <i style="padding-left:7px;font-size:17px;color:black;padding:7px;padding-top:22px" class="fa fa-angle-right" alt=""></i>
+                        <a class="ex5" href="#" onclick="GoForTest()">BPSC</a>
+
+                    </h5>
+
+                    <h5 style="font-size:17px;color:black">
+                        <i style="padding-left:7px;font-size:17px;color:black;padding:7px;padding-top:12px" class="fa fa-angle-right"></i>
+                        <a class="ex5" href="#" onclick="GoForTest()">UP SSC</a>
+                    </h5>
+
+                    <h5 style="font-size:17px;color:black">
+                        <i style="padding-left:7px;font-size:17px;color:black;padding:7px;padding-top:12px" class="fa fa-angle-right"></i>
+                        <a class="ex5" href="#" onclick="GoForTest()">HR Interview</a>
+                    </h5>
+                    <br />
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="w3-panel w3-card card">
+                    <div class="go-corner">
+                        <div class="go-arrow">→</div>
+                    </div>
+                    <h2 class="card-title" style="color:#4CBB17;font-size:23px;padding-top:18px;padding-left:5px">Class 9th</h2>
+
+
+                    <h5 style="font-size:17px;color:black">
+                        <i style="padding-left:7px;font-size:17px;color:black;padding:7px;padding-top:22px" class="fa fa-angle-right" alt=""></i>
+                        <a class="ex5" asp-controller="Class9" asp-action="TestOnline" asp-route-SubjectName="Hindi">
+                            Hindi  
+                        </a>
+
+                    </h5>
+                    <style>
+
+                    </style>
+                    <h5 style="font-size:17px;color:black">
+                        <i style="padding-left:7px;font-size:17px;color:black;padding:7px;padding-top:12px" class="fa fa-angle-right"></i>
+                        <a class="ex5" asp-controller="Class9" asp-action="TestOnline" asp-route-SubjectName="English">
+                            English   
+                        </a>
+
+                    </h5>
+
+                    <h5 style="font-size:17px;color:black">
+                        <i style="padding-left:7px;font-size:17px;color:black;padding:7px;padding-top:12px" class="fa fa-angle-right"></i>
+                        <a class="ex5" asp-controller="Class9" asp-action="TestOnline" asp-route-SubjectName="Science">Science  </a>
+                    </h5>
+                    <br />
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="w3-panel w3-card card">
+                    <div class="go-corner">
+                        <div class="go-arrow">→</div>
+                    </div>
+                    <h2 class="card-title" style="color:#4CBB17;font-size:23px;padding-top:18px;padding-left:5px">Class 10th</h2>
+                    <h5 style="font-size:17px;color:black">
+                        <i style="padding-left:7px;font-size:17px;color:black;padding:7px;padding-top:22px" class="fa fa-angle-right" alt=""></i>
+                        <a class="ex5" asp-controller="CLass10" asp-action="TestOnline" asp-route-SubjectName="Hindi">Hindi  </a>
+                    </h5>
+                    <h5 style="font-size:17px;color:black">
+                        <i style="padding-left:7px;font-size:17px;color:black;padding:7px;padding-top:12px" class="fa fa-angle-right"></i>
+                        <a class="ex5" asp-controller="CLass10" asp-action="TestOnline" asp-route-SubjectName="English">English  </a>
+                    </h5>
+
+                    <h5 style="font-size:17px;color:black">
+                        <i style="padding-left:7px;font-size:17px;color:black;padding:7px;padding-top:12px" class="fa fa-angle-right"></i>
+                        <a class="ex5" asp-controller="CLass10" asp-action="TestOnline" asp-route-SubjectName="Science">Science  </a>
+                    </h5>
+                    <br />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="w3-panel w3-card card">
+                    <div class="go-corner">
+                        <div class="go-arrow">→</div>
+                    </div>
+                    <h2 class="card-title" style="color:#4CBB17;font-size:23px;padding-top:18px;padding-left:5px">Class 11th</h2>
+
+
+                    <h5 style="font-size:17px;color:black">
+                        <i style="padding-left:7px;font-size:17px;color:black;padding:7px;padding-top:22px" class="fa fa-angle-right" alt=""></i>
+                        <a class="ex5" asp-controller="Class11" asp-action="TestOnline" asp-route-SubjectName="Hindi">Hindi  </a>
+
+                    </h5>
+
+                    <h5 style="font-size:17px;color:black">
+                        <i style="padding-left:7px;font-size:17px;color:black;padding:7px;padding-top:12px" class="fa fa-angle-right"></i>
+                        <a class="ex5" asp-controller="Class11" asp-action="TestOnline" asp-route-SubjectName="English">English  </a>
+
+                    </h5>
+
+                    <h5 style="font-size:17px;color:black">
+                        <i style="padding-left:7px;font-size:17px;color:black;padding:7px;padding-top:12px" class="fa fa-angle-right"></i>
+                        <a class="ex5" asp-controller="Class11" asp-action="TestOnline" asp-route-SubjectName="History">History  </a>
+
+                    </h5>
+
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="w3-panel w3-card card">
+                    <div class="go-corner">
+                        <div class="go-arrow">→</div>
+                    </div>
+                    <h2 class="card-title" style="color:#4CBB17;font-size:23px;padding-top:18px;padding-left:5px">Class 12th</h2>
+                    <h5 style="font-size:17px;color:black">
+                        <i style="padding-left:7px;font-size:17px;color:black;padding:7px;padding-top:22px" class="fa fa-angle-right" alt=""></i>
+                        <a class="ex5" asp-controller="Class12" asp-action="TestOnline" asp-route-SubjectName="Hindi">Hindi  </a>
+                    </h5>
+
+                    <h5 style="font-size:17px;color:black">
+                        <i style="padding-left:7px;font-size:17px;color:black;padding:7px;padding-top:12px" class="fa fa-angle-right"></i>
+                        <a class="ex5" asp-controller="Class12" asp-action="TestOnline" asp-route-SubjectName="English">English  </a>
+                    </h5>
+
+                    <h5 style="font-size:17px;color:black">
+                        <i style="padding-left:7px;font-size:17px;color:black;padding:7px;padding-top:12px" class="fa fa-angle-right"></i>
+                        <a class="ex5" asp-controller="Class12" asp-action="TestOnline" asp-route-SubjectName="History">History  </a>
+
+                    </h5>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="w3-panel w3-card card">
+                    <div class="go-corner">
+                        <div class="go-arrow">→</div>
+                    </div>
+                    <h2 class="card-title" style="color:#4CBB17;font-size:23px;padding-top:18px;padding-left:5px">Academic</h2>
+
+                    <h5 style="font-size:17px;color:black">
+                        <i style="padding-left:7px;font-size:17px;color:black;padding:7px;padding-top:22px" class="fa fa-angle-right" alt=""></i>
+                        <a class="ex5" asp-controller="Class6" asp-action="TestOnline">Class 6 All Subject</a>
+
+                    </h5>
+
+
+                    <h5 style="font-size:17px;color:black">
+                        <i style="padding-left:7px;font-size:17px;color:black;padding:7px;padding-top:22px" class="fa fa-angle-right" alt=""></i>
+                        <a class="ex5" asp-controller="Class6" asp-action="TestOnline">Class 7 All Subject</a>
+
+                    </h5>
+
+                    <h5 style="font-size:17px;color:black">
+                        <i style="padding-left:7px;font-size:17px;color:black;padding:7px;padding-top:12px" class="fa fa-angle-right"></i>
+                        <a class="ex5" asp-controller="Class6" asp-action="TestOnline">Class 8 All Subject</a>
+                    </h5>
+                    <br />
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+

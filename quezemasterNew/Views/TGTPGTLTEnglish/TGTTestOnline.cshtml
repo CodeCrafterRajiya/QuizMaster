@@ -1,0 +1,82 @@
+﻿@model IEnumerable<quezemasterNew.Models.TGTPGTLT.TGTQuestionSetViewModel>
+
+    <title>TGT Test</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+    a5:visited, a.ex5:link {
+        text-decoration: none;
+    }
+
+    a.ex5:hover, a.ex5:active {
+        text-decoration: underline;
+    }
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="w3-panel w3-card" style="border-radius:20px">
+                <div class="col-md-1" style="padding-top:0px">
+                    <img src="~/image\notes-removebg-preview.png" height="0px" width="0px" style="padding-left:0px" />
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table-responsive-lg">
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <p style="font-size:17px;color:black;padding-top:10px">
+                                            <a class="ex5" asp-action="TGTOnlineTest" asp-controller="TGTPGTLTEnglish" asp-route-id="@item.id" style="padding-left:0px;font-size:17px;color:black;font-weight:400;padding-top:10px">@item.QuestionSetName</a>
+                                        </p>
+                                        <h5 style="color:#4CBB17;font-weight:400">
+                                            Question : 20 &nbsp; &nbsp;&nbsp <i class="fa fa-clock-o" style="font-size:12px;color:#4CBB17;font-weight:500"></i> 30 Minutes
+                                        </h5>
+                                        <hr />
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="col-md-4">
+            
+            <div class="w3-panel w3-card" style="border-radius:10px">
+                <div class="w3-panel w3-card" style="border-radius:5px;background-color:#f4f4f4">
+                    <center>
+                        <h5 style="font-weight:400">Quick Vedio links</h5>
+                    </center>
+                </div>
+
+                <div class="row">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/IWyslRf9mV4?si=AFGCMfZURSltQ3G1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <br />
+                <div class="row">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/EIMd-U7iY9w?si=tsfvbNYmtaD_zNsa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <br />
+
+                <div class="row">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/j_RWB9KMNRk?si=vu5DTMv3VpqWYysD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                </div>
+                <br />
+
+
+            </div>
+            <br />
+        </div>
+
+    </div>
+</div>
+
+
+

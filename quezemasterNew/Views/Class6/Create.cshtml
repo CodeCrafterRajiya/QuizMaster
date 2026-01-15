@@ -1,0 +1,51 @@
+﻿@model quezemasterNew.Models.Class9.Class9ViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<hr />
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 card card-body">
+        <form asp-action="InsertClass6">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="QuezName" class="control-label"></label>
+                <input asp-for="QuezName" class="form-control" />
+                <span asp-validation-for="QuezName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClassName" class="control-label"></label>
+                <input asp-for="ClassName" class="form-control" />
+                <span asp-validation-for="ClassName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SubjectName" class="control-label"></label>
+                <select class="form-select" asp-for="SubjectName">
+                    <option value="English">English</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="History">History</option>
+                </select>
+                @* <input asp-for="SubjectName" class="form-control" /> *@
+                <span asp-validation-for="SubjectName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark" class="control-label"></label>
+                <input asp-for="Remark" class="form-control" />
+                <span asp-validation-for="Remark" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+        <div>
+            <a asp-action="TGTIndex">Back to List</a>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,28 @@
+﻿@model quezemasterNew.Models.TblQuezIndex20Detail
+@* @model IEnumerable<quezemasterNew.Models.ViewModel.QuezIndex20DetailsViewModel> *@
+
+
+@{
+    ViewData["Title"] = "Test Page";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="container-fluid">
+
+    <div id="GeneralAptitudeUPPForm">
+        @await Component.InvokeAsync("GeneralAptitudeUPP",
+        new { ViewComponentType = "GeneralAptitudeUPPForm", AptitudeUppDetails = Model })
+    </div>
+
+
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-12 card card-body shadow-sm CardCss" id="GAUPPList">
+            @await Component.InvokeAsync("GeneralAptitudeUPP", new { ViewComponentType = "GeneralAptitudeUPPList", AptitudeUppDetails = Model })
+        </div>
+    </div>
+
+</div>
+
+

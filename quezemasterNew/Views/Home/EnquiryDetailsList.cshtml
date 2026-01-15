@@ -1,0 +1,43 @@
+﻿@model IEnumerable<quezemasterNew.Models.ViewModel.enquiryformviewmodel>
+
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<title>Enquiry List</title>
+
+
+
+    <div style="overflow-x:auto">
+        <h3 class="text-dark text-center mt-3 fw-bold">Enquiry Details</h3>
+<table class="table table-responsive-xl table-hover table-bordered table table-striped mt-4" border="0">
+    @{
+        <thead>
+            <tr>
+                <th>Sr No</th>
+                <th>Name</th>
+                <th>MobileNo</th>
+                <th>EmailId</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        var i = 1;
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.Label(" ", i++.ToString())</td>
+                    <td>@item.Name</td>
+                    <td>@item.MobileNo</td>
+                    <td>@item.EmailId</td>
+                    <td>@item.Message</td>
+                </tr>
+            }
+        </tbody>
+
+    }
+</table>
+</div>
+
+

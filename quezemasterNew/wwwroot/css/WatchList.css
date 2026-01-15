@@ -1,0 +1,502 @@
+
+
+
+/* Base Body Styling */
+body {
+    background-color: #f7fafc; /* bg-gray-100 */
+}
+
+.bg-body-tertiary {
+    background-color: #f8f9fa; /* Bootstrap-like tertiary bg */
+}
+
+
+
+.mb-1 {
+    margin-bottom: 0.25rem;
+}
+
+.mb-8 {
+    margin-bottom: 2rem;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+}
+
+.grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.md\:grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.gap-6 {
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .md\:grid-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Flex */
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+/* Text Colors */
+.text-gray-600 {
+    color: #718096;
+}
+
+.text-blue-600 {
+    color: #3182ce;
+}
+
+.text-red-600 {
+    color: #e53e3e;
+}
+
+.text-green-600 {
+    color: #38a169;
+}
+
+/* Background Colors */
+.bg-white {
+    background-color: #ffffff;
+}
+
+.bg-blue-100 {
+    background-color: #ebf8ff;
+}
+
+.bg-green-100 {
+    background-color: #f0fff4;
+}
+
+.bg-red-100 {
+    background-color: #fff5f5;
+}
+
+/* Font Size */
+.text-xl {
+    font-size: 1.25rem;
+}
+
+.text-3xl {
+    font-size: 1.875rem;
+}
+
+/* Font Weight */
+.font-bold {
+    font-weight: bold;
+}
+
+/* Borders */
+.border-l-4 {
+    border-left-width: 4px;
+}
+
+.border-blue-500 {
+    border-color: #4299e1;
+}
+
+.border-red-500 {
+    border-color: #f56565;
+}
+
+.border-green-500 {
+    border-color: #48bb78;
+}
+
+/* Other UI */
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.rounded-full {
+    border-radius: 9999px;
+}
+
+.shadow-md {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.p-3 {
+    padding: 0.75rem;
+}
+
+.p-6 {
+    padding: 1.5rem;
+}
+
+.w-8 {
+    width: 2rem;
+}
+
+.h-8 {
+    height: 2rem;
+}
+
+/* Custom: Centered text */
+.text-center {
+    text-align: center;
+}
+
+
+/* ---------------  watchlist main  --------------------------- */
+:root {
+    --body-bg: #ebedf7;
+    --primary: #2a3f54;
+    --primary-dark: #243648;
+    --primary-light: #2c3e50;
+    --accent-color: rgb(13, 110, 253);
+    --accent-color-hover: rgb(10, 88, 202);
+    --secondary: #dbe0ff;
+    --sidebar-width: 250px;
+    --sidebar-width-2k: 400px;
+    --sidebar-width-4k: 600px;
+    /*sidebar*/
+    --sidebar-bg-color: rgb(42, 63, 84);
+    /*cards*/
+    --card-bg-color: white;
+    --card-icon-bg-color: transparent;
+    /*header*/
+    --header-bg-color: var(--card-bg-color);
+    --header-fg-color: black;
+    /*chat*/
+
+    --chat-body-bg-color: #fff;
+    --chat-header-bg-color: var(--primary-light);
+    --chat-message-bg-color: #f8f9fa;
+}
+
+[data-bs-theme="dark"] {
+    --body-bg: rgb(27, 36, 49);
+    --sidebar-bg-color: rgb(39, 49, 66);
+    --card-bg-color: var(--sidebar-bg-color);
+    --card-icon-bg-color: white;
+    --header-bg-color: var(--card-bg-color);
+    --header-fg-color: white;
+    --chat-body-bg-color: rgb(50 54 56);
+    --chat-header-bg-color: #3c444d;
+    --chat-message-bg-color: #c6cdd4;
+    .icon-phone
+
+{
+    filter: invert(1);
+}
+
+.icon-phone path:nth-child(8), .icon-phone path:nth-child(9) {
+        fill: red !important;
+    fill: #20e5ee !important
+}
+
+#UserProfile {
+    filter: invert(1) sepia(1) saturate(0);
+}
+
+}
+
+
+
+.container-container {
+    padding-left: calc(var(--sidebar-width) + 0px);
+}
+
+.container {
+    max-width: 1500px;
+}
+
+
+
+ /*------------ main  ---------------------*/ 
+
+.section {
+     background-color: rgb(200, 200, 200, 0.1); 
+     border-color: rgb(150, 146, 146) !important; 
+}
+
+.cards > * {
+    min-height: 110px;
+}
+
+.card-custom {
+    height: 100%;
+    width: 350px;
+    max-width: 100%;
+     background-color: white !important; 
+    background-color: var(--card-bg-color);
+}
+
+    .card-custom img {
+         filter: invert(0.5); 
+        filter: invert(17%) sepia(14%) saturate(582%) hue-rotate(169deg) brightness(95%) contrast(90%);
+        filter: brightness(0) saturate(100%) invert(19%) sepia(11%) saturate(1686%) hue-rotate(169deg) brightness(101%) contrast(89%);
+    }
+
+    .card-custom svg {
+         fill:  
+    }
+
+    .card-custom a {
+        text-decoration: none;
+    }
+
+    .card-custom .icon-container {
+        width: 60px;
+         background-color: var(--card-icon-bg-color); 
+    }
+
+        .card-custom .icon-container svg {
+             background-color: var(--card-icon-bg-color); 
+        }
+
+    .card-custom a:hover {
+        text-decoration: underline;
+    }
+
+ /*------------ icons colors -------*/ 
+
+.icon-folder {
+    fill: #caa21e;
+}
+
+.icon-document {
+    fill: #424882;
+}
+
+.icon-audio {
+     fill: #2b9cbe; 
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+.icon-phone {
+     fill: #1c8e9a; 
+}
+
+.icon-user {
+    fill: #5b5bdd;
+    width: 50px;
+     height: 60px; 
+    width: 100%;
+    aspect-ratio: 5/6;
+    aspect-ratio: 5/5;
+}
+
+.icon-location {
+     fill: #d23c3c; 
+    width: 60px;
+     height: 70px; 
+    width: 100%;
+    aspect-ratio: 6/7;
+     aspect-ratio: 6/6; 
+}
+
+.icon-email {
+     fill: #935e08; 
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+.icon-url {
+    fill: #0296ff;
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+.icon-bank {
+     fill: green; 
+    width: 105%;
+    aspect-ratio: 1/1;
+}
+
+.icon-others {
+    fill: #d67d1b;
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+.w-80{
+    width: 80% !important;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+/*//for designing watchlist card*/
+
+
+:root {
+    /*--caseTypeColor: #d68866;*/
+    --TypeColor: #7286e1;
+    /* --teamTypeColor: #5171ff;*/
+    --totalColor: #d68866;
+    /*--teamTypeColor: #7286e1;*/
+    --matchColor: #5171ff;
+    --matchdefaultColor: #ebedf7;
+    --card-bg-color: white;
+}
+
+.watchlist-link {
+    border-left-style: solid;
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 10px 10px 25px #ccc;
+    transition : all .1s ease-in-out;
+/*    box-sizing: content-box;*/
+}
+
+.watchlist-link:hover {
+    box-shadow: 10px 20px 25px #ccc;
+}
+
+    .watchlist-link.active {
+/*        border: 2px solid #0a52f2;*/
+        box-shadow: 5px 5px 15px #ccc;
+        transition: all .1s ease-in-out;
+    }
+
+    .watchlist-link.totalData.active {
+        border: 4px solid #3479b3;
+    }
+
+    .watchlist-link.matchedData.active {
+        border: 4px solid #c45353;
+    }
+
+    .watchlist-link.unmatchedData.active {
+        border: 4px solid #3d9c65;
+    }
+
+
+        [data-bs-theme="dark"] {
+        }
+
+.totalIcon {
+    /* background: #8280ff;*/
+    background: var(--first-color-light);
+    width: 55px;
+    height: 55px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0px;
+}
+.linkdata {
+    background: #ebedf7;
+}
+.matchdata {
+    background:  var(--totalColor);
+}
+
+    .cartSec .card-texts {
+        font-size: 25px !important;
+    }
+
+td.e-templatecell a.dropdown-item:hover{
+    color: white !important;
+}
+
+
+
+[data-bs-theme="dark"] {
+    /*    .statenentCard 
+
+{
+    background-color: rgb(39, 49, 66) !important;
+}*/
+
+
+    .watchlist-link
+    {
+        background-color: rgb(39, 49, 66);
+        box-shadow: 10px 10px 25px #222;
+    }
+
+    .watchlist-link p:first-child {
+        color: white;
+    }
+
+    .watchlist-link:hover {
+        box-shadow: 10px 20px 20px #28282e;
+    }
+
+    .watchlist-link.active {
+    /*    border: 1px solid white;*/
+        box-shadow: 5px 5px 15px #28282e;
+    
+    }
+
+
+    td a.ShowCountAnumber:hover span {
+        color: #000 !important;
+    }
+
+    .watchlist-link.totalData.active {
+        border: 4px solid #4299e1;
+    }
+
+    .watchlist-link.matchedData.active {
+        border: 4px solid #f56565;
+    }
+
+    .watchlist-link.unmatchedData.active {
+        border: 4px solid #48bb78;
+    }
+
+}
+
+.btn-update.btn_style {
+    background-color: #0d6efd; /* Bootstrap primary */
+    color: white;
+    border: 1px solid #0d6efd;
+}
+
+
+/*table*/
+.e-control.e-grid {
+    border: 1px solid gray !important;
+    border-radius: 7px;
+    overflow: hidden;
+    box-shadow: none;
+    padding: 0;
+}
+
+    .e-control.e-grid > div {
+        padding: 0;  
+    }
+
+.e-dlg-content .e-cc-contentdiv {
+    margin-top: 10px;
+}
+
+
+
+[data-bs-theme="dark"] {
+    #searchTypeDropdown::placeholder
+
+{
+    color: #ffff;
+}
+

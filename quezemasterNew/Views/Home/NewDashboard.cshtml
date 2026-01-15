@@ -1,0 +1,486 @@
+﻿<head>
+	<style>
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+		}
+	
+		#image{
+			position: relative;
+		}
+
+		.topleft {
+			position: absolute;
+			top:210px;
+			left:26px;
+			font-size: 18px;
+			color:white;
+			width:50%;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+
+		.container-fluid {
+			/* margin-top: 15px; */
+			padding:10px;
+			position: relative;
+		}
+
+		h2{
+			padding:20px;
+			text-align:center;
+			font-weight:1600px;
+		}
+
+		.container{
+
+			padding-top:20px;
+		}
+
+		.card-img{
+			height:10%;
+
+		}
+
+		h5{
+			font-family: Copperplate;
+			font-size: 27px;
+			font-weight: bold;
+		}
+
+		.card-text{
+			font-family: Georgia;
+		}
+		
+			@* Here my form CSS code is written... *@
+
+
+		h2 {
+			margin-top: 4px;
+			font-family: Arial Black;
+			text-align: center;
+			padding: 10px;
+			color: darkblue;
+			box-shadow: 3px 3px 3px 3px lightblue;
+			
+		}
+
+		.form {
+			padding: 30px;
+			justify-content: center;
+		}
+
+		.form-group {
+			padding: 7px;
+		}
+
+		.checkbox {
+			padding: 10px;
+		}
+
+		button {
+			padding: 40px;
+			margin-left: 10px;
+		}
+
+		/* Here is  my new page style sheet stated */
+
+		#cardshadow{
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		}
+
+		.card{
+			
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		
+		}
+
+		h1{
+		text-align:center;
+		font-family: Copperplate;
+		background-color:royalblue;
+		color:white;
+		font-size:28px;
+			
+		
+		}
+
+		.card-text {
+			font-family: Georgia;
+		}
+
+		/* 🔹 Night light effect (for QUIZE MASTER) */
+		@@keyframes lights {
+			0%
+
+		{
+			color: hsl(230, 40%, 80%);
+			text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.2), 0 0 0.125em hsla(320, 100%, 60%, 0.3);
+		}
+
+		30% {
+			color: hsl(230, 80%, 90%);
+			text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.5), 0 0 0.125em hsla(320, 100%, 60%, 0.5);
+		}
+
+		40% {
+			color: hsl(230, 100%, 95%);
+			text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.6), 0 0 0.125em hsla(320, 100%, 90%, 0.5);
+		}
+
+		70%, 100% {
+			color: hsl(230, 80%, 90%);
+			text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.4), 0 0 0.125em hsla(320, 100%, 60%, 0.4);
+		}
+
+		}
+
+		/* 🔹 Typing effect (for h4) */
+		@@keyframes typing {
+			0% {
+				width: 0ch;
+			}
+
+			40% {
+				width: 28ch; /* number of characters in your text */
+			}
+
+			60% {
+				width: 28ch;
+			}
+
+			100% {
+				width: 0ch;
+			}
+		}
+
+		@@keyframes blink {
+			50% {
+				border-color: transparent;
+			}
+		}
+
+			/* 🔹 Night glow on QUIZE MASTER */
+			.topleft h3 {
+				margin: 0;
+				font-family: Raleway, sans-serif;
+				font-weight: 600;
+				font-size: 2.5rem;
+				animation: lights 5s 750ms linear infinite;
+				text-transform: uppercase;
+			}
+
+			/* 🔹 Typing animation on the sub-heading */
+/* 			.topleft h4 {
+				position: relative;
+				display: inline-block;
+				overflow: hidden;
+				border-right: 2px solid mediumvioletred;
+				white-space: nowrap;
+				margin: 8px 0;
+				letter-spacing: 2px;
+				font-family: 'Roboto', sans-serif;
+				font-weight: 500;
+				color: mediumvioletred;
+				animation: typing 8s steps(30, end) infinite, blink 0.7s step-end infinite;
+			} */
+
+
+
+
+		.H4FontStyle {
+  position: relative;
+  display: inline-block;
+  color: transparent;
+  font-size: 24px;
+  letter-spacing: 2px;
+  overflow: hidden;
+  border-right: 2px solid mediumvioletred;
+  white-space: nowrap;
+  animation: typing 4s steps(28) infinite, blink 0.6s step-end infinite alternate;
+}
+			/* Add the visible text via pseudo-element */
+		.H4FontStyle::before {
+				content: "Take your learning with you!";
+				position: absolute;
+				left: 0;
+				top: 0;
+				color: mediumvioletred;
+			}
+		/* Optional styling for paragraph */
+			.topleft p {
+				color: #f0f0f0;
+				font-size: 16px;
+				line-height: 1.6;
+				margin-top: 12px;
+			}
+	</style>
+</head>
+<body>
+	
+	<div class="container-fluid m-0 p-0" >
+
+		<img id="image" src="~/newfolder/pngtree-minimalist-illustration-a-3d-rendered-clock-and-books-image_3609905.jpg" />
+		
+		<div class="topleft" >
+		
+		
+			
+		    <h3>QUIZE MASTER</h3> 
+			<h4 class="H4FontStyle">Take your learning with you!</h4>
+			<P class="ABC">Grammar lessons with exercises and clear explanations, grammar charts, reading and listening tests with transcriptions, writing lessons, instant marking, answer feedback, and much more!</P>
+
+		</div>
+		
+		<h2>My All Exam Test Series</h2>
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="card">
+					<img src="~/newfolder/gap.jpg" />
+					
+					<div class="card-body">
+						<h5 class="card-title">General Aptitude</h5>
+						<p class="card-text">General Aptitude is an integral part of many competitive examinations like SSC CGL, UPSC, etc. and aims to assess a candidate’s abilities to resolve problems and reasoning-related calculations. 
+							Through this test series, we are bringing you various General Aptitude topics as well as practice questions.</p>
+						<a asp-action="GoforTestPage" asp-controller="Home" asp-route-TypeTest="General Aptitude" class="btn btn-primary">Go For Test</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="card">
+					
+					<img src="~/newfolder/istockphoto-511281043-612x612.jpg" />
+				
+
+					<div class="card-body">
+						<h5 class="card-title">English</h5>
+						<p class="card-text">
+							 
+							To ensure that they had a complete round of preparation and to understand the level of the exam's difficulty, candidates must take a series of mock tests. Candidates can prepare effectively by assessing the format and types of questions used in previous exams through the PYPs.
+						</p>
+						<a asp-action="GoforTestPage" asp-controller="Home" asp-route-TypeTest="EnglishTGT" class="btn btn-primary">Go For Test</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-4">
+				<div class="card">
+					<img src="~/newfolder/engbpsc.jpg" />
+					
+					
+					<div class="card-body">
+						<h5 class="card-title">English(BPSC)</h5>
+						<p class="card-text"> These books are designed to provide aspirants with a comprehensive understanding of the exam pattern and question types. 
+							Solving practice sets helps candidates to assess their strengths and weaknesses, identify the areas that require improvement, and work on them accordingly. </p>
+						<a asp-action="GoforTestPage" asp-controller="Home" asp-route-TypeTest="English (BPSC)" class="btn btn-primary">Go For Test</a>
+					</div>
+				</div>
+			</div>
+
+
+
+		</div>
+	</div>
+
+
+	<div class="container-fluid" style="">
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="card">
+					
+					
+					<img src="~/newfolder/gk.png" />
+					<div class="card-body">
+						<h5 class="card-title">GK</h5>
+						<p class="card-text">For a candidate who is taking a Static general knowledge mock test, the importance remains in possibilities of what they achieve or how much progress they make after taking the mock test. 
+							The whole process of static general knowledge mock tests designed to provide the best educational support with ease of access to different subject-wise tests. </p>
+						<a asp-action="GoforTestPage" asp-controller="Home" asp-route-TypeTest="GK" class="btn btn-primary">Go For Test</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="card">
+					
+					<img src="~/newfolder/61e7ef6d0cf26c86b99caea2_scaled_cover.jpg" />
+					<div class="card-body">
+						<h5 class="card-title">Class 9</h5>
+						<p class="card-text">Practice tests can be extremely helpful in familiarising students with the format and question types they can expect on the actual tests. 
+							By providing practice tests for students from Year 4 to Year 11, Edutest caters to a wide range of age groups and educational levels, which can be beneficial for students at different stages of their academic journey.</p>
+						<a asp-action="GoforTestPage" asp-controller="Home" asp-route-TypeTest="CLass9" class="btn btn-primary">Go For Test</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-4">
+				<div class="card">
+					
+					<img src="~/newfolder/class 10..png" />
+					<div class="card-body">
+						<h5 class="card-title">Class 10</h5>
+						<p class="card-text">Practice tests can be extremely helpful in familiarising students with the format and question types they can expect on the actual tests.
+							By providing practice tests for students from Year 4 to Year 11, Edutest caters to a wide range of age groups and educational levels, which can be beneficial for students at different stages of their academic journey.</p>
+						<a asp-action="GoforTestPage" asp-controller="Home" asp-route-TypeTest="CLass10" class="btn btn-primary">Go For Test</a>
+					</div>
+				</div>
+			</div>
+
+
+
+		</div>
+	</div>
+
+	<div class="container-fluid" style="">
+
+
+
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="card">
+					
+					<img src="~/newfolder/class 11..png" />
+					<div class="card-body">
+						<h5 class="card-title">Class 11</h5>
+						<p class="card-text">Practice tests can be extremely helpful in familiarising students with the format and question types they can expect on the actual tests. 
+							By providing practice tests for students from Year 4 to Year 11, Edutest caters to a wide range of age groups and educational levels, which can be beneficial for students at different stages of their academic journey.</p>
+						<a asp-action="GoforTestPage" asp-controller="Home" asp-route-TypeTest="CLass11" class="btn btn-primary">Go For Test</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="card">
+					
+					<img src="~/newfolder/class 12..png" />
+					<div class="card-body">
+						<h5 class="card-title">Class 12</h5>
+						<p class="card-text">Practice tests can be extremely helpful in familiarising students with the format and question types they can expect on the actual tests. 
+							By providing practice tests for students from Year 4 to Year 11, Edutest caters to a wide range of age groups and educational levels, which can be beneficial for students at different stages of their academic journey.</p>
+						<a asp-action="GoforTestPage" asp-controller="Home" asp-route-TypeTest="CLass12" class="btn btn-primary">Go For Test</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-4">
+				<div class="card">
+					
+					<img src="~/newfolder/download (2).jpeg" />
+					
+					<div class="card-body">
+						<h5 class="card-title">Academic</h5>
+						<p class="card-text">Practice tests can be extremely helpful in familiarising students with the format and question types they can expect on the actual tests. 
+							By providing practice tests for students from Year 4 to Year 11, Edutest caters to a wide range of age groups and educational levels, which can be beneficial for students at different stages of their academic journey.</p>
+						<a asp-action="GoforTestPage" asp-controller="Home" asp-route-TypeTest="Academic" class="btn btn-primary">Go For Test</a>
+					</div>
+				</div>
+			</div>
+
+
+
+		</div>
+	</div>
+	<hr />
+	
+	<div class="container">
+		<div class="row">
+			<div id="aboutus" class="col-sm-6" >
+				<h3>About us..</h3>
+				<p>
+					Students who prepare for tough competitive exams study a lot before exams. However, preparing alone doesn’t help them to attempt the exam confidently. On the contrary,
+					they will be nervous and doubt their potential during exam times. Teachers and students can avoid such frustrations by practicing consistently and boosting their self-confidence.
+
+				</p>
+				<p>There are a lot of websites nowadays that provide online test series comprising unit-wise and entire syllabus tests.
+					This test series consists of questions based on the previous year’s question papers and includes different levels of difficulties. </p>
+				<h4>Benefits of practicing  </h4>
+				<p>There are numerous benefits of practicing test series questions before taking the final exam. Let us look at some of them. </p>
+				<ol>
+					<li>To rectify errors</li>
+					<li>Enhances speed </li>
+					<li>Helps to avoid exam fear</li>
+					<li>Gives better practice</li>
+					<li>Increases confidence</li>
+					<li>Helps to manage time</li>
+					<li>Helps to analyze themselves </li>
+					
+				</ol> 
+
+			</div>
+			<div id="inquiryform" class="col-sm-6">
+				<div class="card">
+					<div class="form">
+						<h2>Enquiry Form</h2>
+						<div class="form-group">
+							<label for="name">Name</label>
+							<input type="text" class="form-control" id="name" placeholder="Enter Your Name">
+						</div>
+						<div class="form-group">
+							<label for="email">Email Id</label>
+							<input type="email" class="form-control" id="email" placeholder="Enter email">
+						</div>
+						<div class="form-group">
+							<label for="number">Mobile Number</label>
+							<input type="number" class="form-control" id="mob" placeholder="Enter Your Number">
+						</div>
+						<div class="form-group">
+							<label for="pwd">Massage</label>
+							<textarea class="form-control" rows="3" id="Messagecomment"></textarea>
+						</div>
+						<button type="submit" class="btn btn-primary"id="SubmitbuttonID" >Submit</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	
+
+
+
+	@* HERE IS MY NEW PAGE IS STARTED *@
+	
+
+	
+	  
+
+	
+
+</body>
+
+<script>
+
+var $ = jQuery.noConflict();
+$("#SubmitbuttonID").click(function () {
+    var Name = $("#name").val();
+    var Email = $("#email").val();
+    var Mobile = $("#mob").val();
+    var Message = $("#Messagecomment").val();
+
+    var data = {
+        Name: Name,
+        Email: Email,
+        Mobile: Mobile,
+        Message: Message
+    }
+    
+	$.ajax({
+		type: "POST",
+		url: "/Home/EnquiryFormNew",
+		data: { data: JSON.stringify(data) },
+        success: function (response) {
+            
+			location.reload(true);
+
+			var Name = $("#name").html('');
+    var Email = $("#email").html('');
+    var Mobile = $("#mob").html('');
+    var Message = $("#Messagecomment").html('');
+
+        }
+    }); 
+}); 
+
+		
+
+</script>

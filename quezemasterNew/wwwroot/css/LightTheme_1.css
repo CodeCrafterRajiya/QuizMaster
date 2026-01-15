@@ -1,0 +1,300 @@
+﻿:root {
+    --alternateRowcolor: #08aa6e;
+    --dark: #1b2431;
+    --gridTablecolor: #273142;
+    --first-color-light: #fff;
+    --graytableColor: #ebedf7;
+    --bs-tertiary-bg: #f8f9fa;
+    --black-color: #000;
+}
+[data-bs-theme="light"] {
+ 
+
+/*---------------------------------------------Light theme common.css--------------------------------------------------------*/
+body{
+    background: #ebedf7 !important;
+}
+.menuLine {
+    fill: var(--black-color) !important;
+}
+
+.toggleMenuIc {
+    fill: #000 !important;
+}
+
+.card {
+    background: var(--first-color-light);
+}
+
+.table > :not(caption) > * > * {
+    background-color: var(--first-color-light);
+}
+
+.page-link {
+    background-color: var(--first-color-light);
+}
+
+    .active > .page-link,
+    .page-link.active {
+        z-index: 3;
+        color: var(--bs-pagination-active-color);
+        background-color: var(--bs-pagination-active-bg);
+        border-color: var(--bs-pagination-active-border-color);
+    }
+
+.profileDropdown .show {
+    background: var(--first-color-light);
+}
+
+.form-check-input {
+    --bs-form-check-bg:;
+}
+
+.form-control,
+.form-select {
+    background-color: var(--bs-tertiary-bg);
+}
+
+    .e-input, .e-input-group, .e-control-wrapper, textarea
+
+{
+    background-color: var(--first-color-light);
+    color: var(--dark-light);
+}
+
+.form-check-input {
+    --bs-form-check-bg: var(--first-color-light);
+}
+
+/*---------------------------------------------Light theme---dashboard--------------------------------------------------------*/
+
+.dTable .form-select {
+    background-color: var(--first-color-light);
+    width: 100px;
+}
+
+.graphCard .dropdown-menu.show a h2 {
+    background-color: var(--first-color-light) !important;
+}
+
+.UserProfilePicture {
+    border: 2px dashed;
+    color: #00000073;
+    border-radius: 12px;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.LoginLogo {
+    width: 32vh;
+    height: 9vh;
+    background: url('/image/Intstack logo.svg') no-repeat center center;
+    background-size: cover; /* Ensure the image scales to cover the div */
+}
+/*---------new dashboard css pie chart css---*/
+.chartcontainer {
+    border: 3px solid #2a3f54;
+    border-radius: 20px;
+    height: 100%;
+    width: 50%;
+    margin-right: 5px;
+    margin-left: 5px;
+    background: #F6F9FF;
+}
+
+.Mainchartcontainer {
+    height: 40vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chartcontainer:first-child {
+    margin-left: 0;
+}
+
+.chartcontainer:last-child {
+    margin-right: 0;
+}
+
+/*-------Histogram graph css----------*/
+
+.ShowGraphDatamainDivContainer {
+    width: 100%;
+    height: calc(55vh - 7.6vh);
+    background: #F6F9FF;
+}
+
+
+.tooltip-box-chardatatable {
+    position: relative;
+    display: inline-block;
+    padding: 3px 9px;
+    background-color: #2563eb;
+    color: white;
+    font-size: 12px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+    /* Large Tooltip Arrow */
+    .tooltip-box-chardatatable::after {
+        content: "";
+        position: absolute;
+        bottom: -16px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 10px;
+        border-style: solid;
+        border-color: #2563eb transparent transparent transparent;
+    }
+
+
+    /*Register confirmation*/
+.confirmation-container {
+    text-align: center;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    color: black;
+}
+
+.icon-container {
+    font-size: 50px;
+    color: #007bff;
+}
+.text-muted {
+    --bs-text-opacity: 1;
+    color: #00000073 !important;
+}
+
+
+/*Selected cell css */
+.e-grid td.e-cellselectionbackground {
+    background: #919090 !important;
+    color: #000 !important;
+}
+
+/*---------------------------------------------Light theme--sign-in.css---------------------------------------------------------*/
+.iputIcon {
+    background: var(--first-color-light);
+}
+
+.labelclass::after {
+    background-color: var(--first-color-light) !important;
+}
+
+.form-check-input {
+    --bs-form-check-bg: var(--first-color-light);
+}
+/*Arati singh modal change color-profile content light mode*/
+.customeModel .modal-content {
+    background-color: var(--first-color-light);
+}
+
+.form-control {
+    background: var(--bs-tertiary-bg);
+}
+/*--grid border color--*/
+
+.e-grid .e-rowcell, .e-grid .e-groupcaption, .e-grid .e-indentcell, .e-grid .e-recordplusexpand, .e-grid .e-recordpluscollapse, .e-grid .e-rowdragdropcell, .e-grid .e-detailrowcollapse, .e-grid .e-detailrowexpand, .e-grid .e-detailindentcell, .e-grid .e-detailcell {
+   border-color:#808080; 
+}
+
+/*Start Import section tabel css added by Rajiya Bano*/
+.table .error-row {
+    background-color: #FFD6D7 !important;
+}
+
+.table .success-row {
+    background-color: #e6ffe6 !important;
+}
+
+.displayfilter {
+    background-color: #cadffa !important;
+    border-radius: 25px;
+    border: 2px solid #2e8bc0 !important;
+    color: #05223c !important;
+    font-weight: 600;
+}
+.FilterIndicatorBtnColor {
+    width: 0.3em;
+    height: 0.3em;
+    position: relative;
+    top: -2px;
+    left: 4px;
+}
+.e-grid td.e-rowcell.differentValue {
+    color: red;
+}
+
+.custom-tooltip {
+    background-color: #333; /* Tooltip background */
+    color: #fff; /* Tooltip text color */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding around text */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    margin-top: -70px;
+    margin-left: 60px;
+}
+/*End Import section tabel css */
+
+.drpActionButton {
+    border: 1px solid #6076ff !important;
+}
+
+    .drpActionButton:hover {
+        background: linear-gradient(90deg, rgba(10,117,245,1) 0%, rgba(154,0,255,1) 100%) !important;
+        color: white;
+    }
+
+/*  hover style dropdown item  */
+.btn-update:hover {
+    background: linear-gradient(90deg, rgba(10,117,245,1) 0%, rgba(154,0,255,1) 100%) !important;
+    border-bottom: solid 1px #3D3C3E;
+    color: white;
+}
+/* Disabled state for the anchor tag inside the list item */
+.disabledlink {
+    pointer-events: none; /* Disables click interaction */
+    opacity: 0.5; /* Visual cue to show the link is disabled */
+}
+
+/*--------------------------Notification css-----------------------------*/
+
+.InformationBlack {
+    color: #000;
+    font-weight: 500;
+}
+
+.WarningYellow {
+    color: #c29519;
+    font-weight: 500;
+}
+
+.ErrorRed {
+    color: red;
+}
+/*-------------------case management----------------------------*/
+.card-body .CaseRightH4 {
+    color: var(--black-color)!important;
+}
+label[for="Input_PhoneNumber"]::after, label[for="Input_NewEmail"]::after {
+    background-color: transparent !important;
+}
+
+/*Start For boosttrap tooltip*/
+.tooltip-inner {
+    color: white !important;
+    background-color: black !important;
+}
+/*End For boosttrap tooltip*/
+}
+
+
+ /* by harsh panjwani */
+Roleviewli .btn-update:hover {
+    background: linear-gradient(90deg, rgba(10,117,245,1) 0%, rgba(154,0,255,1) 100%) !important;
+}

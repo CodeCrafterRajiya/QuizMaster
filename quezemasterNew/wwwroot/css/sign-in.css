@@ -1,0 +1,369 @@
+
+
+/*Add modal css input sign-in css stop show modal input login page  27-07-2024 */
+
+:root {
+    --header-height: 3rem;
+    --nav-width: 80px;
+    --first-color: #2a3f54;
+    --active-hover: #2a3f54;
+    --first-color-light: #fff;
+    --white-color: #257ee8;
+    --body-font: "Nunito", sans-serif;
+    --normal-font-size: 1rem;
+    --z-fixed: 100;
+    --main-blut: #257ee8;
+    --orange: #ffa756;
+    --green: #08aa6e;
+    --dark: #1b2431;
+    --secondary-dark: #273142;
+    --dark-light: #323d4e;
+    --stroke: #313d4f;
+    --stroke-light: rgba(198, 198, 198, 0.3);
+    --stroke-lighter: rgba(207, 207, 207, 0.11);
+    /* comment by arati singh*/
+    /* --bs-body-bg: #273142;*/
+}
+
+html,
+body {
+    /*comment by arati singh 19-08-2024*/
+    /*  height: 100%;*/
+}
+/* for apply animation on cutome alert 10-08-2024 rajiya bano*/
+.custom-alert {
+    display: none;
+    background-color: #f443368f;
+    color: #fff;
+    padding: 7px;
+    border-radius: 5px;
+    z-index: 9999;
+    width: auto;
+    max-width: 45%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    margin-top: -15px;
+    position: fixed;
+    right: -100%;
+    top: 82px;
+    transition: right 1s ease-in-out;
+}
+
+    .custom-alert.show {
+        display: block;
+        right: 20px;
+    }
+
+    .custom-alert .alert-text {
+        font-size: 16px;
+        margin-left: 30px;
+    }
+
+    .custom-alert .close-btn {
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        background: none;
+        border: none;
+        color: #fff;
+        float: right;
+        padding-left: 20px;
+        padding-right: 5px;
+    }
+
+
+
+.custom-alert1 {
+    opacity: 0; /* Start with opacity 0 */
+    transform: translateX(100%); /* Start off-screen to the right */
+    background-color: #f443368f;
+    color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+    z-index: 9999;
+    width: auto; /* Allow width to adjust based on content */
+    max-width: 45%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    margin-top: -15px;
+    position: fixed;
+    right: 0px;
+    top: 82px;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Transition for opacity and transform */
+}
+
+    .custom-alert1.show {
+        opacity: 1; /* Fade in */
+        transform: translateX(0); /* Move to original position */
+    }
+
+    .custom-alert1 .alert-text {
+        font-size: 16px;
+        margin-left: 30px;
+    }
+
+    .custom-alert1 .close-btn {
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        background: none;
+        border: none;
+        color: #fff;
+        float: right;
+        padding-left: 20px;
+        padding-right: 5px;
+    }
+
+.form-signin {
+    max-width: 330px;
+    padding: 1rem;
+}
+
+
+.customeModel .modal-content {
+    background-color: var(--first-color-light);
+    border-radius: 20px;
+}
+
+.customeModel .modal-header {
+    border: none;
+    padding: 24px 30px 0px 30px;
+}
+
+.modal-backdrop {
+    background: #000a2b;
+    opacity: 0.75 !important;
+}
+
+.customeModel .modal-header .btn-close {
+    box-shadow: 0px 0px 60px #000;
+    border-radius: 50px;
+    --bs-btn-close-bg: var(--bs-btn-close-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 40px rgba(12, 30, 91, 0.4);
+    position: absolute;
+    opacity: 1;
+    right: 0;
+    top: 0;
+    background: #fff;
+    cursor: pointer;
+}
+
+.modal-title {
+    font-size: 24px;
+}
+
+.modal-body {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.customeModel .modal-footer {
+    border: none;
+    padding: 24px 30px;
+}
+
+.signInCard {
+    box-shadow: 0px 2px 18px #00000029;
+    border-radius: 16px;
+    border: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    .signInCard {
+        box-shadow: 0px 2px 18px #000;
+    }
+
+    .iputIcon {
+        fill: rgba(255, 255, 255, 0.42);
+    }
+}
+
+
+
+.loginBg {
+    background-color:#85219C;
+    width: 100%;
+    border-radius: 16px;
+    background: url("../image/Background Image (Login Page)_ImgID1.png") no-repeat center center;
+    /* background: url("../image/loginBg.png") no-repeat center center;*/
+    object-fit: contain;
+    /*background-size: 100%;*/
+    height: 100%;
+    padding-left: 70px !important;
+    /* height: 100%;
+  background: hsla(268, 95%, 50%, 1);
+  background: linear-gradient(160deg, hsla(268, 95%, 50%, 1) 0%, hsla(213, 81%, 53%, 1) 72%);
+  background: -moz-linear-gradient(160deg, hsla(268, 95%, 50%, 1) 0%, hsla(213, 81%, 53%, 1) 72%);
+  background: -webkit-linear-gradient(160deg, hsla(268, 95%, 50%, 1) 0%, hsla(213, 81%, 53%, 1) 72%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#7607F9", endColorstr="#257EE8", GradientType=1 ); */
+}
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.light {
+    display: none;
+}
+
+.f16 {
+    font-size: 16px;
+}
+
+.iputIcon {
+    top: 20px;
+    left: 24px;
+    fill: rgba(0, 0, 0, 0.42);
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .loginBg {
+        min-height: 340px;
+        padding-left: 40px !important;
+    }
+
+    .signInCard {
+        border-radius: 0;
+    }
+}
+
+.b-example-divider {
+    width: 100%;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: solid rgba(0, 0, 0, 0.15);
+    border-width: 1px 0;
+    box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1), inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+}
+
+.b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+}
+
+.bi {
+    vertical-align: -0.125em;
+    fill: currentColor;
+}
+
+.nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+}
+
+    .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+.btn-bd-primary {
+    --bd-violet-bg: #712cf9;
+    --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: var(--bd-violet-bg);
+    --bs-btn-border-color: var(--bd-violet-bg);
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: #6528e0;
+    --bs-btn-hover-border-color: #6528e0;
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: #5a23c8;
+    --bs-btn-active-border-color: #5a23c8;
+}
+
+.bd-mode-toggle {
+    z-index: 1500;
+}
+
+    .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+    }
+
+.loginInput {
+    border-radius: 50px;
+    padding-left: 22px;
+    padding-right: 20px;
+}
+
+.labelclass {
+    left: 34px !important;
+    position: relative;
+}
+
+.btn-primary {
+    background: hsla(268, 95%, 50%, 1);
+    background: linear-gradient( 160deg, hsla(268, 95%, 50%, 1) 0%, hsla(213, 81%, 53%, 1) 72% );
+    background: -moz-linear-gradient( 160deg, hsla(268, 95%, 50%, 1) 0%, hsla(213, 81%, 53%, 1) 72% );
+    background: -webkit-linear-gradient( 160deg, hsla(268, 95%, 50%, 1) 0%, hsla(213, 81%, 53%, 1) 72% );
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#7607F9", endColorstr="#257EE8", GradientType=1 );
+}
+
+.forgotPass {
+    text-decoration: none;
+    padding-top: 4px !important;
+    display: inline-block;
+}
+
+.backHome {
+    color: var(--bs-secondary-color);
+}
+/*change margin left value 15px*/
+.seperator {
+    display: inline-block;
+    margin-left: 15px;
+    width: 1px;
+    height: 30px;
+    background: var(--bs-border-color);
+}
+
+.loginVline {
+    height: 2px;
+    width: 116px;
+    background: #a4b9ff;
+    margin-bottom: 10px;
+}
+
+
+
+.modal_footer_ip_address{
+    width:fit-content;
+}

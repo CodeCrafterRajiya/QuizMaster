@@ -1,0 +1,215 @@
+﻿@model IEnumerable<quezemasterNew.Models.TGTPGTLT.TGTPGTLTViewModel>
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<!--Show alert message using bootstrp sweet modal--->
+<div class="alert  alert-dismissible  custom-alert" id="customPGTMessage" role="alert">
+    <span class="alert-text"></span>
+    <span class="close-btn float-end" id="closeBtn" aria-label="Close">&times;</span>
+</div>
+
+<div class="table-responsive">
+<table class="table table-bordered table-hover text-center average-font-size" border="1" id="PGTConfirmTable">
+ @{
+        <thead>
+            <tr>
+                <th>
+                    <label>#</label>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.QuezName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ClassName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SubjectName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Remark)
+                </th>
+
+                <th>Action</th>
+            </tr>
+        </thead>
+        int i = 1;
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td data-label="#">
+                        @Html.Label("" + i++.ToString())
+                    </td>
+                    <td data-label="Quez Name">
+                        @Html.DisplayFor(modelItem => item.QuezName)
+                    </td>
+                    <td data-label="Class Name">
+                        @Html.DisplayFor(modelItem => item.ClassName)
+                    </td>
+                    <td data-label="Subject Name">
+                        @Html.DisplayFor(modelItem => item.SubjectName)
+                    </td>
+                    <td data-label="Remark">
+                        @Html.DisplayFor(modelItem => item.Remark)
+                    </td>
+                    <td>
+                        @*     @Html.ActionLink("Add Question", "AddQuestionPGT", new { id = item.Id }) |
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }) *@
+
+                        <div class="dropdown text-center average-font-size">
+                            <span class="btn-sm" data-bs-toggle="dropdown" aria-expanded="false" style="cursor:pointer;">
+                                <svg width="18" height="18" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                    <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                </svg>
+                            </span>
+
+                            <ul class="dropdown-menu bg-body p-0">
+                                <li>
+                                    <a asp-action="AddQuestionPGT" asp-controller="TGTPGTLTEnglish" asp-route-id="@item.Id" class="dropdown-item p-2 ps-3   GneralApptitudeUPPQuestionPaper">
+                                        Question
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <span class="dropdown-item p-2 ps-3 EditPGTDetails" data-id="@item.Id">
+                                        Edit
+                                    </span>
+                                </li>
+
+                                <li>
+                                    <span class="dropdown-item p-2 ps-3 text-danger btn-drop-delete DeletePGTDetails" data-id="@item.Id">
+                                        Delete
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+ }
+</table>
+
+</div>
+
+ <script>
+      var $jq = jQuery.noConflict();
+
+    $jq(document).ready(function () {
+ 
+
+          var errorMessage = '@ViewData["PGTResult"]';
+        console.log("msg :"+errorMessage);
+        if(errorMessage!=null && errorMessage!="")
+        {
+           if(errorMessage ==="SaveSuccess")
+              showMessageToUser('customPGTMessage', "Your data has been successfully saved.", "success");
+           else if(errorMessage ==="SaveError")
+              showMessageToUser('customPGTMessage',"We apologize, but an error occurred while saving the data.", "error");
+           else if(errorMessage==="UpdateSuccess")
+                showMessageToUser('customPGTMessage', "Your data has been successfully update.", "success");
+           else if(errorMessage ==="UpdateError")
+              showMessageToUser('customPGTMessage',"We apologize, but an error occurred while updating the data.", "error");
+           else if(errorMessage ==="DeleteSuccess")
+               showMessageToUser('customPGTMessage',"Your data has been successfully deleted.", "success");
+           else if(errorMessage ==="DeleteError")
+              showMessageToUser('customPGTMessage',"We apologize, but an error occurred while deleting the data.", "error");
+        }
+
+
+
+        $jq('#PGTConfirmTable').on('click', '.DeletePGTDetails', function () {
+            // Disable the button to prevent multiple clicks
+            $jq(this).prop('disabled', true);
+            if (!confirm("Are you sure you want to delete this?")) {
+                // Re-enable the button if the user cancels the action
+                $jq(this).prop('disabled', false);
+                return false;
+            }
+            else {
+           // Get the ID from clicked button
+            var id = $jq(this).data('id');
+           console.log("Clicked ID:", id);
+
+                $jq.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("DeletePGTDetails", "TGTPGTLTEnglish")',
+                    data: { PGTId: id },
+                    success: function (data) {
+                        if (data.length > 0) {
+                            // Retrieve the ViewData value and ensure it's a string
+                            $jq("#PGTDetailsList").html('');
+                            $jq("#PGTDetailsList").html(data);
+                        }
+                        // Re-enable the button after the process is complete
+                        $jq('.DeletePGTDetails').prop('disabled', false);
+                    },
+                    error: function (error) {
+                        console.log(error);
+
+                        showMessageToUser('customTGTPGTMessage',"We apologize, but an error occurred while deleting the data.", "error");
+
+                        // Re-enable the button if an error occurs
+                        $jq('.DeletePGTDetails').prop('disabled', false);
+                    }
+
+                });
+
+            }
+        });
+
+
+
+        //code for Edit data
+        $jq('#PGTConfirmTable').on('click', '.EditPGTDetails', function () {
+        // Get the ID from clicked button
+          var id = $jq(this).data('id');
+          console.log("Clicked ID:", id);
+
+          // Disable the button to prevent multiple clicks
+          $jq(this).prop('disabled', true);
+    
+            $jq.ajax({
+                type: 'POST',
+                url: '@Url.Action("EditPGTDetailsData", "TGTPGTLTEnglish")',
+                data: { PGTId: id },
+                success: function (data) {
+                    if (data.length > 0) {
+                        $jq("#PGTDetailsForm").html('');
+                        $jq("#PGTDetailsForm").replaceWith(data);
+                  
+                    }
+                    // Re-enable the button after the process is complete
+                    $jq('.EditPGTDetails').prop('disabled', false);
+                },
+                error: function (error) {
+                    console.log(error);
+                    // Re-enable the button if an error occurs
+                    $jq('.EditPGTDetails').prop('disabled', false);
+                }
+
+            });
+
+        });
+
+
+
+
+
+         $jq('#customPGTMessage').on('click', '#closeBtn', function () {
+            setupAlertClose('customPGTMessage', 1000);
+         });
+
+
+
+    });
+
+
+
+
+ </script>
