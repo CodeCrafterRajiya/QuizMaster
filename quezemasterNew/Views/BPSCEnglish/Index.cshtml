@@ -1,18 +1,18 @@
-﻿@* @model quezemasterNew.Models.Class9.Class9ViewModel *@
-@model IEnumerable<quezemasterNew.Models.Class9.Class9ViewModel>
+﻿@model quezemasterNew.Models.Class9.Class9ViewModel
+@* @model IEnumerable<quezemasterNew.Models.Class9.Class9ViewModel> *@
 
 @{
     ViewData["Title"] = "BPSC";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<p>
+@* <p>
     <a asp-action="Create">Create New</a>
 </p>
 <h4 class="text-center">BPSC</h4>
+ *@
 
-
-@* <div class="container-fluid">
+<div class="container-fluid">
 
     <div id="BPSCForm">
         @await Component.InvokeAsync("BPSCEnglish",
@@ -26,14 +26,14 @@
         </div>
     </div>
 
-</div> *@
+</div>
 
 
 
 
 
 
-
+@* 
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -85,3 +85,4 @@
 }
     </tbody>
 </table>
+ *@

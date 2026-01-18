@@ -3,8 +3,10 @@ using Microsoft.EntityFrameworkCore;
 using quezemasterNew.CommonFunctional;
 using quezemasterNew.Models;
 using quezemasterNew.Models.Class9;
+using quezemasterNew.Models.TGTPGTLT;
 using quezemasterNew.Models.ViewModel;
 using quezemasterNew.Models.ViewModel.Test;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
@@ -147,7 +149,7 @@ namespace quezemasterNew.BussinesLogic
 
 
 
-        internal async Task SaveBPSCRecords(Class9ViewModel BPSCData)
+        internal async Task<bool> SaveBPSCRecords(Class9ViewModel BPSCData)
         {
             try
             {
@@ -176,6 +178,7 @@ namespace quezemasterNew.BussinesLogic
                             await sql_cmnd.ExecuteNonQueryAsync();
                         }
                         await conn.CloseAsync();
+                        return true;
                     }
                 }
             }
@@ -183,6 +186,7 @@ namespace quezemasterNew.BussinesLogic
             {
 
             }
+            return false;
         }
 
         internal async Task SaveBPSCClassEnglishQuestionPaper(QuestionPepar10ViewModel QuestionPaperData)
@@ -234,7 +238,7 @@ namespace quezemasterNew.BussinesLogic
                     using (SqlCommand cmd = new SqlCommand("UpdateQuestionPeparEnglishClassBPSCDetail", conn))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@Id", data.PrimaryId);
+                        cmd.Parameters.AddWithValue("@PrimaryId", data.PrimaryId);
                         cmd.Parameters.AddWithValue("@QuestionNo", data.QuestionNo);
                         cmd.Parameters.AddWithValue("@AnswerA", data.AnswerA);
                         cmd.Parameters.AddWithValue("@AnswerB", data.AnswerB);
@@ -585,6 +589,106 @@ namespace quezemasterNew.BussinesLogic
 
             }
             return LsBPSCDetails;
+        }
+
+        internal async Task<bool> UpdateBPSCEnglishQuizDetails(Class9ViewModel data)
+        {
+
+            try
+            {
+                if (data != null)
+                {
+                    using (SqlConnection sqlCon = new SqlConnection(ConnectionString.Connection))
+                    {
+
+                        sqlCon.Open();
+                        SqlCommand sql_cmnd = new SqlCommand("UpdateTblquizeIndeClassBPSCDetails", sqlCon);
+                        sql_cmnd.CommandType = CommandType.StoredProcedure;
+
+                        sql_cmnd.Parameters.AddWithValue("@Id", data.Id);
+                        sql_cmnd.Parameters.AddWithValue("@QuezName", data.QuezName);
+                        sql_cmnd.Parameters.AddWithValue("@ClassName", data.ClassName);
+                        sql_cmnd.Parameters.AddWithValue("@SubjectName", data.SubjectName);
+                        sql_cmnd.Parameters.AddWithValue("@Remark", data.Remark);
+
+                        sql_cmnd.Parameters.AddWithValue("@Remark2", "");
+                        sql_cmnd.Parameters.AddWithValue("@Remark3", "");
+                        sql_cmnd.Parameters.AddWithValue("@Remark4", "");
+                        sql_cmnd.Parameters.AddWithValue("@Remark5", "");
+
+                        sql_cmnd.ExecuteNonQuery();
+                        sqlCon.Close();
+
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle exception
+            }
+            return false;
+        }
+
+        internal async Task<Class9ViewModel> FillClassBPSCQuizDetailsUsingId(int BPSCId)
+        {
+            Class9ViewModel lsdata = new Class9ViewModel();
+            try
+            {
+                SqlConnection connection = new SqlConnection(ConnectionString.Connection);
+
+                SqlCommand command = new SqlCommand("SP_GetQuizIndexDetailsBySubject", connection);
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+
+                command.Parameters.AddWithValue("@Id", BPSCId);
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+                    lsdata.Id = Convert.ToInt32(reader["Id"]);
+                    lsdata.QuezName = reader["QuezName"].ToString();
+                    lsdata.ClassName = reader["ClassName"].ToString();
+                    lsdata.SubjectName = reader["SubjectName"].ToString();
+                    lsdata.Remark = reader["Remark"].ToString();
+
+                }
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return lsdata;
+        }
+
+        internal async Task<bool> DeleteBPSCDetails(int? BPSCId)
+        {
+            try
+            {
+                if (BPSCId > 0)
+                {
+                    using (SqlConnection conn = new SqlConnection(ConnectionString.Connection))
+                    {
+                        using (SqlCommand cmd = new SqlCommand("DeleteQuezeIndexBPSCDetails", conn))
+                        {
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@Id", BPSCId);
+
+                            await conn.OpenAsync();
+                            await cmd.ExecuteNonQueryAsync();
+                        }
+                    }
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+            return false;
         }
     }
 }

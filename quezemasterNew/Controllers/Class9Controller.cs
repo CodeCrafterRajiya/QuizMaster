@@ -21,12 +21,9 @@ namespace quezemasterNew.Controllers
 
         public async Task<IActionResult> Index(string Subject)
         {
-            List<Class9ViewModel> LsClass9QuezDetails = new List<Class9ViewModel>();
-
-            LsClass9QuezDetails = await _Class9Helper.FillClass9QuizDetailsBySubjectName(LsClass9QuezDetails: LsClass9QuezDetails, Subject: Subject);
-
-            return View(LsClass9QuezDetails);
-
+            Class9ViewModel BPSCDetails = new Class9ViewModel();
+            BPSCDetails.SubjectName = Subject;
+            return View(BPSCDetails);
         }
 
         public IActionResult Create()

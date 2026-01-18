@@ -1,13 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
+using quezemasterNew.BussinesLogic;
 using quezemasterNew.CommonFunctional;
-using quezemasterNew.Models.Class9;
-using quezemasterNew.Models.ViewModel.Test;
-using quezemasterNew.Models.ViewModel;
 using quezemasterNew.Models;
+using quezemasterNew.Models.Class9;
+using quezemasterNew.Models.TGTPGTLT;
+using quezemasterNew.Models.ViewModel;
+using quezemasterNew.Models.ViewModel.Test;
 using System.Data;
 using System.Threading.Tasks;
-using quezemasterNew.BussinesLogic;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace quezemasterNew.Controllers
 {
@@ -20,23 +22,10 @@ namespace quezemasterNew.Controllers
         public async Task<IActionResult> Index(string Subject)
         {
 
-            List<Class9ViewModel> LsCass9Records = new List<Class9ViewModel>();
-
-            try
-            {
-
-                LsCass9Records = await BPSCHelper.GetBPSCSaveDetails(LsCass9Records, SubjectName: Subject);
-
-            }
-            catch (Exception ex)
-            {
-
-            }
-
-            return View(LsCass9Records);
-            //Class9ViewModel BPSCDetails = new Class9ViewModel();
-            //BPSCDetails.SubjectName = Subject;
-            //return View(BPSCDetails);
+          
+            Class9ViewModel BPSCDetails = new Class9ViewModel();
+            BPSCDetails.SubjectName = Subject;
+            return View(BPSCDetails);
         }
 
         public IActionResult Create()
@@ -48,25 +37,73 @@ namespace quezemasterNew.Controllers
         public async Task<IActionResult> InsertClassBPSC(Class9ViewModel data)
         {
 
+            string result = "Error";
             try
             {
-                if(data!=null)
+                if (data != null)
                 {
-                    await BPSCHelper.SaveBPSCRecords(BPSCData:data);
+                    if (data.Id > 0)
+                    {
+                        bool IsDataUpdate = await BPSCHelper.UpdateBPSCEnglishQuizDetails(data: data);
+
+                        result = IsDataUpdate ? "UpdateSuccess" : "UpdateError";
+                    }
+                    else
+                    {
+                        bool IsDataSave = await BPSCHelper.SaveBPSCRecords(BPSCData: data);
+
+                        result = IsDataSave ? "SaveSuccess" : "SaveError";
+                    }
+
+
                 }
-          
-               
             }
             catch (Exception ex)
             {
 
-
             }
+            ViewData["BPSCResult"] = result;
+            return ViewComponent("BPSCEnglish", new { ViewComponentType = "BPSCEnglishList", BPSCEnglishDetails = data });
 
-            return RedirectToAction("Index",new { Subject = data?.SubjectName});
+
         }
 
-      
+
+
+
+        public async Task<IActionResult> EditBPSCDetailsData(int BPSCId)
+        {
+
+            Class9ViewModel BPSCDetails = new Class9ViewModel();
+            if (BPSCId > 0)
+            {
+                BPSCDetails = await BPSCHelper.FillClassBPSCQuizDetailsUsingId(BPSCId: BPSCId);
+            }
+        
+            return ViewComponent("BPSCEnglish", new { ViewComponentType = "BPSCEnglishForm", BPSCEnglishDetails = BPSCDetails });
+        }
+
+
+
+        public async Task<IActionResult> DeleteBPSCDetails(int? BPSCId, string SubjectName)
+        {
+            string result = "DeleteError";
+            Class9ViewModel QuezIndexBPSCDetails = new Class9ViewModel();
+            QuezIndexBPSCDetails.SubjectName = SubjectName;
+            if (BPSCId != null)
+            {
+                if (BPSCId > 0)
+                {
+                    bool IsDataUpdate = await BPSCHelper.DeleteBPSCDetails(BPSCId: BPSCId);
+
+                    result = IsDataUpdate ? "DeleteSuccess" : "DeleteError";
+                }
+            }
+            ViewData["BPSCResult"] = result;
+            return ViewComponent("BPSCEnglish", new { ViewComponentType = "BPSCEnglishList", BPSCEnglishDetails = QuezIndexBPSCDetails });
+        }
+
+
 
         public async Task<IActionResult> AddQuestion(int id, int PrimaryId)
         {
@@ -214,35 +251,35 @@ namespace quezemasterNew.Controllers
                         }
                     }
 
-                    if (String.IsNullOrEmpty(finalResute.AnswerA) == false)
+                    if (string.IsNullOrEmpty(finalResute.AnswerA) == false)
                     {
                         if (finalResute.AnswerA == test11.CurrectAnswer)
                         {
                             finalResute.CurrectAnswer = test11.CurrectAnswer;
                         }
                     }
-                    else if ((String.IsNullOrEmpty(finalResute.AnswerB) == false))
+                    else if ((string.IsNullOrEmpty(finalResute.AnswerB) == false))
                     {
                         if (finalResute.AnswerB == test11.CurrectAnswer)
                         {
                             finalResute.CurrectAnswer = test11.CurrectAnswer;
                         }
                     }
-                    else if ((String.IsNullOrEmpty(finalResute.AnswerC) == false))
+                    else if ((string.IsNullOrEmpty(finalResute.AnswerC) == false))
                     {
                         if (finalResute.AnswerC == test11.CurrectAnswer)
                         {
                             finalResute.CurrectAnswer = test11.CurrectAnswer;
                         }
                     }
-                    else if ((String.IsNullOrEmpty(finalResute.AnswerD) == false))
+                    else if ((string.IsNullOrEmpty(finalResute.AnswerD) == false))
                     {
                         if (finalResute.AnswerD == test11.CurrectAnswer)
                         {
                             finalResute.CurrectAnswer = test11.CurrectAnswer;
                         }
                     }
-                    else if ((String.IsNullOrEmpty(finalResute.AnswerE) == false))
+                    else if ((string.IsNullOrEmpty(finalResute.AnswerE) == false))
                     {
                         if (finalResute.AnswerE == test11.CurrectAnswer)
                         {
@@ -266,42 +303,42 @@ namespace quezemasterNew.Controllers
                     finalResute.TestQuestionId = test11.TestId;
                     finalResute.DatetimeStamp = DateTime.Now;
 
-                    if (String.IsNullOrEmpty(finalResute.CurrentUser) == true)
+                    if (string.IsNullOrEmpty(finalResute.CurrentUser) == true)
                     {
                         finalResute.CurrentUser = "";
                     }
-                    if (String.IsNullOrEmpty(finalResute.AnswerA) == true)
+                    if (string.IsNullOrEmpty(finalResute.AnswerA) == true)
                     {
                         finalResute.AnswerA = "";
                     }
-                    if (String.IsNullOrEmpty(finalResute.AnswerB) == true)
+                    if (string.IsNullOrEmpty(finalResute.AnswerB) == true)
                     {
                         finalResute.AnswerB = "";
                     }
-                    if (String.IsNullOrEmpty(finalResute.AnswerC) == true)
+                    if (string.IsNullOrEmpty(finalResute.AnswerC) == true)
                     {
                         finalResute.AnswerC = "";
                     }
-                    if (String.IsNullOrEmpty(finalResute.AnswerD) == true)
+                    if (string.IsNullOrEmpty(finalResute.AnswerD) == true)
                     {
                         finalResute.AnswerD = "";
                     }
-                    if (String.IsNullOrEmpty(finalResute.AnswerE) == true)
+                    if (string.IsNullOrEmpty(finalResute.AnswerE) == true)
                     {
                         finalResute.AnswerE = "";
                     }
 
-                    if (String.IsNullOrEmpty(finalResute.QuestionNo) == true)
+                    if (string.IsNullOrEmpty(finalResute.QuestionNo) == true)
                     {
                         finalResute.QuestionNo = "";
                     }
 
-                    if (String.IsNullOrEmpty(finalResute.CurrectAnswer) == true)
+                    if (string.IsNullOrEmpty(finalResute.CurrectAnswer) == true)
                     {
                         finalResute.CurrectAnswer = "";
                     }
 
-                    if (String.IsNullOrEmpty(finalResute.TestSerise) == true)
+                    if (string.IsNullOrEmpty(finalResute.TestSerise) == true)
                     {
                         finalResute.TestSerise = "";
                     }
@@ -323,7 +360,7 @@ namespace quezemasterNew.Controllers
 
              
 
-                if (String.IsNullOrEmpty(test11.FinalTest) == false)
+                if (string.IsNullOrEmpty(test11.FinalTest) == false)
                 {
                     List<TblClassBpscenglisgTestFinalDetail> QuestionDetails = new List<TblClassBpscenglisgTestFinalDetail>();
                     QuestionDetails = await BPSCHelper.GetBPSCEnglishTestDetails(); 
